@@ -12,9 +12,8 @@ import { defineConfig } from 'vite'
 
   export default defineConfig({
     plugins: [react()],
-    base: '/changshancheng.github.io/',
+    base: '/',
     build: {
       outDir: 'dist'
     }
   })
-  
