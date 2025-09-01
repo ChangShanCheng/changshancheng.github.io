@@ -1,4 +1,4 @@
-import { Skill } from '../types';
+import type { Skill } from '../types';
 import './Skills.css';
 
 const skillsData: Skill[] = [

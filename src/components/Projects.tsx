@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Project } from '../types';
+import type { Project } from '../types';
 import './Projects.css';
 
 const projectsData: Project[] = [
