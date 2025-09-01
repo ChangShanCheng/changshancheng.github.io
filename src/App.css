@@ -1,42 +1,89 @@
-#root {
-  max-width: 1280px;
+.App {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+main {
+  position: relative;
+}
+
+/* 確保所有區塊都有適當的間距 */
+section {
+  position: relative;
+  z-index: 1;
+}
+
+/* 平滑滾動 */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 響應式圖片 */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 通用按鈕重置 */
+button {
+  font-family: inherit;
+}
+
+/* 通用容器樣式 */
+.container {
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  padding: 0 2rem;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
+/* 載入動畫 */
+@keyframes fadeInUp {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: translateY(30px);
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* 媒體查詢優化 */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
   }
 }
 
-.card {
-  padding: 2em;
+/* 載入狀態 */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 1.2rem;
 }
 
-.read-the-docs {
-  color: #888;
+/* 無障礙優化 */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Focus 樣式 */
+a:focus,
+button:focus {
+  outline: 2px solid #ffd700;
+  outline-offset: 2px;
 }
