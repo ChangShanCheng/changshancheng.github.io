@@ -17,7 +17,7 @@ const experiences: (ExperienceItem & { icon: typeof Building2; tone: string })[]
       '主導企業大腦：從知識圖譜（Neo4j + PostgreSQL + 向量檢索）與 Claude Code 式 Agent Harness（Memory + Tool + Sandbox + Cronjob）兩個 PoC，推進為偏光片產線的地端 AI 數據分析平台（FastAPI + MCP + 沙盒 + 稽核日誌），6 支 n8n 流程遷移為 skill/flows，XGBoost 良率模型 + SHAP 配方建議。',
       '設計 APO-OCR Prompt 自動優化架構並指導實習生落地；擔任 ChatGPT Team 課程助教（67 位學員）。',
     ],
-    tags: ['Azure OpenAI', 'Gemini', 'FastAPI', 'React', 'Neo4j', 'Qdrant', 'Docker', 'GCP', 'MCP'],
+    tags: ['Azure OpenAI', 'Gemini', 'FastAPI', 'React', 'Neo4j', 'pgvector', 'Docker', 'GCP', 'MCP'],
   },
   {
     icon: Factory,
