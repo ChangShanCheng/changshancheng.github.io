@@ -14,8 +14,7 @@ const experiences: (ExperienceItem & { icon: typeof Building2; tone: string })[]
       '從零建立公司文件 AI 平台（Azure Document Intelligence + Azure OpenAI），定義可複用的 OCR → LLM 提取 → 驗證 → 回饋流程。',
       '六套系統正式上線：報價單 OCR（準確率 51% → 100%、速度 3 倍）、臺灣發票 OCR（97%，年省 850 人時）、BMS 中國發票 OCR（100%）、關務 OCR、新人健檢 OCR 平台（48 欄位、97.4%、AES-256-GCM 加密）、供應商 ESG 問卷系統（GCP）。',
       '合計平均準確率 97%+，每年節省 1,500+ 人時、約 100 萬元成本，並避免 48–76 萬元外包支出。',
-      '建構企業大腦 PoC：Neo4j + PostgreSQL + Qdrant 知識圖譜，以及 Claude Code 式 Agent Harness（Gemini API + Memory + Tool + Sandbox + Cronjob）。',
-      '主導 AI 數據分析平台：偏光片產線的地端 AI Agent（FastAPI + MCP + 沙盒 + 稽核日誌），6 支 n8n 流程遷移為 skill/flows，XGBoost 良率模型 + SHAP 配方建議。',
+      '主導企業大腦：從知識圖譜（Neo4j + PostgreSQL + 向量檢索）與 Claude Code 式 Agent Harness（Memory + Tool + Sandbox + Cronjob）兩個 PoC，推進為偏光片產線的地端 AI 數據分析平台（FastAPI + MCP + 沙盒 + 稽核日誌），6 支 n8n 流程遷移為 skill/flows，XGBoost 良率模型 + SHAP 配方建議。',
       '設計 APO-OCR Prompt 自動優化架構並指導實習生落地；擔任 ChatGPT Team 課程助教（67 位學員）。',
     ],
     tags: ['Azure OpenAI', 'Gemini', 'FastAPI', 'React', 'Neo4j', 'Qdrant', 'Docker', 'GCP', 'MCP'],
@@ -28,10 +27,12 @@ const experiences: (ExperienceItem & { icon: typeof Building2; tone: string })[]
     period: '2024/01 – 2024/11',
     location: '高雄',
     description: [
-      '排除冷軋鋼捲產線生產異況，維持連續生產、產率達 95%。',
-      '主導鋼捲缺陷真因分析，並與上下游製程協調以達成客戶訂單要求。',
+      '負責冷軋鋼捲產線值班運作與異況排除，維持連續生產、產率達 95%。',
+      '以製程參數與品質數據進行鋼捲缺陷真因分析，提出製程調整建議，減少重工與停線。',
+      '協調上下游製程與品保以達成客戶訂單，建立對產線製程資料與現場作業的第一線理解。',
+      '這段製造現場經驗成為日後在明基材料建構產線 AI 數據分析平台（感測器分析、SPC、良率模型）的領域基礎。',
     ],
-    tags: ['製程改善', '根因分析', '跨部門協作'],
+    tags: ['製程數據分析', '根因分析', 'SPC', '產線異況排除', '跨部門協作'],
   },
 ];
 
