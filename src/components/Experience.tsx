@@ -7,7 +7,7 @@ const experiences: (ExperienceItem & { icon: typeof Building2; tone: string })[]
     icon: Building2,
     tone: 'brand',
     company: '明基材料 BenQ Materials',
-    position: 'AI 應用工程師 · 數位技術中心 AI 專案辦公室 (DCA1)',
+    position: 'AI 應用研發工程師 (AI Application R&D Engineer) · 數位技術中心 AI 專案辦公室 (DCA1)',
     period: '2024/12 – 至今',
     location: '桃園',
     description: [

@@ -25,7 +25,7 @@ const Hero = () => {
         <div className="hero-text">
           <div className="hero-eyebrow">
             <span className="dot" />
-            AI Application Engineer · BenQ Materials
+            AI Application R&D Engineer · BenQ Materials
           </div>
           <h1>
             {profile.nameZh}
