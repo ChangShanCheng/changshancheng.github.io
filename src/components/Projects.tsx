@@ -171,9 +171,9 @@ const Projects = () => {
           ))}
         </div>
 
-        <div className="projects-grid">
+        <div className="projects-grid" key={filter}>
           {list.map((p, i) => (
-            <article key={p.id} className={`card card-hover project reveal d${(i % 3) + 1}`}>
+            <article key={p.id} className="card card-hover project" style={{ animationDelay: `${Math.min(i, 5) * 70}ms` }}>
               <div className="project-top">
                 <span className={`badge ${badgeTone[p.category]}`}>{p.category}</span>
                 <span className="project-period">{p.period}</span>

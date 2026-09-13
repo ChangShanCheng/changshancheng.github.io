@@ -24,8 +24,8 @@ const experiences: (ExperienceItem & { icon: typeof Building2; tone: string })[]
     icon: Factory,
     tone: 'lav',
     company: '中國鋼鐵 China Steel',
-    position: '製程工程師 · 冷軋廠',
-    period: '2024/01 – 2024/10',
+    position: '值班股長 · 冷軋廠',
+    period: '2024/01 – 2024/11',
     location: '高雄',
     description: [
       '排除冷軋鋼捲產線生產異況，維持連續生產、產率達 95%。',
