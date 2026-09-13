@@ -1,154 +1,184 @@
-/* 基础重置和全局样式 */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* ── Design tokens：比照 Enterprise Brain / AI Data Analysis Platform 的淡紫主題 ── */
+:root {
+  --lav-50: #F5F0F9;  --lav-100: #ECE3F5; --lav-200: #D8C9E8; --lav-300: #C4AFDB;
+  --lav-400: #A88BCB; --lav-500: #9D6FC0; --lav-600: #7B5BA6; --lav-700: #6B4A8E;
+  --lav-800: #553F7E; --lav-900: #3D2B5C;
+  --ink-900: #161020; --ink-800: #241a38; --ink-700: #33254e;
+  --sage-500: #5C9E69; --sage-50: #F1F6F2;
+  --rose-500: #B85C66; --rose-50: #FBF3F5;
+  --amber-500: #d97706; --amber-50: #FFF7E6;
+
+  --surface: #f5f2f8;
+  --surface-2: #faf8fc;
+  --card: #ffffff;
+  --text: #1e293b;
+  --text-2: #475569;
+  --muted: #64748b;
+  --faint: #94a3b8;
+  --line: rgba(0, 0, 0, 0.06);
+  --line-2: #e2e8f0;
+
+  --radius: 16px;
+  --radius-sm: 12px;
+  --shadow-card: 0 2px 8px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.03);
+  --shadow-hover: 0 8px 32px rgba(0,0,0,0.10);
+  --shadow-brand: 0 8px 20px rgba(107,74,142,0.35);
+
+  --font: "Inter", "Noto Sans TC", -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  --container: 1160px;
 }
 
-:root {
-  font-family: 'Inter', 'system-ui', 'Avenir', 'Helvetica', 'Arial', sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-  
-  /* 亮色主题 */
-  color: #333;
-  background-color: #ffffff;
-  
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
 
 body {
-  margin: 0;
-  min-width: 320px;
-  min-height: 100vh;
-  background-color: #ffffff;
-  color: #333;
-}
-
-#root {
-  min-height: 100vh;
-  width: 100%;
-}
-
-/* 基础排版 */
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 600;
-  line-height: 1.2;
-  color: inherit;
-}
-
-h1 {
-  font-size: 2.5rem;
-}
-
-h2 {
-  font-size: 2rem;
-}
-
-h3 {
-  font-size: 1.5rem;
-}
-
-h4 {
-  font-size: 1.25rem;
-}
-
-p {
+  font-family: var(--font);
+  background: var(--surface);
+  color: var(--text);
   line-height: 1.6;
-  margin-bottom: 1rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-width: 320px;
 }
 
-/* 链接样式 */
-a {
-  color: #007bff;
-  text-decoration: none;
-  transition: color 0.3s ease;
+#root { min-height: 100vh; }
+
+h1, h2, h3, h4 { line-height: 1.2; font-weight: 700; color: var(--text); }
+p { margin: 0; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; border: none; background: none; cursor: pointer; color: inherit; }
+ul, ol { list-style: none; }
+img { max-width: 100%; display: block; }
+
+::selection { background: var(--lav-200); color: var(--ink-900); }
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #c1cdd9; border-radius: 4px; }
+
+/* ── Layout helpers ── */
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 24px;
 }
 
-a:hover {
-  color: #0056b3;
-}
+.section { padding: 96px 0; }
+.section.alt { background: var(--surface-2); }
 
-/* 按钮基础样式重置 */
-button {
-  border: none;
-  background: none;
-  font-family: inherit;
-  cursor: pointer;
+.section-head { margin-bottom: 48px; }
+.section-head .eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--lav-700);
+  margin-bottom: 12px;
 }
-
-/* 输入框样式 */
-input, textarea {
-  font-family: inherit;
-  font-size: inherit;
+.section-head .eyebrow::before {
+  content: ""; width: 20px; height: 2px; background: var(--lav-500); border-radius: 2px;
 }
+.section-head h2 { font-size: 34px; font-weight: 800; letter-spacing: -0.01em; }
+.section-head p { color: var(--muted); font-size: 16px; margin-top: 10px; max-width: 640px; }
 
-/* 列表样式 */
-ul, ol {
-  list-style: none;
+/* ── Card system（同 ADAP .card / .card-hover）── */
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
 }
+.card-hover { transition: transform .25s cubic-bezier(.4,0,.2,1), box-shadow .25s cubic-bezier(.4,0,.2,1); }
+.card-hover:hover { transform: translateY(-3px); box-shadow: var(--shadow-hover); }
 
-/* 图片响应式 */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
+/* ── Icon tile ── */
+.icon-tile {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 44px; height: 44px; border-radius: 12px; flex-shrink: 0;
+  background: var(--lav-50); color: var(--lav-600);
 }
-
-/* 滚动条样式 (WebKit 浏览器) */
-::-webkit-scrollbar {
-  width: 8px;
+.icon-tile.brand {
+  background: linear-gradient(135deg, var(--lav-600), var(--lav-500));
+  color: #fff; box-shadow: var(--shadow-brand);
 }
+.icon-tile.sage { background: var(--sage-50); color: var(--sage-500); }
+.icon-tile.rose { background: var(--rose-50); color: var(--rose-500); }
+.icon-tile.amber { background: var(--amber-50); color: var(--amber-500); }
 
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
+/* ── Chips / badges ── */
+.chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 5px 12px; border-radius: 999px;
+  font-size: 13px; font-weight: 500;
+  background: #fff; border: 1px solid var(--line-2); color: var(--text-2);
+  transition: border-color .2s, color .2s, transform .2s;
 }
+.chip:hover { border-color: var(--lav-400); color: var(--lav-700); transform: translateY(-1px); }
+.chip.soft { background: var(--lav-50); border-color: transparent; color: var(--lav-700); }
 
-::-webkit-scrollbar-thumb {
-  background: #c1c1c1;
-  border-radius: 4px;
+.badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.04em;
+  padding: 3px 10px; border-radius: 999px;
 }
+.badge.lav { background: var(--lav-50); color: var(--lav-700); }
+.badge.indigo { background: #eef2ff; color: #4338ca; }
+.badge.sage { background: var(--sage-50); color: #3f7a4a; }
+.badge.amber { background: var(--amber-50); color: #b45309; }
+.badge.rose { background: var(--rose-50); color: var(--rose-500); }
 
-::-webkit-scrollbar-thumb:hover {
-  background: #a8a8a8;
+/* ── Buttons ── */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  height: 46px; padding: 0 22px; border-radius: 12px;
+  font-size: 14px; font-weight: 600;
+  transition: transform .15s, box-shadow .2s, background .2s, color .2s;
 }
-
-/* 选择文本样式 */
-::selection {
-  background-color: #ffd700;
-  color: #333;
+.btn:active { transform: scale(0.97); }
+.btn.primary {
+  color: #fff;
+  background: linear-gradient(135deg, var(--lav-700) 0%, var(--lav-500) 100%);
+  box-shadow: var(--shadow-brand);
 }
+.btn.primary:hover { box-shadow: 0 12px 28px rgba(107,74,142,0.45); }
+.btn.ghost {
+  color: #fff; background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.22); backdrop-filter: blur(6px);
+}
+.btn.ghost:hover { background: rgba(255,255,255,0.16); }
+.btn.outline { color: var(--lav-700); background: #fff; border: 1.5px solid var(--lav-300); }
+.btn.outline:hover { background: var(--lav-50); border-color: var(--lav-500); }
 
-/* 无障碍优化 */
+/* ── Segmented control（同 Dashboard 的期間選擇器）── */
+.segmented {
+  display: inline-flex; flex-wrap: wrap; gap: 2px;
+  background: #ebe7f0; border-radius: 12px; padding: 4px;
+}
+.segmented button {
+  padding: 8px 16px; border-radius: 10px; font-size: 13px; font-weight: 600;
+  color: var(--muted); transition: all .2s;
+}
+.segmented button:hover { color: var(--text); }
+.segmented button.active { background: #fff; color: var(--text); box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+
+/* ── Reveal on scroll ── */
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+.reveal.in { opacity: 1; transform: none; }
+.reveal.d1 { transition-delay: .08s; }
+.reveal.d2 { transition-delay: .16s; }
+.reveal.d3 { transition-delay: .24s; }
+
+@keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+@keyframes pulse-dot { 0%,100% { opacity: .5; transform: scale(.9); } 50% { opacity: 1; transform: scale(1.15); } }
+
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .reveal { opacity: 1; transform: none; }
 }
 
-/* 响应式断点 */
 @media (max-width: 768px) {
-  :root {
-    font-size: 14px;
-  }
-  
-  h1 {
-    font-size: 2rem;
-  }
-  
-  h2 {
-    font-size: 1.75rem;
-  }
-  
-  h3 {
-    font-size: 1.25rem;
-  }
+  .section { padding: 64px 0; }
+  .section-head h2 { font-size: 28px; }
+  .container { padding: 0 18px; }
 }
+
+a:focus-visible, button:focus-visible { outline: 2px solid var(--lav-500); outline-offset: 2px; border-radius: 8px; }

@@ -1,0 +1,37 @@
+.timeline { position: relative; display: flex; flex-direction: column; gap: 28px; }
+.timeline::before {
+  content: ""; position: absolute; left: 21px; top: 44px; bottom: 44px; width: 2px;
+  background: linear-gradient(180deg, var(--lav-300), var(--lav-100));
+}
+.timeline-item { display: grid; grid-template-columns: 44px 1fr; gap: 24px; }
+.timeline-rail { position: relative; z-index: 1; padding-top: 8px; }
+.timeline-card { padding: 28px 30px; }
+.timeline-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; flex-wrap: wrap; }
+.timeline-head h3 { font-size: 18px; font-weight: 800; }
+.timeline-company { color: var(--muted); font-size: 14px; margin-top: 4px; }
+.timeline-card ul { margin-top: 18px; display: flex; flex-direction: column; gap: 9px; }
+.timeline-card li {
+  position: relative; padding-left: 18px; color: var(--text-2); font-size: 15px; line-height: 1.7;
+}
+.timeline-card li::before {
+  content: ""; position: absolute; left: 0; top: 11px; width: 7px; height: 7px; border-radius: 50%;
+  background: var(--lav-400);
+}
+.timeline-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+
+.education { margin-top: 56px; }
+.education-title { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+.education-title h3 { font-size: 22px; font-weight: 800; }
+.education-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+.education-card { padding: 24px 26px; }
+.education-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+.education-head h4 { font-size: 17px; font-weight: 800; }
+.education-degree { margin-top: 8px; font-weight: 600; color: var(--text-2); }
+.education-note { margin-top: 8px; color: var(--muted); font-size: 13.5px; line-height: 1.6; }
+
+@media (max-width: 640px) {
+  .timeline::before { display: none; }
+  .timeline-item { grid-template-columns: 1fr; gap: 10px; }
+  .timeline-rail { padding-top: 0; }
+  .timeline-card { padding: 22px 20px; }
+}

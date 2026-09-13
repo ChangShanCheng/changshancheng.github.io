@@ -1,69 +1,29 @@
-# React + TypeScript + Vite
+# changshancheng.github.io
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+張善程（Shan-Cheng Chang）的個人網站：AI Application Engineer — Document AI / LLM Agents / Knowledge Graph。
 
-Currently, two official plugins are available:
+線上網址：https://changshancheng.github.io
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 技術
 
-## Expanding the ESLint configuration
+React 19 + TypeScript + Vite，透過 GitHub Actions 自動部署到 GitHub Pages（推到 `main` 即部署）。
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 開發
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+npm run dev      # 本機預覽
+npm run build    # 型別檢查 + 打包到 dist/
+npm run preview  # 預覽打包結果
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 內容維護
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+| 想改什麼 | 檔案 |
+|---|---|
+| Email / GitHub / LinkedIn / 地點 / 履歷連結 | `src/data/profile.ts` |
+| 首頁文案與數字 | `src/components/Hero.tsx` |
+| 工作經歷與學歷 | `src/components/Experience.tsx` |
+| 技能與認證 | `src/components/Skills.tsx` |
+| 專案作品 | `src/components/Projects.tsx` |
+| 履歷檔案（HTML / PDF） | `public/resume/` |

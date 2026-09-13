@@ -1,167 +1,96 @@
 import { useState } from 'react';
+import { Mail, MapPin, FileText, Globe, Send } from 'lucide-react';
+import { GithubIcon, LinkedinIcon } from './BrandIcons';
+import { profile } from '../data/profile';
 import './Contact.css';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  });
+  const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' });
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const onChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
+    setForm((f) => ({ ...f, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // 這裡可以整合實際的郵件服務
-    const mailtoLink = `mailto:changshancheng@example.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`
-姓名: ${formData.name}
-Email: ${formData.email}
-
-訊息:
-${formData.message}
-    `)}`;
-    
-    window.location.href = mailtoLink;
-  };
-
-  const downloadResume = () => {
-    // 創建一個示例簡歷下載功能
-    const link = document.createElement('a');
-    link.href = '/resume_chang_shan_cheng.pdf'; // 您需要將簡歷PDF放在public資料夾中
-    link.download = 'Chang_Shan_Cheng_Resume.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    const body = `姓名: ${form.name}\nEmail: ${form.email}\n\n訊息:\n${form.message}`;
+    window.location.href = `mailto:${profile.email}?subject=${encodeURIComponent(form.subject)}&body=${encodeURIComponent(body)}`;
   };
 
   return (
-    <section id="contact" className="contact">
+    <section id="contact" className="section alt contact">
       <div className="container">
-        <div className="section-header">
+        <div className="section-head reveal">
+          <div className="eyebrow">Contact</div>
           <h2>聯絡我</h2>
-          <p>讓我們一起討論您的 AI 專案需求</p>
+          <p>歡迎討論 AI 應用、文件自動化、LLM Agent 或工作機會。</p>
         </div>
 
-        <div className="contact-content">
-          <div className="contact-info">
-            <div className="info-card">
-              <div className="info-icon">📧</div>
-              <h3>電子郵件</h3>
-              <p>changshancheng@example.com</p>
-              <p>24小時內回覆</p>
-            </div>
-
-            <div className="info-card">
-              <div className="info-icon">📱</div>
-              <h3>電話</h3>
-              <p>+886 912-345-678</p>
-              <p>週一至週五 9:00-18:00</p>
-            </div>
-
-            <div className="info-card">
-              <div className="info-icon">📍</div>
-              <h3>位置</h3>
-              <p>台灣 台北市</p>
-              <p>可遠端工作</p>
-            </div>
-
-            <div className="social-links">
-              <h3>社群媒體</h3>
-              <div className="social-icons">
-                <a href="https://github.com/changshancheng" target="_blank" rel="noopener noreferrer">
-                  <span className="social-icon">💻</span>
-                  <span>GitHub</span>
-                </a>
-                <a href="https://linkedin.com/in/changshancheng" target="_blank" rel="noopener noreferrer">
-                  <span className="social-icon">💼</span>
-                  <span>LinkedIn</span>
-                </a>
-                <a href="mailto:changshancheng@example.com">
-                  <span className="social-icon">📧</span>
-                  <span>Email</span>
-                </a>
+        <div className="contact-grid">
+          <div className="contact-side">
+            <a className="card card-hover info reveal" href={`mailto:${profile.email}`}>
+              <span className="icon-tile brand"><Mail size={20} /></span>
+              <div>
+                <h4>電子郵件</h4>
+                <p>{profile.email}</p>
+                <small>通常 24 小時內回覆</small>
+              </div>
+            </a>
+            <div className="card info reveal d1">
+              <span className="icon-tile"><MapPin size={20} /></span>
+              <div>
+                <h4>位置</h4>
+                <p>{profile.location}</p>
+                <small>可配合北部工作，接受遠端 / 混合</small>
               </div>
             </div>
-
-            <div className="resume-section">
-              <h3>履歷下載</h3>
-              <button className="resume-btn" onClick={downloadResume}>
-                <span className="resume-icon">📄</span>
-                下載我的履歷
-              </button>
-              <p className="resume-note">包含完整的工作經驗與專案詳情</p>
+            <div className="social reveal d2">
+              <a className="card card-hover social-link" href={profile.github} target="_blank" rel="noopener noreferrer">
+                <GithubIcon size={18} /> GitHub
+              </a>
+              <a className="card card-hover social-link" href={profile.linkedin} target="_blank" rel="noopener noreferrer">
+                <LinkedinIcon size={18} /> LinkedIn
+              </a>
+            </div>
+            <div className="card resume reveal d3">
+              <h4><FileText size={18} /> 履歷下載</h4>
+              <div className="resume-buttons">
+                <a className="btn primary" href={profile.resumePdfZh} target="_blank" rel="noopener noreferrer">中文履歷 (PDF)</a>
+                <a className="btn outline" href={profile.resumePdfEn} target="_blank" rel="noopener noreferrer">English Resume (PDF)</a>
+                <a className="resume-link" href={profile.resumeHtml} target="_blank" rel="noopener noreferrer">
+                  <Globe size={14} /> 線上版（可切換語言）
+                </a>
+              </div>
+              <small>最後更新：2026 年 9 月</small>
             </div>
           </div>
 
-          <div className="contact-form-wrapper">
-            <form className="contact-form" onSubmit={handleSubmit}>
-              <h3>發送訊息</h3>
-              
-              <div className="form-group">
-                <label htmlFor="name">姓名 *</label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleInputChange}
-                  required
-                  placeholder="請輸入您的姓名"
-                />
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="email">電子郵件 *</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleInputChange}
-                  required
-                  placeholder="請輸入您的Email"
-                />
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="subject">主旨 *</label>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleInputChange}
-                  required
-                  placeholder="請輸入郵件主旨"
-                />
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="message">訊息內容 *</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleInputChange}
-                  required
-                  rows={5}
-                  placeholder="請詳細描述您的專案需求或想要討論的內容..."
-                />
-              </div>
-
-              <button type="submit" className="submit-btn">
-                <span>發送訊息</span>
-                <span className="btn-icon">📤</span>
-              </button>
-            </form>
-          </div>
+          <form className="card contact-form reveal d1" onSubmit={onSubmit}>
+            <h3>發送訊息</h3>
+            <div className="form-row">
+              <label>
+                <span>姓名 *</span>
+                <input name="name" value={form.name} onChange={onChange} required placeholder="您的姓名" />
+              </label>
+              <label>
+                <span>電子郵件 *</span>
+                <input type="email" name="email" value={form.email} onChange={onChange} required placeholder="your@email.com" />
+              </label>
+            </div>
+            <label>
+              <span>主旨 *</span>
+              <input name="subject" value={form.subject} onChange={onChange} required placeholder="例如：AI 應用工程師職缺" />
+            </label>
+            <label>
+              <span>訊息內容 *</span>
+              <textarea name="message" value={form.message} onChange={onChange} required rows={6} placeholder="請描述您想討論的內容或職缺資訊..." />
+            </label>
+            <button type="submit" className="btn primary full">
+              <Send size={16} /> 以 Email 發送
+            </button>
+            <small>送出後會開啟你的郵件程式，內容已預先填好。</small>
+          </form>
         </div>
       </div>
     </section>

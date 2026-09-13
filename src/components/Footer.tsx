@@ -1,74 +1,51 @@
+import { Cpu, Mail, ArrowUp } from 'lucide-react';
+import { GithubIcon, LinkedinIcon } from './BrandIcons';
+import { profile } from '../data/profile';
 import './Footer.css';
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
-  
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+  const year = new Date().getFullYear();
+  const go = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
 
   return (
     <footer className="footer">
       <div className="container">
-        <div className="footer-content">
-          <div className="footer-section">
-            <h3>張善程</h3>
-            <p>AI Application Developer</p>
-            <p className="footer-description">
-              專精於 OCR + LLM 識別技術的軟體工程師，
-              致力於創造實用的 AI 解決方案。
-            </p>
-          </div>
-          
-          <div className="footer-section">
-            <h4>快速連結</h4>
-            <ul>
-              <li><a onClick={() => document.getElementById('hero')?.scrollIntoView({ behavior: 'smooth' })}>首頁</a></li>
-              <li><a onClick={() => document.getElementById('skills')?.scrollIntoView({ behavior: 'smooth' })}>技能</a></li>
-              <li><a onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}>作品</a></li>
-              <li><a onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>聯絡</a></li>
-            </ul>
-          </div>
-          
-          <div className="footer-section">
-            <h4>專業領域</h4>
-            <ul>
-              <li>OCR 文字識別</li>
-              <li>Large Language Models</li>
-              <li>Computer Vision</li>
-              <li>全端網頁開發</li>
-            </ul>
-          </div>
-          
-          <div className="footer-section">
-            <h4>聯絡資訊</h4>
-            <div className="contact-info">
-              <p>📧 changshancheng@example.com</p>
-              <p>📱 +886 912-345-678</p>
-              <p>📍 台北市, 台灣</p>
+        <div className="footer-grid">
+          <div className="footer-brand">
+            <div className="brand-row">
+              <span className="icon-tile brand"><Cpu size={20} /></span>
+              <div>
+                <div className="fname">{profile.nameZh} · {profile.nameEn}</div>
+                <div className="ftitle">{profile.title}</div>
+              </div>
             </div>
+            <p>專注於 Document AI、LLM Agent 與企業知識圖譜的 AI 應用工程師，把 AI 做成部門真的會用的系統。</p>
             <div className="footer-social">
-              <a href="https://github.com/changshancheng" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                💻
-              </a>
-              <a href="https://linkedin.com/in/changshancheng" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                💼
-              </a>
-              <a href="mailto:changshancheng@example.com" aria-label="Email">
-                📧
-              </a>
+              <a href={profile.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub"><GithubIcon size={18} /></a>
+              <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><LinkedinIcon size={18} /></a>
+              <a href={`mailto:${profile.email}`} aria-label="Email"><Mail size={18} /></a>
             </div>
+          </div>
+          <div className="footer-col">
+            <h4>導覽</h4>
+            <button onClick={() => go('hero')}>首頁</button>
+            <button onClick={() => go('experience')}>經歷</button>
+            <button onClick={() => go('skills')}>技能</button>
+            <button onClick={() => go('projects')}>專案</button>
+            <button onClick={() => go('contact')}>聯絡</button>
+          </div>
+          <div className="footer-col">
+            <h4>專業領域</h4>
+            <span>OCR + LLM 文件自動化</span>
+            <span>LLM Agent / Harness Engineering</span>
+            <span>知識圖譜與 RAG</span>
+            <span>全端與雲端系統交付</span>
           </div>
         </div>
-        
         <div className="footer-bottom">
-          <div className="footer-credits">
-            <p>&copy; {currentYear} 張善程. All rights reserved.</p>
-            <p>Built with React + TypeScript + Vite</p>
-          </div>
-          
-          <button className="scroll-to-top" onClick={scrollToTop} aria-label="回到頂部">
-            ⬆️
+          <span>© {year} {profile.nameZh} {profile.nameEn}. Built with React + TypeScript + Vite · GitHub Pages</span>
+          <button className="to-top" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} aria-label="回到頂部">
+            <ArrowUp size={16} />
           </button>
         </div>
       </div>
