@@ -5,6 +5,22 @@ import './Projects.css';
 
 const projectsData: Project[] = [
   {
+    id: 4,
+    title: '企業大腦：從 PoC 到產線 AI 數據分析平台',
+    period: '2025/12 – 進行中',
+    category: 'Agent & KG',
+    description: '從知識圖譜與 Agent Harness 兩個 PoC 起步，推進為偏光片產線的地端 AI Agent 平台：感測器數據分析、知識沉澱與知識圖譜，Skill 格式與 Claude Code 相容，資料不出內網。',
+    metric: '2 個 PoC → 10 個 Docker 服務 · 7 種分析方法 · XGBoost F1 0.74',
+    technologies: ['FastAPI', 'Gemini Function Calling', 'MCP', 'PostgreSQL + pgvector', 'Neo4j', 'Docker', 'React', 'XGBoost', 'SHAP', 'n8n → Skills'],
+    highlights: [
+      'PoC 階段：以化妝品法規比對驗證知識圖譜（Neo4j + PostgreSQL + 向量檢索），含輸入規範、知識審核機制與版控',
+      'PoC 階段：自建 Claude Code 式 Agent Harness（Memory / Tool / Sandbox / Cronjob）與 Prompt 版控治理',
+      '產線階段：原生 Skill / Bash / Read 工具 + MCP 工具伺服器 + 沙盒執行 + append-only 稽核日誌',
+      '產線階段：6 支 n8n 流程遷移為 1 個 skill（7 種分析方法）+ 7 個 flows；XGBoost 良率模型 + SHAP 配方建議卡',
+      '知識沉澱：分析結果標註 → 與武功秘笈比對 → 知識圖譜（141 個實體已入圖）',
+    ],
+  },
+  {
     id: 1,
     title: '報價單 OCR 自動稽核',
     period: '2025/01 – 2025/05 上線',
@@ -50,26 +66,10 @@ const projectsData: Project[] = [
     ],
   },
   {
-    id: 4,
-    title: '企業大腦：從 PoC 到產線 AI 數據分析平台',
-    period: '2025/12 – 進行中',
-    category: 'Agent & KG',
-    description: '從知識圖譜與 Agent Harness 兩個 PoC 起步，推進為偏光片產線的地端 AI Agent 平台：感測器數據分析、知識沉澱與知識圖譜，Skill 格式與 Claude Code 相容，資料不出內網。',
-    metric: '2 個 PoC → 10 個 Docker 服務 · 7 種分析方法 · XGBoost F1 0.74',
-    technologies: ['FastAPI', 'Gemini Function Calling', 'MCP', 'PostgreSQL + pgvector', 'Neo4j', 'Docker', 'React', 'XGBoost', 'SHAP', 'n8n → Skills'],
-    highlights: [
-      'PoC 階段：以化妝品法規比對驗證知識圖譜（Neo4j + PostgreSQL + 向量檢索），含輸入規範、知識審核機制與版控',
-      'PoC 階段：自建 Claude Code 式 Agent Harness（Memory / Tool / Sandbox / Cronjob）與 Prompt 版控治理',
-      '產線階段：原生 Skill / Bash / Read 工具 + MCP 工具伺服器 + 沙盒執行 + append-only 稽核日誌',
-      '產線階段：6 支 n8n 流程遷移為 1 個 skill（7 種分析方法）+ 7 個 flows；XGBoost 良率模型 + SHAP 配方建議卡',
-      '知識沉澱：分析結果標註 → 與武功秘笈比對 → 知識圖譜（141 個實體已入圖）',
-    ],
-  },
-  {
     id: 5,
     title: 'APO-OCR：Prompt 自動優化引擎',
     period: '2026/03 – 2026/09',
-    category: 'Agent & KG',
+    category: 'Document AI',
     description: '設計「Golden Set + 純程式碼驗證器 + Coach LLM + 熔斷治理」的迴圈架構，讓 Prompt 自動迭代到達標；指導實習生實作並交接上線。',
     metric: '$1.44 · 2 輪迭代 · 保留測試集 8/8',
     technologies: ['Python', 'Azure OpenAI', 'Loop Engineering', 'Golden Set', 'Validator'],
@@ -78,21 +78,6 @@ const projectsData: Project[] = [
       '達標 / 圈數 / 預算三重熔斷，避免無限震盪',
       '引擎與 OCR API 僅透過 HTTP 溝通，換單據只需換測試集',
       '自動產出的 Prompt 比人工版短 35%，與資深工程師手調版同分',
-    ],
-  },
-  {
-    id: 6,
-    title: '供應商 ESG 問卷管理系統',
-    period: '2025/10 – 2026/03',
-    category: 'Cloud & Web',
-    description: '首次自行架設的 GCP 全端系統：取代採購部門手動 Excel 管理供應商 ESG 問卷，支援多專案、批次操作、自動提醒與權限控管。',
-    metric: '33K+ 行程式碼 · 52 個 API · 4.5 個月獨立完成',
-    technologies: ['React 19', 'Express 5', 'Cloud Functions', 'Firestore', 'Firebase Hosting', 'Google Sheets API', 'Entra ID', 'Sentry', 'Playwright'],
-    highlights: [
-      'Google Forms / Sheets 雙向同步（Apps Script + OAuth2）',
-      'Microsoft Entra ID 登入，省下每人約 1 萬元的帳號費用',
-      'RBAC + Tag 權限模型、4 個排程任務、Firestore 安全規則',
-      'AI 輔助開發（Claude），估計效率提升 3–5 倍',
     ],
   },
   {
@@ -111,6 +96,21 @@ const projectsData: Project[] = [
     ],
   },
   {
+    id: 6,
+    title: '供應商 ESG 問卷管理系統',
+    period: '2025/10 – 2026/03',
+    category: 'Cloud & Web',
+    description: '首次自行架設的 GCP 全端系統：取代採購部門手動 Excel 管理供應商 ESG 問卷，支援多專案、批次操作、自動提醒與權限控管。',
+    metric: '33K+ 行程式碼 · 52 個 API · 4.5 個月獨立完成',
+    technologies: ['React 19', 'Express 5', 'Cloud Functions', 'Firestore', 'Firebase Hosting', 'Google Sheets API', 'Entra ID', 'Sentry', 'Playwright'],
+    highlights: [
+      'Google Forms / Sheets 雙向同步（Apps Script + OAuth2）',
+      'Microsoft Entra ID 登入，省下每人約 1 萬元的帳號費用',
+      'RBAC + Tag 權限模型、4 個排程任務、Firestore 安全規則',
+      'AI 輔助開發（Claude），估計效率提升 3–5 倍',
+    ],
+  },
+  {
     id: 8,
     title: 'AIoT 害蟲監控與蜜蜂授粉優化（碩士研究）',
     period: '2021 – 2023',
@@ -126,7 +126,7 @@ const projectsData: Project[] = [
   },
 ];
 
-const categories: Array<'all' | ProjectCategory> = ['all', 'Document AI', 'Agent & KG', 'Cloud & Web', 'Side Project', 'Research'];
+const categories: Array<'all' | ProjectCategory> = ['all', 'Agent & KG', 'Document AI', 'Cloud & Web', 'Side Project', 'Research'];
 
 const badgeTone: Record<ProjectCategory, string> = {
   'Document AI': 'lav',

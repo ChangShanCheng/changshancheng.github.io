@@ -31,7 +31,7 @@ const Hero = () => {
             {profile.nameZh}
             <span className="hero-en">{profile.nameEn}</span>
           </h1>
-          <p className="hero-tagline">Document AI · LLM Agents · Knowledge Graph</p>
+          <p className="hero-tagline">LLM Agents · Knowledge Graph · Document AI</p>
           <p className="hero-desc">
             在製造業把 <strong>OCR + LLM</strong> 從零做到六套系統正式上線的 AI 應用工程師。
             目前在明基材料負責<strong>企業知識圖譜</strong>、<strong>Claude Code 式 AI Agent</strong>

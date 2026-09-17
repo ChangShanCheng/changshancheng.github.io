@@ -62,6 +62,9 @@
   .job li::before{content:"";position:absolute;left:0;top:.55em;width:5px;height:5px;border-radius:50%;background:var(--lav-500)}
   .job li b{font-weight:700;color:var(--lav-900)}
   .job li em{font-style:normal;font-weight:700;color:var(--text)}
+  .job li ul{margin:1.2mm 0 0;padding-left:0}
+  .job li li{margin-bottom:1.4mm;padding-left:11px}
+  .job li li::before{width:4px;height:4px;background:var(--lav-300)}
   .proj{margin-bottom:2.5mm;padding:2.2mm 3mm;border:1px solid var(--line);border-radius:8px;background:#fff}
   .proj h5{margin:0;font-size:9.8pt;display:flex;justify-content:space-between;gap:8px;align-items:center}
   .proj h5 .when{font-size:7.6pt;font-weight:700;color:var(--lav-700);background:var(--lav-50);padding:1px 7px;border-radius:999px;white-space:nowrap}
@@ -95,6 +98,7 @@
     .print-sidebar-bg{display:block;position:fixed;top:0;left:0;width:62mm;height:100%;background:var(--side);border-right:1px solid var(--lav-100);z-index:0;-webkit-print-color-adjust:exact;print-color-adjust:exact}
     .side,.main,.top{position:relative;z-index:1}
     .job li,.proj,.edu,.pub,.kpi,.skillgroup{break-inside:avoid;page-break-inside:avoid}
+    .job li:has(ul){break-inside:auto;page-break-inside:auto}
     .main h2,.side h3{break-after:avoid;page-break-after:avoid}
   }
   @media (max-width:820px){
@@ -119,7 +123,7 @@
     <div class="who">
       <div class="eyebrow"><span class="dot"></span>AI Application R&amp;D Engineer · BenQ Materials</div>
       <h1 class="name">Shan-Cheng Chang<small>張善程</small></h1>
-      <div class="title">Document AI · LLM Agents · Knowledge Graph</div>
+      <div class="title">LLM Agents · Knowledge Graph · Document AI</div>
       <ul class="contact">
         <li><span class="k">✉</span><a href="mailto:steven7962102@icloud.com">steven7962102@icloud.com</a></li>
         <li><span class="k">🌐</span><a href="https://changshancheng.github.io">changshancheng.github.io</a></li>
@@ -153,7 +157,7 @@
   </aside>
 
   <main class="main">
-    <p class="summary">AI application engineer with 2 years of shipping production LLM systems in manufacturing. Built BenQ Materials' document-AI stack from zero (six OCR + LLM systems live across finance, procurement, HR and customs), then moved up to an enterprise knowledge graph, a Claude Code–style agent harness and an on-prem AI analytics platform for a production line. Owns the full loop from user interviews to deployment and adoption.</p>
+    <p class="summary">AI application engineer with 2 years of shipping production LLM systems in manufacturing. Lead developer of BenQ Materials' Enterprise Brain — a knowledge graph plus a Claude Code–style agent harness, productized as an on-prem AI data-analysis platform for a production line — after building the company's document-AI stack from zero (six OCR + LLM systems live across finance, procurement, HR and customs). Owns the full loop from user interviews to deployment and adoption.</p>
 
     <div class="kpi">
       <div><b>6</b><span>AI systems in production</span></div>
@@ -168,13 +172,16 @@
         <div class="job-head"><h4>AI Application R&amp;D Engineer</h4><span class="when">Dec 2024 – Present</span></div>
         <div class="org">BenQ Materials Corp. (明基材料) · Digital Technology Center, AI Project Office · Taoyuan, Taiwan</div>
         <ul>
-          <li><b>Built the company's document-AI platform from zero</b> — Azure Document Intelligence + Azure OpenAI, Python/FastAPI, React, SQL Server; the OCR → LLM → validation → feedback pipeline every later project was cloned from.</li>
-          <li><b>Quotation OCR</b> — accuracy <em>51% → 100%</em>, 3× faster, 758+ documents; automated procurement audit pre-check with explainable bounding boxes.</li>
-          <li><b>Taiwan & China invoice OCR</b> — <em>97% / 100%</em> accuracy incl. handwritten; saves <em>1,447 h/yr</em> and avoids 480–760K NTD/yr outsourcing; live at 3 sites.</li>
-          <li><b>Health-check OCR platform</b> — 48 medical fields at <em>97.4%</em>; AES-256-GCM encryption, AD + JWT, RBAC and audit logging to ISO 27001.</li>
-          <li><b>Enterprise Brain → AI Data Analysis Platform</b> (lead) — knowledge graph (Neo4j + PostgreSQL) and a Claude Code–style agent harness, productized as the on-prem AI agent for the polarizer line: MCP tools, sandbox, audit log, 6 n8n workflows → skills, XGBoost yield model (F1 0.74).</li>
-          <li><b>APO-OCR prompt-optimization engine</b> — designed the golden-set + code-validator + coach-LLM loop; mentored an intern to ship it (<em>8/8</em> held-out for $1.44).</li>
-          <li><b>Supplier ESG questionnaire system on GCP</b> — React 19 + Cloud Functions + Firestore; 33K LOC, 52 APIs, delivered solo in 4.5 months; Entra ID login saved ~10K NTD/user.</li>
+          <li><b>Enterprise Brain → AI Data Analysis Platform</b> (lead developer) — knowledge graph (Neo4j + PostgreSQL) and a Claude Code–style agent harness, productized as the on-prem AI agent for the polarizer line: MCP tools, sandbox, audit log, 6 n8n workflows → skills, XGBoost yield model (F1 0.74).</li>
+          <li><b>Document-AI applications (OCR + LLM)</b> — built the company's platform from zero (Azure Document Intelligence + Azure OpenAI, Python/FastAPI, React, SQL Server) and the OCR → LLM → validation → feedback pipeline every later project was cloned from; six systems live across finance, procurement, HR and customs.
+            <ul>
+              <li><b>Quotation OCR</b> — accuracy <em>51% → 100%</em>, 3× faster, 758+ documents; automated procurement audit pre-check with explainable bounding boxes.</li>
+              <li><b>Taiwan & China invoice OCR</b> — <em>97% / 100%</em> accuracy incl. handwritten; saves <em>1,447 h/yr</em> and avoids 480–760K NTD/yr outsourcing; live at 3 sites.</li>
+              <li><b>Health-check OCR platform</b> — 48 medical fields at <em>97.4%</em>; AES-256-GCM encryption, AD + JWT, RBAC and audit logging to ISO 27001.</li>
+              <li><b>APO-OCR prompt-optimization engine</b> — designed the golden-set + code-validator + coach-LLM loop; mentored an intern to ship it (<em>8/8</em> held-out for $1.44).</li>
+            </ul>
+          </li>
+          <li><b>Google Cloud Platform — supplier ESG questionnaire system</b> — React 19 + Cloud Functions + Firestore; 33K LOC, 52 APIs, delivered solo in 4.5 months; Entra ID login saved ~10K NTD/user.</li>
         </ul>
       </div>
       <div class="job">
@@ -215,7 +222,7 @@
     <div class="who">
       <div class="eyebrow"><span class="dot"></span>AI 應用研發工程師 · 明基材料</div>
       <h1 class="name">張善程<small>Shan-Cheng Chang</small></h1>
-      <div class="title">文件 AI · LLM Agent · 知識圖譜</div>
+      <div class="title">LLM Agent · 知識圖譜 · 文件 AI</div>
       <ul class="contact">
         <li><span class="k">✉</span><a href="mailto:steven7962102@icloud.com">steven7962102@icloud.com</a></li>
         <li><span class="k">🌐</span><a href="https://changshancheng.github.io">changshancheng.github.io</a></li>
@@ -249,7 +256,7 @@
   </aside>
 
   <main class="main">
-    <p class="summary">具兩年製造業 LLM 系統落地經驗的 AI 應用工程師。在明基材料從零建立公司的文件 AI 技術棧（六套 OCR + LLM 系統已於財務、採購、人資與關務單位上線），再往上推進到企業知識圖譜、Claude Code 式 Agent Harness 與產線的地端 AI 數據分析平台。能獨立負責從使用者訪談到部署與推動採用的完整循環。</p>
+    <p class="summary">具兩年製造業 LLM 系統落地經驗的 AI 應用工程師。主導明基材料的「企業大腦」— 以知識圖譜與 Claude Code 式 Agent Harness 產品化為產線的地端 AI 數據分析平台；在此之前從零建立公司的文件 AI 技術棧（六套 OCR + LLM 系統已於財務、採購、人資與關務單位上線）。能獨立負責從使用者訪談到部署與推動採用的完整循環。</p>
 
     <div class="kpi">
       <div><b>6</b><span>套 AI 系統正式上線</span></div>
@@ -264,13 +271,16 @@
         <div class="job-head"><h4>AI 應用研發工程師</h4><span class="when">2024/12 – 至今</span></div>
         <div class="org">明基材料股份有限公司 · 數位技術中心 AI 專案辦公室 · 桃園</div>
         <ul>
-          <li><b>從零建立公司文件 AI 平台</b> — Azure Document Intelligence + Azure OpenAI、Python/FastAPI、React、SQL Server；定義出 OCR → LLM 提取 → 驗證 → 回饋的可複用流程，成為後續所有專案的範本。</li>
-          <li><b>報價單 OCR</b> — 準確率 <em>51% → 100%</em>、速度 3 倍、累計 758+ 份；自動化採購稽核預檢，結果以邊界框可解釋呈現。</li>
-          <li><b>臺灣與中國發票 OCR</b> — 準確率 <em>97% / 100%</em>（含手寫）；年省 <em>1,447 人時</em>，避免每年 48–76 萬外包支出；已導入三個廠區。</li>
-          <li><b>新人健檢 OCR 平台</b> — 48 項健檢欄位、準確率 <em>97.4%</em>；AES-256-GCM 加密、AD + JWT、權限控管與稽核日誌，符合 ISO 27001。</li>
           <li><b>企業大腦 → AI 數據分析平台</b>（主要開發者）— 由知識圖譜（Neo4j + PostgreSQL）與 Claude Code 式 Agent Harness 兩個 PoC，產品化為偏光片產線的地端 AI Agent：MCP 工具、沙盒、稽核日誌、6 支 n8n 流程遷移為 skill、XGBoost 良率模型（F1 0.74）。</li>
-          <li><b>APO-OCR Prompt 自動優化引擎</b> — 設計黃金測試集 + 程式碼驗證器 + Coach LLM 的迴圈架構，指導實習生上線（保留測試集 <em>8/8</em>，成本 $1.44）。</li>
-          <li><b>供應商 ESG 問卷系統（GCP）</b> — React 19 + Cloud Functions + Firestore；33K 行程式碼、52 個 API，4.5 個月獨立完成；Entra ID 登入每人省約 1 萬元帳號費。</li>
+          <li><b>文件 AI 應用（OCR + LLM）</b> — 從零建立公司平台（Azure Document Intelligence + Azure OpenAI、Python/FastAPI、React、SQL Server），定義出 OCR → LLM 提取 → 驗證 → 回饋的可複用流程；六套系統已於財務、採購、人資與關務上線。
+            <ul>
+              <li><b>報價單 OCR</b> — 準確率 <em>51% → 100%</em>、速度 3 倍、累計 758+ 份；自動化採購稽核預檢，結果以邊界框可解釋呈現。</li>
+              <li><b>臺灣與中國發票 OCR</b> — 準確率 <em>97% / 100%</em>（含手寫）；年省 <em>1,447 人時</em>，避免每年 48–76 萬外包支出；已導入三個廠區。</li>
+              <li><b>新人健檢 OCR 平台</b> — 48 項健檢欄位、準確率 <em>97.4%</em>；AES-256-GCM 加密、AD + JWT、權限控管與稽核日誌，符合 ISO 27001。</li>
+              <li><b>APO-OCR Prompt 自動優化引擎</b> — 設計黃金測試集 + 程式碼驗證器 + Coach LLM 的迴圈架構，指導實習生上線（保留測試集 <em>8/8</em>，成本 $1.44）。</li>
+            </ul>
+          </li>
+          <li><b>Google Cloud Platform — 供應商 ESG 問卷系統</b> — React 19 + Cloud Functions + Firestore；33K 行程式碼、52 個 API，4.5 個月獨立完成；Entra ID 登入每人省約 1 萬元帳號費。</li>
         </ul>
       </div>
       <div class="job">
