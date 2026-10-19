@@ -20,7 +20,7 @@ const specialties = [
 
 const credentials = [
   { icon: Award, tone: 'amber', title: '發明專利 TW I842416 B', desc: '作物採收機 · 2024/05 核准' },
-  { icon: BookOpen, tone: 'lav', title: '期刊論文 · Computers and Electronics in Agriculture', desc: 'Development of AIoT system for facility asparagus cultivation (2023)' },
+  { icon: BookOpen, tone: 'lav', title: '期刊論文 · Computers and Electronics in Agriculture', desc: 'Development of AIoT system for facility asparagus cultivation (2023)（共同第一作者）' },
   { icon: Mic, tone: 'rose', title: '研討會論文 · ISMAB 2022', desc: 'AIoT based pest counting system for asparagus cultivation（第一作者）' },
   { icon: Languages, tone: 'sage', title: '語言', desc: '英文 TOEIC 790 · 德文 A2 · 中文母語' },
 ];

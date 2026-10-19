@@ -119,7 +119,7 @@ const projectsData: Project[] = [
     metric: 'YOLOv8 mAP 99.5% · 追蹤 97.7% · 害蟲計數 95.8%',
     technologies: ['PyTorch', 'YOLOv8', 'StrongSORT', 'Mask R-CNN (Swin-T)', 'IoT', 'Kriging'],
     highlights: [
-      '期刊論文：Computers and Electronics in Agriculture (2023)',
+      '期刊論文：Computers and Electronics in Agriculture (2023)（共同第一作者）',
       '研討會論文：ISMAB 2022（第一作者）',
       '發明專利 TW I842416 B 作物採收機',
     ],
