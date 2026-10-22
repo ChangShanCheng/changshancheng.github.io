@@ -11,12 +11,13 @@ const experiences: (ExperienceItem & { icon: typeof Building2; tone: string })[]
     period: '2024/12 – 至今',
     location: '桃園',
     description: [
-      '主導企業大腦：從知識圖譜（Neo4j + PostgreSQL + 向量檢索）與 Claude Code 式 Agent Harness（Memory + Tool + Sandbox + Cronjob）兩個 PoC，推進為偏光片產線的地端 AI 數據分析平台（FastAPI + MCP + 沙盒 + 稽核日誌），6 支 n8n 流程遷移為 skill/flows，XGBoost 良率模型 + SHAP 配方建議。',
-      '文件 AI 應用（OCR + LLM）：從零建立公司文件 AI 平台（Azure Document Intelligence + Azure OpenAI），定義可複用的 OCR → LLM 提取 → 驗證 → 回饋流程；上線報價單 OCR（準確率 51% → 100%、速度 3 倍）、臺灣發票 OCR（97%，年省 850 人時）、BMS 中國發票 OCR（100%）、關務 OCR、新人健檢 OCR 平台（48 欄位、97.4%、AES-256-GCM 加密），並設計 APO-OCR Prompt 自動優化架構指導實習生落地。',
-      'Google Cloud Platform：獨立完成供應商 ESG 問卷管理系統（React 19 + Cloud Functions + Firestore + Entra ID 登入，33K LOC、52 API、4.5 個月）。',
-      '合計平均準確率 97%+，每年節省 1,500+ 人時、約 100 萬元成本，並避免 48–76 萬元外包支出；另擔任 ChatGPT Team 課程助教（67 位學員）。',
+      '主導企業大腦：從知識圖譜與 Claude Code 式 Agent Harness 兩個 PoC，做成正式部署公司伺服器的 AI 數據分析平台，BML 偏光片產線每天在用，取代外購 AutoML（兩年免採購 415 萬），6 支產線自動分析流程零斷線切換；知識庫以「工程師標註分析結果 → AI 比對既有知識 → 審核入庫」累積中。技術上（FastAPI + Gemini Function Calling + MCP，10 個 Docker 服務）：10 輪上限的工具迴圈、Skill 延遲載入、上下文摘要壓縮、錯誤回饋與重試、4 種角色工具白名單、沙盒與只增不改的稽核日誌；6 支 n8n 流程（約 550 節點）收斂為 1 個 skill + 7 支 flow。',
+      '文件 AI 應用（OCR + LLM）：從零建立公司文件 AI 平台（Azure Document Intelligence + Azure OpenAI），定義可複用的 OCR → LLM 提取 → 驗證 → 回饋流程；每套上線前以人工標註測試集評分：報價單 OCR（效期準確率 51% → 100%，29 份回歸集；單份 30 秒 → 10 秒）、臺灣發票 OCR（31/32 份、5 個關鍵欄位全對，年省 850 人時）、BMS 中國發票 OCR（31/31 份、10 欄位）、新人健檢 OCR 平台（欄位級 97.4%，42 份 × 46 欄位；AES-256-GCM 加密），並設計 APO-OCR Prompt 自動優化架構（golden set 24 訓練／8 保留、純程式碼評分）指導實習生落地。',
+      'Google Cloud Platform：獨立完成供應商問卷管理系統並上線（React 19 + Cloud Functions + Firestore + Entra ID 登入，52 個 API、4.5 個月），已交接同仁並完成 GCP 教學。',
+      'ESG 碳及能源數位管理平台重構：程式 44,000 → 6,000 行、相依主機 5 → 1 台，資料改網頁上傳並自動驗證，不再綁定個人電腦。',
+      '發票與健檢三套系統合計每年節省 1,572 人時、有形效益約 99 萬元，另可避免 48–76 萬元外包支出；另擔任 ChatGPT Team 課程助教（67 位學員）。',
     ],
-    tags: ['Azure OpenAI', 'Gemini', 'FastAPI', 'React', 'Neo4j', 'pgvector', 'Docker', 'GCP', 'MCP'],
+    tags: ['Agent Harness', 'MCP', 'Gemini', 'Azure OpenAI', 'FastAPI', 'Docker', 'Neo4j', 'pgvector', 'React', 'GCP'],
   },
   {
     icon: Factory,

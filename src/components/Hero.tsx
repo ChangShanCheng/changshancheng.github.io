@@ -3,10 +3,10 @@ import { profile } from '../data/profile';
 import './Hero.css';
 
 const STATS = [
-  { icon: FileCheck2, label: 'AI 系統上線', value: '6', tone: 'lav' },
-  { icon: Target, label: 'OCR 欄位準確率', value: '97%+', tone: 'sage' },
+  { icon: Coins, label: '兩年免外購 AutoML (NTD)', value: '415 萬', tone: 'lav' },
+  { icon: Target, label: '每年有形效益 (NTD)', value: '~100 萬', tone: 'sage' },
   { icon: Clock, label: '每年節省人時', value: '1,500+', tone: 'amber' },
-  { icon: Coins, label: '每年效益 (NTD)', value: '~100 萬', tone: 'rose' },
+  { icon: FileCheck2, label: '產線分析流程平台化', value: '6 支', tone: 'rose' },
 ];
 
 const PIPELINE = [
@@ -74,7 +74,7 @@ const Hero = () => {
               ))}
             </div>
             <div className="pipeline-note">
-              <span className="live" /> 報價單 · 發票 · 健檢報告 · 關務文件 皆由同一條流程衍生
+              <span className="live" /> 報價單 · 發票 · 健檢報告 皆由同一條流程衍生
             </div>
           </div>
         </div>

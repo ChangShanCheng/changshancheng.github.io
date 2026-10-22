@@ -4,6 +4,7 @@ import './Skills.css';
 
 const groups: SkillGroup[] = [
   { category: 'LLM & Agents', items: ['Prompt Engineering', 'RAG', 'Knowledge Graph', 'LLM Agents', 'Harness Engineering', 'Function Calling', 'MCP', 'Prompt 自動優化 (APO)', 'Azure OpenAI (GPT-4o / o3 / o4-mini)', 'Gemini API', 'Claude Code'] },
+  { category: 'Evaluation & Quality', items: ['Golden Set / 保留測試集', '程式碼驗證器', '回歸基準 (Regression Baseline)', '失敗案例分析'] },
   { category: 'Document AI / CV', items: ['Azure Document Intelligence', 'OCR + LLM 結構化提取', 'Bounding Box 可解釋化', 'OpenCV', 'YOLOv8', 'StrongSORT', 'Mask R-CNN', 'PyTorch', 'TensorFlow'] },
   { category: 'Data & ML', items: ['XGBoost', 'SHAP', 'SPC', 'Pandas', 'Neo4j', 'Qdrant', 'pgvector', 'PostgreSQL', 'SQL Server', 'Firestore'] },
   { category: 'Backend', items: ['Python', 'FastAPI', 'Flask', 'Node.js', 'Express', 'REST', 'GraphQL', 'Server-Sent Events', 'WebSocket'] },
@@ -13,8 +14,8 @@ const groups: SkillGroup[] = [
 ];
 
 const specialties = [
-  { icon: ScanText, tone: 'brand', title: 'Document AI（OCR + LLM）', desc: 'Azure Document Intelligence 結合 LLM 結構化提取，報價單、發票、健檢報告等六套系統上線，平均準確率 97%+。' },
-  { icon: Brain, tone: 'lav', title: 'LLM Agent 與知識圖譜', desc: '自建 Claude Code 式 Agent Harness（Memory / Tool / Sandbox / Cron / MCP）與 Neo4j + Qdrant 企業知識圖譜。' },
+  { icon: ScanText, tone: 'brand', title: 'Document AI（OCR + LLM）', desc: 'Azure Document Intelligence 結合 LLM 結構化提取，報價單、發票、健檢報告等系統上線，每套都先以人工標註測試集評分。' },
+  { icon: Brain, tone: 'lav', title: 'LLM Agent 與知識圖譜', desc: '自建 Claude Code 式 Agent Harness（工具迴圈、上下文壓縮、沙盒、角色權限、稽核日誌、MCP）；Neo4j 企業知識圖譜。' },
   { icon: ShieldCheck, tone: 'sage', title: '企業級系統交付', desc: 'AES-256-GCM 加密、AD / Entra ID 登入、RBAC 與稽核日誌，符合 ISO 27001；Docker 與 GCP 雲端部署。' },
 ];
 

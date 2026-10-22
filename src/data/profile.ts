@@ -9,6 +9,6 @@ export const profile = {
   linkedin: 'https://www.linkedin.com/in/shan-cheng-chang-897688274',
   location: '台灣 桃園',
   resumeHtml: '/resume/Resume_Chang_Shan_Cheng_2026.html',
-  resumePdfEn: '/resume/Resume_Chang_Shan_Cheng_2026_EN.pdf',
-  resumePdfZh: '/resume/Resume_Chang_Shan_Cheng_2026_ZH.pdf',
+  resumePdfEn: '/resume/Resume_Chang_Shan_Cheng_2026_EN_A4.pdf',
+  resumePdfZh: '/resume/Resume_Chang_Shan_Cheng_2026_ZH_A4.pdf',
 };
