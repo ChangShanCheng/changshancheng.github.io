@@ -83,6 +83,7 @@
   body[data-lang="zh"] .lang-en{display:none!important}
   body[data-lang="zh"] .page{font-family:"Noto Sans TC","Inter","PingFang TC","Microsoft JhengHei",sans-serif}
   .lang-en .main{font-size:9.6pt;padding-bottom:1mm}
+  .lang-zh .main{padding-bottom:2mm}
   .lang-en .job li{margin-bottom:1.7mm}
   .print-sidebar-bg{display:none}
   .page.p2{grid-template-rows:auto 1fr}
@@ -191,31 +192,33 @@
         <ul>
           <li><b>Enterprise Brain → AI data-analysis platform</b> (system architect &amp; lead developer) — used daily by the BML line, replacing a purchased AutoML package (<em>4.15M NTD / 2 yrs</em>); 6 flows cut over with zero downtime. FastAPI + Azure OpenAI + Docker sandbox, on-prem.
             <div class="flow">
-              <div class="st"><b>Data in</b><span>Excel upload · API · 6 schedules (7 sources)</span></div>
-              <div class="st"><b>One input contract</b><span>validated, errors say how to fix</span></div>
-              <div class="st me"><b>sensor-analysis skill</b><span>teammates' methods as modules, one command runs all</span></div>
-              <div class="st"><b>Code computes → LLM explains</b><span>stats, charts, Excel by code; LLM writes the reading</span></div>
-              <div class="st"><b>Feedback → knowledge</b><span>engineer notes → reviewed into the knowledge base</span></div>
+              <div class="st"><b>Data in</b><span>upload · API · 6 schedules</span></div>
+              <div class="st"><b>One format</b><span>validated, with fix hints</span></div>
+              <div class="st me"><b>Analysis skill</b><span>teammates' methods plugged in</span></div>
+              <div class="st"><b>Code → LLM</b><span>code computes, LLM explains</span></div>
+              <div class="st"><b>Feedback</b><span>reviewed into knowledge</span></div>
             </div>
             <p class="cap">Data → analysis → knowledge. Purple box: the shared skill I designed.</p>
             <table class="cmp">
               <tr><th></th><th>Before (n8n)</th><th>After (one skill)</th></tr>
-              <tr><td>Analysis logic</td><td>6 workflows, ~550 nodes, each a copy</td><td>1 skill shared by all 3 entry points</td></tr>
-              <tr><td>New analysis method</td><td>edit every workflow</td><td>teammate gives the logic; wired in once</td></tr>
-              <tr><td>New data source</td><td>clone a whole workflow</td><td>map data to the contract (7 sources)</td></tr>
-              <tr><td>Standalone stats analysis</td><td>a separate node chain</td><td>merged in as one skill method</td></tr>
-              <tr><td>Cutover check</td><td>—</td><td>Excel 9/9 cell-identical to old emails; identical PDFs</td></tr>
+              <tr><td>Analysis logic</td><td>6 flows, ~550 nodes</td><td>1 skill, 3 entry points</td></tr>
+              <tr><td>New method</td><td>edit every flow</td><td>teammate’s logic, wired once</td></tr>
+              <tr><td>Cutover check</td><td>—</td><td>Excel 9/9 cell-identical; same PDFs</td></tr>
             </table>
             <ul>
-              <li><b>Claude Code–style</b> — same skill and permission format, so skills tested in Claude Code move over unchanged; analysis runs in a Docker sandbox (no privileges, CPU / memory / time caps) that chat will later reuse.</li>
-              <li><b>Why code calls it</b> — in the chat prototype, LLM-run analysis drifted; in production, entry points call the skill in code and the LLM only interprets.</li>
+              <li><b>Why a skill</b> — hard-coding would work today; a Claude Code–format skill lets a future chat LLM call the same methods. Analysis already runs in a Docker sandbox that chat will reuse.</li>
+              <li><b>Status</b> — analysis platform live; now building an OCAP text knowledge base (K1, incl. my 6 flows) and a user-feedback base (K2) before chat; MCP and knowledge graph are prototypes. Full architecture on my website.</li>
             </ul>
-            <div class="flow road">
-              <div class="st ok"><b>① Analysis</b><span>live, used daily</span></div>
-              <div class="st on"><b>② K1 OCAP · now</b><span>my 6 defect flows</span></div>
-              <div class="st on"><b>③ K2 feedback · now</b><span>notes → review</span></div>
-              <div class="st"><b>④ Chat</b><span>next; MCP, graph prototyped</span></div>
-            </div>
+          </li>
+          <li><b>Document-AI applications (OCR + LLM)</b> — built the company's platform from zero (Azure Document Intelligence + Azure OpenAI); every system scored on a hand-labelled test set before go-live.
+            <table class="cmp doc">
+              <tr><th>System</th><th>Accuracy (test set)</th><th>Impact</th></tr>
+              <tr><td>Quotation OCR</td><td>validity <em>51% → 100%</em> (29 docs)</td><td>30 → 10 s; 758+ docs</td></tr>
+              <tr><td>Invoice OCR (TW/CN)</td><td><em>31/32</em>, <em>31/31</em> fully correct</td><td>1,447 h/yr; 3 sites</td></tr>
+              <tr><td>Health-check OCR</td><td><em>97.4%</em> fields (42 × 46)</td><td>AES-256, AD, ISO 27001</td></tr>
+              <tr><td>APO-OCR prompt tuning</td><td><em>8/8</em> held-out (24 / 8 split)</td><td>$1.44; mentored intern</td></tr>
+            </table>
+            <p class="cap">Scored by exact-match code; the LLM only proposes.</p>
           </li>
         </ul>
       </div>
@@ -250,18 +253,8 @@
     <section>
       <h2>Experience (cont.)</h2>
       <div class="job">
-        <div class="job-head"><h4>BenQ Materials — Document AI &amp; other systems</h4><span class="when">Dec 2024 – Present</span></div>
+        <div class="job-head"><h4>BenQ Materials — other systems</h4><span class="when">Dec 2024 – Present</span></div>
         <ul style="margin-top:2mm">
-          <li><b>Document-AI applications (OCR + LLM)</b> — built the company's platform from zero (Azure Document Intelligence + Azure OpenAI); every system scored on a hand-labelled test set before go-live.
-            <table class="cmp doc">
-              <tr><th>System</th><th>Accuracy (test set)</th><th>Impact</th></tr>
-              <tr><td>Quotation OCR</td><td>validity date <em>51% → 100%</em> (29 docs)</td><td>30 s → 10 s per doc; 758+ processed</td></tr>
-              <tr><td>TW / CN invoice OCR</td><td><em>31/32</em>, <em>31/31</em> docs fully correct (incl. handwritten)</td><td>1,447 h/yr saved; 3 sites</td></tr>
-              <tr><td>Health-check OCR</td><td><em>97.4%</em> field-level (42 × 46 fields)</td><td>AES-256-GCM, AD login, ISO 27001</td></tr>
-              <tr><td>APO-OCR prompt tuning</td><td><em>8/8</em> held-out (24 train / 8 held-out)</td><td>$1.44; mentored an intern to ship it</td></tr>
-            </table>
-            <p class="cap">Scoring is exact-match code, the LLM only proposes; a 7/8 APO-OCR run traced to a date format missing from training.</p>
-          </li>
           <li><b>Google Cloud Platform — supplier questionnaire management system</b> (live) — 52 APIs, built solo in 4.5 months, handed over; React 19 + Cloud Functions + Entra ID.</li>
           <li><b>ESG carbon platform refactor &amp; handover</b> — import moved to a web upload run by a colleague; backend split into one module per page (APIs 104 → 42), 55 copy-pasted chart files merged into 5 shared components; every step verified output-identical.</li>
         </ul>
@@ -335,32 +328,33 @@
         <ul>
           <li><b>企業大腦 → AI 數據分析平台</b>（系統架構設計、主要開發者）— BML 產線每天在用，取代外購 AutoML（<em>兩年免採購 415 萬</em>）；6 支流程零斷線切換。FastAPI + Azure OpenAI + Docker 沙盒，資料不出內網。
             <div class="flow">
-              <div class="st"><b>資料進來</b><span>上傳 Excel · 對外 API · 6 支排程（7 種資料源）</span></div>
-              <div class="st"><b>整理成統一格式</b><span>先驗格式，錯了告訴你怎麼修</span></div>
-              <div class="st me"><b>sensor-analysis skill</b><span>同事的分析方法掛成模組，一行指令全跑</span></div>
-              <div class="st"><b>程式算 → LLM 寫</b><span>統計、圖表、Excel 由程式產；LLM 只寫判讀</span></div>
-              <div class="st"><b>回饋變知識</b><span>工程師標註結果 → 審核後進知識庫</span></div>
+              <div class="st"><b>資料進來</b><span>上傳 · API · 6 支排程</span></div>
+              <div class="st"><b>統一格式</b><span>先驗格式，附修法</span></div>
+              <div class="st me"><b>分析 skill</b><span>掛上同事的分析方法</span></div>
+              <div class="st"><b>程式算 → LLM 寫</b><span>數據由程式，判讀由 LLM</span></div>
+              <div class="st"><b>回饋變知識</b><span>標註審核後進知識庫</span></div>
             </div>
             <p class="cap">圖：資料進來 → 分析 → 累積成知識；紫框是我設計的共用 skill。</p>
             <table class="cmp">
               <tr><th></th><th>原本（n8n）</th><th>改成一個 skill 後</th></tr>
               <tr><td>分析邏輯</td><td>6 支流程、約 550 節點各自複製</td><td>1 個 skill，3 個入口共用</td></tr>
               <tr><td>新增分析方法</td><td>要逐支流程改</td><td>同事給計算邏輯，掛進一次</td></tr>
-              <tr><td>接新資料來源</td><td>複製一整支流程</td><td>整理成統一格式（已接 7 種）</td></tr>
-              <tr><td>獨立的統計分析</td><td>另一串獨立節點</td><td>併成 skill 的一個方法</td></tr>
               <tr><td>切換驗證</td><td>—</td><td>Excel 9/9 逐格一致、PDF 相同</td></tr>
             </table>
             <ul>
-              <li><b>仿 Claude Code</b> — skill 與權限檔格式和 Claude Code 相同，在 Claude Code 開發測試後原封不動上平台；分析在 Docker 沙盒執行（移除權限、限 CPU／記憶體／時間），之後同一套沙盒也給 chat 跑程式。</li>
-              <li><b>為什麼由程式呼叫</b> — chat 原型裡讓 LLM 自己載入 skill 跑分析，結果會飄；上線版改由上傳、API、排程用程式直接呼叫，LLM 只寫判讀，失敗也不影響數據。</li>
+              <li><b>為什麼做成 skill</b> — 現在寫死在程式也能跑；做成仿 Claude Code 格式，是為了之後 chat 的 LLM 能直接呼叫；分析已在沙盒執行，之後也給 chat 用。</li>
+              <li><b>目前進度</b> — 分析已上線；正在建 OCAP 知識庫（K1，含我建的 6 支流程）與回饋知識庫（K2），之後才做 chat；MCP、知識圖譜為原型。詳見個人網站。</li>
             </ul>
-            <div class="flow road">
-              <div class="st ok"><b>① 分析平台</b><span>已上線，產線每天在用</span></div>
-              <div class="st on"><b>② K1 OCAP 知識庫</b><span>文字知識庫，收錄我建的 6 支缺陷處理流程</span></div>
-              <div class="st on"><b>③ K2 回饋知識庫</b><span>工程師標註 → AI 比對 → 審核入庫</span></div>
-              <div class="st"><b>④ chat 核心</b><span>之後做；評估知識庫是否轉成知識圖譜</span></div>
-            </div>
-            <p class="cap">圖：路線圖，目前在 ②③ 收集知識；chat 的上下文管理、MCP、知識圖譜仍是原型。</p>
+          </li>
+          <li><b>文件 AI 應用（OCR + LLM）</b> — 從零建立公司平台（Azure Document Intelligence + Azure OpenAI），每套上線前都以人工標註測試集評分。
+            <table class="cmp doc">
+              <tr><th>系統</th><th>準確率（測試集）</th><th>效益</th></tr>
+              <tr><td>報價單 OCR</td><td>效期 <em>51% → 100%</em>（29 份）</td><td>30 → 10 秒／份；758+ 份</td></tr>
+              <tr><td>臺灣／中國發票 OCR</td><td><em>31/32</em>、<em>31/31</em> 份全對</td><td>年省 1,447 人時；3 廠區</td></tr>
+              <tr><td>新人健檢 OCR</td><td>欄位級 <em>97.4%</em>（42 份 × 46 欄）</td><td>AES-256、AD、ISO 27001</td></tr>
+              <tr><td>APO-OCR 自動調 prompt</td><td>保留集 <em>8/8</em></td><td>$1.44；指導實習生上線</td></tr>
+            </table>
+            <p class="cap">評分一律由程式碼逐欄位比對，LLM 只提案。</p>
           </li>
         </ul>
       </div>
@@ -395,18 +389,8 @@
     <section>
       <h2>工作經歷（續）</h2>
       <div class="job">
-        <div class="job-head"><h4>明基材料 — 文件 AI 與其他系統</h4><span class="when">2024/12 – 至今</span></div>
+        <div class="job-head"><h4>明基材料 — 其他系統</h4><span class="when">2024/12 – 至今</span></div>
         <ul style="margin-top:2mm">
-          <li><b>文件 AI 應用（OCR + LLM）</b> — 從零建立公司平台（Azure Document Intelligence + Azure OpenAI），每套上線前都以人工標註測試集評分。
-            <table class="cmp doc">
-              <tr><th>系統</th><th>準確率（測試集）</th><th>效益</th></tr>
-              <tr><td>報價單 OCR</td><td>效期 <em>51% → 100%</em>（29 份）</td><td>單份 30 → 10 秒；已處理 758+ 份</td></tr>
-              <tr><td>臺灣／中國發票 OCR</td><td><em>31/32</em>、<em>31/31</em> 份全欄位正確（含手寫）</td><td>年省 1,447 人時；3 個廠區</td></tr>
-              <tr><td>新人健檢 OCR</td><td>欄位級 <em>97.4%</em>（42 份 × 46 欄）</td><td>AES-256-GCM、AD 登入、ISO 27001</td></tr>
-              <tr><td>APO-OCR 自動調 prompt</td><td>保留集 <em>8/8</em>（24 訓練／8 保留）</td><td>成本 $1.44；指導實習生上線</td></tr>
-            </table>
-            <p class="cap">評分一律由程式碼逐欄位比對，LLM 只提案；APO-OCR 一次 7/8 追到訓練集缺一種日期格式。</p>
-          </li>
           <li><b>Google Cloud Platform — 供應商問卷管理系統</b>（已上線）— 52 個 API、4.5 個月獨立完成，已交接；React 19 + Cloud Functions + Entra ID。</li>
           <li><b>ESG 碳管理平台重構與交接</b> — 匯入改網頁上傳並交給同事；後端單檔拆成每頁一個模組（API 104 → 42）、前端 55 個複製檔合成 5 個共用元件；每步逐筆比對，輸出不變。</li>
         </ul>

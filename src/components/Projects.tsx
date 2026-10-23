@@ -39,6 +39,7 @@ const projectsData: Project[] = [
     technologies: ['FastAPI', 'Azure OpenAI', 'Docker 沙盒', 'PostgreSQL + pgvector', 'React', 'n8n → Skills', 'Gemini Function Calling（原型）', 'MCP（原型）'],
     highlights: [
       '資料怎麼進來：各資料源自己整理成統一格式（資料整理不進 skill），skill 先驗格式、錯了回傳修法，再跑分析；產出圖表資料、Excel 報表與判讀文字',
+      '為什麼做成 skill：現在的分析其實寫死在程式也能跑；做成 skill 是為了之後 chat 能讓 LLM 直接呼叫同一套方法，不必重寫',
       '仿 Claude Code：skill 目錄（SKILL.md）與權限檔（deny 規則）格式和 Claude Code 相同，在 Claude Code 開發測試後原封不動上平台',
       '沙盒：分析在 Docker 沙盒執行（移除權限、限 CPU／記憶體／時間），之後同一套沙盒也給 chat 跑程式',
       'chat 原型（PoC）：仿 Claude Code，提示裡只放 skill 名稱與用途，LLM 需要時呼叫 Skill 工具載入說明，再用 Bash 在沙盒跑腳本、Read 讀產出',
