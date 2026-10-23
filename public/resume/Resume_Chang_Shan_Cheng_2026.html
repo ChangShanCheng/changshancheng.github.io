@@ -164,7 +164,7 @@
       <h3>Core Skills</h3>
       <div class="skillgroup"><b>Agent Engineering (live)</b><div class="tags"><span class="tag">Skills (Claude Code style)</span><span class="tag">Sandboxing</span><span class="tag">RBAC / Audit Log</span></div></div>
       <div class="skillgroup"><b>Agent Prototypes (PoC)</b><div class="tags"><span class="tag">Agent Harness</span><span class="tag">Function Calling</span><span class="tag">MCP</span><span class="tag">Context Management</span><span class="tag">Knowledge Graph (PostgreSQL + pgvector)</span></div></div>
-      <div class="skillgroup"><b>Evaluation &amp; Validation</b><div class="tags"><span class="tag">Golden Set</span><span class="tag">Code Validators</span><span class="tag">Regression Baseline</span><span class="tag">Failure Analysis</span></div></div>
+      <div class="skillgroup"><b>Evaluation &amp; Validation</b><div class="tags"><span class="tag">Golden Set</span><span class="tag">Code Validators</span></div></div>
       <div class="skillgroup"><b>LLM</b><div class="tags"><span class="tag">Azure OpenAI</span><span class="tag">Gemini API</span><span class="tag">Prompt Engineering</span><span class="tag">APO</span></div></div>
       <div class="skillgroup"><b>Document AI / ML / CV</b><div class="tags"><span class="tag">Azure Document Intelligence</span><span class="tag">OCR + LLM Extraction</span><span class="tag">YOLOv8</span><span class="tag">PyTorch</span></div></div>
       <div class="skillgroup"><b>Backend &amp; Web</b><div class="tags"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">Node.js</span><span class="tag">React</span><span class="tag">JavaScript</span><span class="tag">PostgreSQL</span><span class="tag">SQL Server</span></div></div>
@@ -204,7 +204,7 @@
               <tr><th></th><th>Before (n8n)</th><th>After (one skill)</th></tr>
               <tr><td>Analysis logic</td><td>6 flows, ~550 nodes</td><td>1 skill, 3 entry points</td></tr>
               <tr><td>New method</td><td>edit every flow</td><td>teammate’s logic, wired once</td></tr>
-              <tr><td>Cutover check</td><td>—</td><td>Excel 9/9 cell-identical; same PDFs</td></tr>
+              <tr><td>Migration check</td><td>—</td><td>Old = new: Excel 9/9 cells; same PDFs</td></tr>
             </table>
             <ul>
               <li><b>Why a skill</b> — hard-coding would work today; a Claude Code–format skill lets a future chat LLM call the same methods. Analysis already runs in a Docker sandbox that chat will reuse.</li>
@@ -300,7 +300,7 @@
       <h3>核心技能</h3>
       <div class="skillgroup"><b>Agent 工程（已上線）</b><div class="tags"><span class="tag">Skills（仿 Claude Code）</span><span class="tag">沙盒執行</span><span class="tag">RBAC / 稽核日誌</span></div></div>
       <div class="skillgroup"><b>Agent 原型（PoC）</b><div class="tags"><span class="tag">Agent Harness</span><span class="tag">Function Calling</span><span class="tag">MCP</span><span class="tag">上下文管理</span><span class="tag">知識圖譜 (PostgreSQL + pgvector)</span></div></div>
-      <div class="skillgroup"><b>評估與驗證</b><div class="tags"><span class="tag">Golden Set 黃金測試集</span><span class="tag">程式碼驗證器</span><span class="tag">回歸基準</span><span class="tag">失敗案例分析</span></div></div>
+      <div class="skillgroup"><b>評估與驗證</b><div class="tags"><span class="tag">Golden Set 黃金測試集</span><span class="tag">程式碼驗證器</span></div></div>
       <div class="skillgroup"><b>LLM</b><div class="tags"><span class="tag">Azure OpenAI</span><span class="tag">Gemini API</span><span class="tag">Prompt Engineering</span><span class="tag">Prompt 自動優化 (APO)</span></div></div>
       <div class="skillgroup"><b>文件 AI / ML / 電腦視覺</b><div class="tags"><span class="tag">Azure Document Intelligence</span><span class="tag">OCR + LLM 結構化提取</span><span class="tag">YOLOv8</span><span class="tag">PyTorch</span></div></div>
       <div class="skillgroup"><b>後端與網頁</b><div class="tags"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">Node.js</span><span class="tag">React</span><span class="tag">JavaScript</span><span class="tag">PostgreSQL</span><span class="tag">SQL Server</span></div></div>
@@ -340,7 +340,7 @@
               <tr><th></th><th>原本（n8n）</th><th>改成一個 skill 後</th></tr>
               <tr><td>分析邏輯</td><td>6 支流程、約 550 節點各自複製</td><td>1 個 skill，3 個入口共用</td></tr>
               <tr><td>新增分析方法</td><td>要逐支流程改</td><td>同事給計算邏輯，掛進一次</td></tr>
-              <tr><td>切換驗證</td><td>—</td><td>Excel 9/9 逐格一致、PDF 相同</td></tr>
+              <tr><td>遷移驗證</td><td>—</td><td>新舊產出比對：Excel 9/9 逐格一致、PDF 完全相同</td></tr>
             </table>
             <ul>
               <li><b>為什麼做成 skill</b> — 現在寫死在程式也能跑；做成仿 Claude Code 格式，是為了之後 chat 的 LLM 能直接呼叫；分析已在沙盒執行，之後也給 chat 用。</li>
