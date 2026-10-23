@@ -37,8 +37,8 @@ const Footer = () => {
           <div className="footer-col">
             <h4>專業領域</h4>
             <span>OCR + LLM 文件自動化</span>
-            <span>LLM Agent / Harness Engineering</span>
-            <span>知識庫與 RAG</span>
+            <span>LLM Agent / 仿 Claude Code skill 架構</span>
+            <span>AI 數據分析平台</span>
             <span>全端與雲端系統交付</span>
           </div>
         </div>

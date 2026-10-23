@@ -3,10 +3,11 @@ import type { SkillGroup } from '../types';
 import './Skills.css';
 
 const groups: SkillGroup[] = [
-  { category: 'LLM & Agents', items: ['Prompt Engineering', 'RAG', 'Knowledge Graph（PoC）', 'LLM Agents', 'Harness Engineering', 'Function Calling', 'MCP', 'Prompt 自動優化 (APO)', 'Azure OpenAI (GPT-4o / o3 / o4-mini)', 'Gemini API', 'Claude Code'] },
+  { category: 'LLM & Agents', items: ['Skills（仿 Claude Code）', 'Docker 沙盒執行', 'Prompt Engineering', 'Prompt 自動優化 (APO)', 'Azure OpenAI (GPT-4o / o3 / o4-mini)', 'Gemini API', 'Claude Code'] },
+  { category: 'Agent Prototypes (PoC)', items: ['Agent Harness', 'Function Calling', 'MCP', '上下文管理', 'Knowledge Graph (PostgreSQL + pgvector)'] },
   { category: 'Evaluation & Quality', items: ['Golden Set / 保留測試集', '程式碼驗證器', '回歸基準 (Regression Baseline)', '失敗案例分析'] },
-  { category: 'Document AI / CV', items: ['Azure Document Intelligence', 'OCR + LLM 結構化提取', 'Bounding Box 可解釋化', 'OpenCV', 'YOLOv8', 'StrongSORT', 'Mask R-CNN', 'PyTorch', 'TensorFlow'] },
-  { category: 'Data & ML', items: ['SPC', 'Pandas', 'Neo4j（PoC）', 'Qdrant', 'pgvector', 'PostgreSQL', 'SQL Server', 'Firestore'] },
+  { category: 'Document AI / CV', items: ['Azure Document Intelligence', 'OCR + LLM 結構化提取', 'Bounding Box 可解釋化', 'OpenCV', 'YOLOv8', 'StrongSORT', 'Mask R-CNN', 'PyTorch'] },
+  { category: 'Data & ML', items: ['SPC', 'Pandas', 'PostgreSQL', 'SQL Server', 'Firestore'] },
   { category: 'Backend', items: ['Python', 'FastAPI', 'Flask', 'Node.js', 'Express', 'REST', 'GraphQL', 'Server-Sent Events', 'WebSocket'] },
   { category: 'Frontend', items: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'Recharts', 'React Query'] },
   { category: 'Cloud & DevOps', items: ['Docker', 'GCP', 'Firebase Hosting', 'Cloud Functions', 'Cloud Run', 'Supabase', 'Azure AI', 'IIS', 'Git', 'n8n', 'Vitest', 'Playwright', 'Sentry'] },

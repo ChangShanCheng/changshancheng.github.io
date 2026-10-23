@@ -18,7 +18,7 @@ export interface Project {
   demo?: string;
 }
 
-export type SkillCategory = 'LLM & Agents' | 'Evaluation & Quality' | 'Document AI / CV' | 'Data & ML' | 'Backend' | 'Frontend' | 'Cloud & DevOps' | 'Security';
+export type SkillCategory = 'LLM & Agents' | 'Agent Prototypes (PoC)' | 'Evaluation & Quality' | 'Document AI / CV' | 'Data & ML' | 'Backend' | 'Frontend' | 'Cloud & DevOps' | 'Security';
 
 export interface SkillGroup {
   category: SkillCategory;
