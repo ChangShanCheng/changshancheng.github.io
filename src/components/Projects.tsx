@@ -8,7 +8,7 @@ const projectsData: Project[] = [
     id: 4,
     title: '企業大腦：從 PoC 到產線 AI 數據分析平台',
     period: '2025/12 – 進行中',
-    category: 'Agent & KG',
+    category: 'Agent & Analytics',
     description: '系統架構設計與主要開發。BML 產線每天在用，取代外購 AutoML。原本散在 6 支 n8n 流程的分析和另一套獨立的統計分析，我收斂成一個仿 Claude Code 格式的 skill：同事只給計算邏輯，上傳、API、排程都呼叫同一個 skill。',
     metric: '免外購 415 萬／兩年 · 6 支產線流程平台化 · 零斷線切換',
     flow: [
@@ -36,7 +36,7 @@ const projectsData: Project[] = [
       { title: '④ chat 核心', desc: '之後做；同時評估文字知識庫是否轉成知識圖譜', status: 'next' },
     ],
     roadmapCaption: '路線圖：目前在 ②③ 收集知識；chat 的上下文管理、MCP、知識圖譜都還是原型（PoC），沙盒已用在分析，之後也給 chat 跑程式',
-    technologies: ['FastAPI', 'Azure OpenAI', 'Docker 沙盒', 'PostgreSQL + pgvector', 'React', 'n8n → Skills', 'Gemini Function Calling（原型）', 'MCP（原型）'],
+    technologies: ['FastAPI', 'Azure OpenAI', 'Docker 沙盒', 'PostgreSQL', 'React', 'n8n → Skills', 'Gemini Function Calling（原型）', 'MCP（原型）', '知識圖譜 pgvector（原型）'],
     highlights: [
       '資料怎麼進來：各資料源自己整理成統一格式（資料整理不進 skill），skill 先驗格式、錯了回傳修法，再跑分析；產出圖表資料、Excel 報表與判讀文字',
       '為什麼做成 skill：現在的分析其實寫死在程式也能跑；做成 skill 是為了之後 chat 能讓 LLM 直接呼叫同一套方法，不必重寫',
@@ -181,11 +181,11 @@ const projectsData: Project[] = [
   },
 ];
 
-const categories: Array<'all' | ProjectCategory> = ['all', 'Agent & KG', 'Document AI', 'Cloud & Web', 'Side Project', 'Research'];
+const categories: Array<'all' | ProjectCategory> = ['all', 'Agent & Analytics', 'Document AI', 'Cloud & Web', 'Side Project', 'Research'];
 
 const badgeTone: Record<ProjectCategory, string> = {
   'Document AI': 'lav',
-  'Agent & KG': 'indigo',
+  'Agent & Analytics': 'indigo',
   'Cloud & Web': 'sage',
   'Side Project': 'rose',
   'Research': 'amber',

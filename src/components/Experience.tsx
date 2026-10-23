@@ -17,7 +17,7 @@ const experiences: (ExperienceItem & { icon: typeof Building2; tone: string })[]
       'ESG 碳管理平台：匯入改網頁上傳並交接同事；後端單檔拆成每頁一個模組（API 104 → 42 支）、前端逐廠複製的圖表合成共用元件（219 → 51 檔），輸出逐筆比對不變。',
       '發票與健檢三套系統每年節省 1,572 人時、有形效益約 99 萬元；ChatGPT Team 課程助教（67 位學員）。',
     ],
-    tags: ['Agent Harness', 'Azure OpenAI', 'FastAPI', 'Docker', 'pgvector', 'React', 'GCP', 'MCP（原型）'],
+    tags: ['Skills（仿 Claude Code）', 'Docker 沙盒', 'Azure OpenAI', 'FastAPI', 'React', 'GCP', 'MCP（原型）'],
   },
   {
     icon: Factory,

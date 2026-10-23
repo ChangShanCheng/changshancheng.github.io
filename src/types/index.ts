@@ -1,4 +1,4 @@
-export type ProjectCategory = 'Document AI' | 'Agent & KG' | 'Cloud & Web' | 'Side Project' | 'Research';
+export type ProjectCategory = 'Document AI' | 'Agent & Analytics' | 'Cloud & Web' | 'Side Project' | 'Research';
 
 export interface Project {
   id: number;
