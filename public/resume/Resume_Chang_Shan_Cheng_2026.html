@@ -82,7 +82,7 @@
   body:not([data-lang="zh"]) .lang-zh{display:none!important}
   body[data-lang="zh"] .lang-en{display:none!important}
   body[data-lang="zh"] .page{font-family:"Noto Sans TC","Inter","PingFang TC","Microsoft JhengHei",sans-serif}
-  .lang-en .main{font-size:9.6pt;padding-bottom:3mm}
+  .lang-en .main{font-size:9.6pt;padding-bottom:1mm}
   .lang-en .job li{margin-bottom:1.7mm}
   .print-sidebar-bg{display:none}
   .page.p2{grid-template-rows:auto 1fr}
@@ -173,7 +173,7 @@
     </section>
   </aside>
   <main class="main">
-    <p class="summary">AI application engineer who designs, validates and maintains enterprise AI systems: architect of BenQ Materials' AI data-analysis platform (in daily production use) and of its document-AI stack, built from zero. Every system is validated against a test set or the system it replaces before go-live.</p>
+    <p class="summary">AI application engineer who designs, validates and maintains enterprise AI systems: architect of BenQ Materials' AI data-analysis platform (in daily production use) and its document-AI stack, built from zero. Every system is checked against a test set or the system it replaces before go-live.</p>
     <div class="kpi">
       <div><b>4.15M NTD</b><span>AutoML avoided / 2 yrs</span></div>
       <div><b>6</b><span>line flows on platform</span></div>
@@ -184,15 +184,15 @@
       <h2>Experience</h2>
       <div class="job">
         <div class="job-head"><h4>AI Application R&amp;D Engineer</h4><span class="when">Dec 2024 – Present</span></div>
-        <div class="org">BenQ Materials Corp. (明基材料) · Digital Technology Center, Intelligent Application Dept., Intelligent Application Development Sec. · Taoyuan, Taiwan</div>
+        <div class="org">BenQ Materials Corp. (明基材料) · Digital Technology Center, Intelligent Application Dev. Sec. · Taoyuan</div>
         <ul>
           <li><b>Enterprise Brain → AI data-analysis platform</b> (system architect &amp; lead developer) — used daily by the BML line, replacing a purchased AutoML package (<em>4.15M NTD / 2 yrs</em>); 6 flows cut over with zero downtime. FastAPI + Gemini + MCP, on-prem.
             <div class="flow">
-              <div class="st"><b>3 entry points</b><span>Excel upload · API · 6 schedules</span></div>
-              <div class="st"><b>One input contract</b><span>validated, with fix hints</span></div>
-              <div class="st me"><b>sensor-analysis skill</b><span>teammates' calculation logic (incl. StatRecipe) as methods</span></div>
-              <div class="st"><b>Code computes → LLM explains</b><span>stats → interpretation → PDF / Excel</span></div>
-              <div class="st"><b>Feedback → knowledge</b><span>annotate → review → knowledge graph</span></div>
+              <div class="st"><b>Data in</b><span>Excel upload · API · 6 schedules (7 sources)</span></div>
+              <div class="st"><b>One input contract</b><span>validated, errors say how to fix</span></div>
+              <div class="st me"><b>sensor-analysis skill</b><span>teammates' methods as modules, one command runs all</span></div>
+              <div class="st"><b>Code computes → LLM explains</b><span>stats, charts, Excel by code; LLM writes the reading</span></div>
+              <div class="st"><b>Feedback → knowledge</b><span>annotate → review → graph (holds 6 OCAP flows I built)</span></div>
             </div>
             <p class="cap">Data → analysis → knowledge. Purple box: the shared skill I designed.</p>
             <table class="cmp">
@@ -200,13 +200,13 @@
               <tr><td>Analysis logic</td><td>6 workflows, ~550 nodes, each a copy</td><td>1 skill shared by all 3 entry points</td></tr>
               <tr><td>New analysis method</td><td>edit every workflow</td><td>teammate gives the logic; wired in once</td></tr>
               <tr><td>New data source</td><td>clone a whole workflow</td><td>map data to the contract (7 sources)</td></tr>
-              <tr><td>StatRecipe (SR)</td><td>a separate node chain</td><td>ported as one skill method</td></tr>
+              <tr><td>Standalone stats analysis</td><td>a separate node chain</td><td>merged in as one skill method</td></tr>
               <tr><td>Cutover check</td><td>—</td><td>Excel 9/9 cell-identical to old emails; identical PDFs</td></tr>
             </table>
             <ul>
-              <li><b>Design</b> — teammates supply only the calculation; the platform handles validation, interpretation and reports; an LLM failure never blocks the numbers.</li>
-              <li><b>Reliability &amp; safety</b> — long chats auto-summarized, failed tools retried with the error fed back, max 10 tool calls per question; role-based access, rules enforced in code, tamper-proof audit log.</li>
-              <li><b>Knowledge loop</b> — the graph holds the 6 OCAP defect-handling flows I built; chat Q&amp;A opens once it matures.</li>
+              <li><b>Claude Code–style</b> — same skill and permission format, so skills tested in Claude Code move over unchanged. The prompt lists only skill names; the LLM calls a Skill tool to load one, Bash runs its scripts in a sandbox, Read returns results.</li>
+              <li><b>Why code calls it</b> — LLM-run analysis drifted, so all entry points call the skill in code; the LLM only interprets, and never blocks the numbers.</li>
+              <li><b>Reliability &amp; safety</b> — chats summarized, failed tools retried, ≤ 10 tool calls; role access, rules in code, tamper-proof audit log.</li>
             </ul>
           </li>
         </ul>
@@ -327,10 +327,10 @@
         <ul>
           <li><b>企業大腦 → AI 數據分析平台</b>（系統架構設計、主要開發者）— BML 產線每天在用，取代外購 AutoML（<em>兩年免採購 415 萬</em>）；6 支流程零斷線切換。FastAPI + Gemini + MCP，資料不出內網。
             <div class="flow">
-              <div class="st"><b>3 個入口</b><span>上傳 Excel · 對外 API · 6 支排程</span></div>
-              <div class="st"><b>統一輸入格式</b><span>先驗格式，錯了告訴你怎麼修</span></div>
-              <div class="st me"><b>sensor-analysis skill</b><span>同事的計算邏輯（含 StatRecipe）掛成方法</span></div>
-              <div class="st"><b>程式算 → LLM 寫</b><span>統計 → 判讀 → PDF／Excel 報表</span></div>
+              <div class="st"><b>資料進來</b><span>上傳 Excel · 對外 API · 6 支排程（7 種資料源）</span></div>
+              <div class="st"><b>整理成統一格式</b><span>先驗格式，錯了告訴你怎麼修</span></div>
+              <div class="st me"><b>sensor-analysis skill</b><span>同事的分析方法掛成模組，一行指令全跑</span></div>
+              <div class="st"><b>程式算 → LLM 寫</b><span>統計、圖表、Excel 由程式產；LLM 只寫判讀</span></div>
               <div class="st"><b>回饋變知識</b><span>工程師標註 → 審核 → 知識圖譜</span></div>
             </div>
             <p class="cap">圖：資料進來 → 分析 → 累積成知識；紫框是我設計的共用 skill。</p>
@@ -339,11 +339,12 @@
               <tr><td>分析邏輯</td><td>6 支流程、約 550 節點各自複製</td><td>1 個 skill，3 個入口共用</td></tr>
               <tr><td>新增分析方法</td><td>要逐支流程改</td><td>同事給計算邏輯，掛進一次</td></tr>
               <tr><td>接新資料來源</td><td>複製一整支流程</td><td>整理成統一格式（已接 7 種）</td></tr>
-              <tr><td>StatRecipe（SR）</td><td>獨立的一串節點</td><td>移植成 skill 的一個方法</td></tr>
+              <tr><td>獨立的統計分析</td><td>另一串獨立節點</td><td>併成 skill 的一個方法</td></tr>
               <tr><td>切換驗證</td><td>—</td><td>Excel 9/9 逐格一致、PDF 相同</td></tr>
             </table>
             <ul>
-              <li><b>設計重點</b> — 同事只給計算邏輯，驗證、判讀、報表由平台負責；LLM 失敗不影響數據。</li>
+              <li><b>仿 Claude Code</b> — skill 與權限檔格式和 Claude Code 相同，在 Claude Code 開發測試後原封不動上平台。提示裡只放 skill 清單；LLM 判斷需要時呼叫 Skill 工具載入說明，再用 Bash 在沙盒跑腳本、Read 讀結果。</li>
+              <li><b>為什麼分析改由程式呼叫</b> — 讓 LLM 自己跑分析時結果會飄，所以上傳、API、排程改成程式直接呼叫同一個 skill，LLM 只寫判讀，失敗也不影響數據；chat 留給知識問答。</li>
               <li><b>穩定與安全</b> — 長對話自動摘要、工具失敗重試並讓模型換做法、每題最多 10 次工具呼叫；依角色限權、公司規定由程式擋下、稽核紀錄不可改。</li>
               <li><b>知識迴圈</b> — 知識圖譜已收錄我建的 6 支 OCAP 缺陷處理流程；成熟後開放 chat 問答。</li>
             </ul>
