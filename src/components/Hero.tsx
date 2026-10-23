@@ -33,9 +33,9 @@ const Hero = () => {
           </h1>
           <p className="hero-tagline">LLM Agents · Knowledge Graph · Document AI</p>
           <p className="hero-desc">
-            在製造業把 <strong>OCR + LLM</strong> 從零做到六套系統正式上線的 AI 應用工程師。
-            目前在明基材料負責<strong>企業知識圖譜</strong>、<strong>Claude Code 式 AI Agent</strong>
-            與偏光片產線的 <strong>AI 數據分析平台</strong>。從使用者訪談、架構設計、前後端到部署與推動採用，一個人扛完整條線。
+            在製造業設計、驗證並維運企業 AI 系統的 AI 應用工程師：主導明基材料的
+            <strong>AI 數據分析平台</strong>（Claude Code 式 Agent，產線每天在用），並從零建立
+            <strong>文件 AI（OCR + LLM）</strong>。每套系統都先用測試集驗過才上線。
           </p>
           <div className="hero-actions">
             <button className="btn primary" onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}>
