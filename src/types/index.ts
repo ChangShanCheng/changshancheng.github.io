@@ -9,6 +9,9 @@ export interface Project {
   technologies: string[];
   highlights: string[];
   metric?: string;
+  flow?: { title: string; desc: string; mine?: boolean }[];
+  flowCaption?: string;
+  compare?: { head: [string, string, string]; rows: [string, string, string][] };
   github?: string;
   demo?: string;
 }

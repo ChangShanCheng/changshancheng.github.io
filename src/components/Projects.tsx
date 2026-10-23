@@ -9,15 +9,32 @@ const projectsData: Project[] = [
     title: '企業大腦：從 PoC 到產線 AI 數據分析平台',
     period: '2025/12 – 進行中',
     category: 'Agent & KG',
-    description: '負責系統架構設計與主要開發：從知識圖譜與 Agent Harness 兩個 PoC 起步，做成正式上線、BML 產線每天在用的 AI 數據分析平台，取代外購 AutoML（兩年免採購 415 萬）。平台設計成可插拔：同事開發的分析方法與機器學習模型以 skill 形式掛上即可使用；之後再透過使用者對分析結果的回饋累積成企業知識。資料不出內網。',
+    description: '負責系統架構設計與主要開發：正式上線、BML 產線每天在用的 AI 數據分析平台，取代外購 AutoML（兩年免採購 415 萬）。原本分析邏輯散在 6 支 n8n 流程，另有獨立的 StatRecipe（SR）分析；我把它們收斂成同一個 sensor-analysis skill，並定一份統一輸入格式，讓同事只要提供計算邏輯，方法就能被上傳、API、排程共用。之後再透過使用者對分析結果的回饋累積成企業知識。資料不出內網。',
     metric: '免外購 415 萬／兩年 · 6 支產線流程平台化 · 零斷線切換',
+    flow: [
+      { title: '3 個入口', desc: '上傳 Excel · 對外 API · 6 支排程' },
+      { title: '統一輸入格式', desc: 'analysis_input.v1，先驗格式，錯了告訴你怎麼修' },
+      { title: 'sensor-analysis skill', desc: '同事的計算邏輯（含 StatRecipe）掛成方法', mine: true },
+      { title: '程式算 → LLM 寫', desc: '統計 → 判讀 → PDF／Excel 報表' },
+      { title: '回饋變知識', desc: '工程師標註 → 審核 → 知識圖譜' },
+    ],
+    flowCaption: '資料進來 → 分析 → 累積成知識；紫框是我設計的共用 skill',
+    compare: {
+      head: ['', '原本（n8n）', '改成一個 skill 後'],
+      rows: [
+        ['分析邏輯', '散在 6 支流程、約 550 個節點，各自複製', '1 個 skill，3 個入口共用'],
+        ['新增分析方法', '要逐支流程改', '同事提供計算邏輯，掛進 skill 一次'],
+        ['接新資料來源', '複製一整支流程', '整理成統一格式即可（已接 7 種）'],
+        ['StatRecipe（SR）', '獨立的一串節點', '移植成 skill 的一個方法'],
+        ['切換驗證', '—', 'Excel 報表與舊信 9/9 逐格一致、PDF 逐 byte 相同'],
+      ],
+    },
     technologies: ['FastAPI', 'Gemini Function Calling', 'MCP', 'PostgreSQL + pgvector', 'Neo4j', 'Docker', 'React', 'n8n → Skills'],
     highlights: [
-      '可插拔架構：同事的分析方法與 ML 模型以 skill 形式掛上平台，不必改平台；上傳 Excel、對外 API 與 6 支排程都呼叫同一個 skill。skill 格式與 Claude Code 相同，在 Claude Code 開發測試後可原封不動搬上平台',
-      '統計由程式計算，LLM 只依統計結果撰寫判讀；LLM 失敗也不影響數據',
-      '遷移與驗證：6 支 n8n 流程（約 550 節點）→ 1 個 skill + 7 支 flow，切換前逐一與舊流程比對（筆數、實際重跑、PDF 報表逐 byte 相同）',
-      '知識迴圈：工程師在分析結果標註經驗 → AI 比對既有知識 → 審核通過 → 寫入知識圖譜（已收錄 6 支 OCAP 缺陷處理流程）；知識庫成熟後再開放 chat 問答',
+      '設計重點：資料整理與分析分開——同事只提供計算邏輯，我包成 skill 的方法，負責格式驗證、LLM 判讀與報表；統計由程式算，LLM 只寫判讀，LLM 失敗也不影響數據',
+      'skill 格式與 Claude Code 相同：同事在 Claude Code 開發測試後，可原封不動搬上平台',
       '穩定與安全：對話太長自動摘要、工具失敗重試並讓模型換做法、每題最多 10 次工具呼叫；依角色限定工具、公司規定由程式強制擋下、沙盒執行、不可修改的稽核紀錄',
+      '知識迴圈：知識圖譜已收錄我建的 6 支 OCAP 缺陷處理流程；知識庫成熟後再開放 chat 問答',
     ],
   },
   {
@@ -139,6 +156,18 @@ const projectsData: Project[] = [
       '發明專利 TW I842416 B 作物採收機',
     ],
   },
+  {
+    id: 10,
+    title: '以 Autoware / ROS 實現無人駕駛導航系統（大學專題）',
+    period: '2020 – 2021',
+    category: 'Research',
+    description: '北科大機械系專題：在 Ubuntu + ROS + Autoware 上建構室內外自駕平台，完成建圖、定位與路徑規劃，並整合機器學習口罩偵測模組。',
+    technologies: ['ROS', 'Autoware', 'Ubuntu', 'SLAM', 'Machine Learning'],
+    highlights: [
+      '室內外建圖、定位與路徑規劃',
+      '整合機器學習口罩偵測模組',
+    ],
+  },
 ];
 
 const categories: Array<'all' | ProjectCategory> = ['all', 'Agent & KG', 'Document AI', 'Cloud & Web', 'Side Project', 'Research'];
@@ -174,7 +203,7 @@ const Projects = () => {
 
         <div className="projects-grid" key={filter}>
           {list.map((p, i) => (
-            <article key={p.id} className="card card-hover project" style={{ animationDelay: `${Math.min(i, 5) * 70}ms` }}>
+            <article key={p.id} className={`card card-hover project${p.flow ? ' wide' : ''}`} style={{ animationDelay: `${Math.min(i, 5) * 70}ms` }}>
               <div className="project-top">
                 <span className={`badge ${badgeTone[p.category]}`}>{p.category}</span>
                 <span className="project-period">{p.period}</span>
@@ -182,6 +211,22 @@ const Projects = () => {
               <h3>{p.title}</h3>
               <p className="project-desc">{p.description}</p>
               {p.metric && <div className="project-metric">{p.metric}</div>}
+              {p.flow && (
+                <div className="arch">
+                  <ol className="arch-flow">
+                    {p.flow.map((f) => (
+                      <li key={f.title} className={f.mine ? 'mine' : ''}><b>{f.title}</b><span>{f.desc}</span></li>
+                    ))}
+                  </ol>
+                  {p.flowCaption && <p className="arch-cap">{p.flowCaption}</p>}
+                </div>
+              )}
+              {p.compare && (
+                <table className="arch-table">
+                  <thead><tr>{p.compare.head.map((h, k) => <th key={k}>{h}</th>)}</tr></thead>
+                  <tbody>{p.compare.rows.map((r) => <tr key={r[0]}>{r.map((c, k) => <td key={k}>{c}</td>)}</tr>)}</tbody>
+                </table>
+              )}
               <ul className="project-highlights">
                 {p.highlights.map((h) => (
                   <li key={h}><Check size={14} strokeWidth={2.5} />{h}</li>

@@ -77,35 +77,53 @@
   .edu h5{margin:0;font-size:9.4pt;display:flex;justify-content:space-between;gap:8px}
   .edu h5 .when{color:var(--lav-700);font-weight:700;font-size:7.8pt;white-space:nowrap}
   .edu p{margin:1px 0 0;color:var(--muted);font-size:8.6pt}
+  .side .pub{font-size:7.9pt;text-indent:0;padding-left:0;margin-bottom:6px}
   .pub{font-size:8.8pt;margin:0 0 5px;line-height:1.45;padding-left:12px;text-indent:-12px;color:var(--text-2)}
   body:not([data-lang="zh"]) .lang-zh{display:none!important}
   body[data-lang="zh"] .lang-en{display:none!important}
   body[data-lang="zh"] .page{font-family:"Noto Sans TC","Inter","PingFang TC","Microsoft JhengHei",sans-serif}
-  .lang-en .main{font-size:9.8pt;padding-bottom:2mm}
-  .lang-en .main section{margin-bottom:4.5mm}
-  .lang-en .job li{margin-bottom:1.6mm}
+  .lang-en .main{font-size:9.6pt;padding-bottom:3mm}
+  .lang-en .job li{margin-bottom:1.7mm}
   .print-sidebar-bg{display:none}
+  .page.p2{grid-template-rows:auto 1fr}
+  .mini{grid-column:1/3;display:flex;justify-content:space-between;align-items:center;padding:2.6mm 9mm;color:#fff;font-size:8.3pt;background:linear-gradient(135deg,#2A1F3D 0%,#3D2B5C 45%,#6B4A8E 100%)}
+  .mini b{font-size:10pt;font-weight:800}
+  .mini span{color:#E9DDF5}
+  .flow{display:flex;margin:2mm 0 1mm}
+  .flow .st{flex:1;min-width:0;background:var(--lav-50);border:1px solid var(--lav-200);border-radius:7px;padding:4px 6px;position:relative;margin-right:10px}
+  .flow .st::after{content:"";position:absolute;right:-9px;top:50%;margin-top:-4px;border-top:4px solid transparent;border-bottom:4px solid transparent;border-left:6px solid var(--lav-500)}
+  .flow .st:last-child{margin-right:0;background:#EEF6F0;border-color:#cfe5d4}
+  .flow .st:last-child::after{display:none}
+  .flow .st.me{background:var(--lav-100);border:1.5px solid var(--lav-500)}
+  .flow .st b{display:block;font-size:7.8pt;color:var(--lav-900);line-height:1.25}
+  .flow .st span{display:block;font-size:7pt;color:var(--text-2);line-height:1.35;margin-top:1px}
+  .cap{font-size:7.2pt;color:var(--muted);margin:0 0 1.8mm}
+  table.cmp{width:100%;border-collapse:collapse;font-size:7.9pt;margin:0 0 2mm;line-height:1.35}
+  table.cmp th,table.cmp td{border-bottom:1px solid var(--line);padding:2px 5px;text-align:left;vertical-align:top}
+  table.cmp th{background:var(--lav-50);color:var(--lav-700);font-weight:700}
+  table.cmp td:first-child{color:var(--muted);white-space:nowrap}
+  table.cmp td:nth-child(2){color:var(--text-2)}
+  table.cmp td:last-child{color:var(--text);font-weight:600}
+  .job li .flow,.job li .cap,.job li table{margin-left:0}
   @media print{
     @page{size:A4;margin:0}
     html,body{background:#fff}
     .toolbar{display:none}
-    .page{margin:0;box-shadow:none;width:210mm;display:block;min-height:0}
-    .top{display:flex}
-    .side{float:left;width:62mm;background:transparent;border-right:0}
-    .main{margin-left:62mm}
-    .page::after{content:'';display:block;clear:both}
-    .top,.side,.kpi div,.tag,.job-head .when,.proj h5 .when,.eyebrow{-webkit-print-color-adjust:exact;print-color-adjust:exact}
-    .print-sidebar-bg{display:block;position:fixed;top:0;left:0;width:62mm;height:100%;background:var(--side);border-right:1px solid var(--lav-100);z-index:0;-webkit-print-color-adjust:exact;print-color-adjust:exact}
-    .side,.main,.top{position:relative;z-index:1}
-    .job li,.proj,.edu,.pub,.kpi,.skillgroup{break-inside:avoid;page-break-inside:avoid}
+    .page{margin:0;box-shadow:none;min-height:296mm}
+    .page.p2{break-before:page;page-break-before:always}
+    .top,.mini,.side,.kpi div,.tag,.job-head .when,.proj h5 .when,.eyebrow,.flow .st,table.cmp th{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .job li,.proj,.edu,.pub,.kpi,.skillgroup,table.cmp,.flow{break-inside:avoid;page-break-inside:avoid}
     .job li:has(ul){break-inside:auto;page-break-inside:auto}
     .main h2,.side h3{break-after:avoid;page-break-after:avoid}
   }
   @media screen and (max-width:820px){
     .page{width:100%;grid-template-columns:1fr;min-height:auto}
-    .top{grid-column:1;flex-direction:column;align-items:flex-start}
+    .top,.mini{grid-column:1;flex-direction:column;align-items:flex-start}
     .side{border-right:0;border-bottom:1px solid var(--line)}
     .kpi{grid-template-columns:repeat(2,1fr)}
+    .flow{flex-direction:column}
+    .flow .st{margin:0 0 10px}
+    .flow .st::after{right:auto;left:50%;top:auto;bottom:-9px;margin:0 0 0 -4px;border-left:4px solid transparent;border-right:4px solid transparent;border-top:6px solid var(--lav-500);border-bottom:0}
   }
 </style>
 </head>
@@ -117,8 +135,9 @@
   <span class="hint">A4 · set margins to “None” and enable background graphics when printing</span>
 </div>
 
-<!-- ============================== ENGLISH ============================== -->
-<div class="page lang-en"><div class="print-sidebar-bg"></div>
+
+<!-- ============================== ENGLISH · page 1 ============================== -->
+<div class="page lang-en">
   <header class="top"><div class="glow a"></div><div class="glow b"></div>
     <div class="who">
       <div class="eyebrow"><span class="dot"></span>AI Application R&amp;D Engineer · BenQ Materials</div>
@@ -149,43 +168,85 @@
       <div class="edu"><h5>National Taiwan University</h5><p>M.S. Biomechatronics Eng. (AIoT / CV) · 2021 – 2023</p></div>
       <div class="edu"><h5>National Taipei University of Technology</h5><p>B.S. Mechanical Engineering · 2017 – 2021</p></div>
     </section>
-    <section>
-      <h3>Languages</h3>
-      <ul><li>Mandarin Chinese — Native</li><li>English — Professional (TOEIC 790)</li><li>German — A2</li><li style="margin-top:4px;color:var(--muted)">Company Digital Talent L3 (Expert)</li><li style="color:var(--muted)">Military service completed</li></ul>
-    </section>
-
   </aside>
-
   <main class="main">
-    <p class="summary">AI application engineer who designs, verifies and maintains enterprise AI systems in manufacturing: lead developer of BenQ Materials' on-prem AI data-analysis platform and Claude Code–style agent harness, in daily production use, after building the company's document-AI stack from zero. Every system ships with a labelled test set or regression check.</p>
-
+    <p class="summary">AI application engineer who designs, validates and maintains enterprise AI systems in manufacturing. Architect and lead developer of BenQ Materials' on-prem AI data-analysis platform (Claude Code–style agent harness, in daily production use); earlier built the company's document-AI stack from zero. Every system is checked against a labelled test set or the system it replaces.</p>
     <div class="kpi">
-      <div><b>4.15M NTD</b><span>AutoML purchase avoided / 2 yrs</span></div>
-      <div><b>6</b><span>production-line flows on platform</span></div>
-      <div><b>~1M NTD</b><span>tangible benefit / yr (3 OCR)</span></div>
-      <div><b>1,500+ h</b><span>saved / yr (3 OCR systems)</span></div>
+      <div><b>4.15M NTD</b><span>AutoML avoided / 2 yrs</span></div>
+      <div><b>6</b><span>line flows on platform</span></div>
+      <div><b>~1M NTD</b><span>benefit / yr (3 OCR)</span></div>
+      <div><b>1,500+ h</b><span>saved / yr (3 OCR)</span></div>
     </div>
-
     <section>
       <h2>Experience</h2>
       <div class="job">
         <div class="job-head"><h4>AI Application R&amp;D Engineer</h4><span class="when">Dec 2024 – Present</span></div>
         <div class="org">BenQ Materials Corp. (明基材料) · Digital Technology Center, Intelligent Application Dept., Intelligent Application Development Sec. · Taoyuan, Taiwan</div>
         <ul>
-          <li><b>Enterprise Brain → AI data-analysis platform</b> (system architect &amp; lead developer) — live on company servers and used daily by the BML polarizer line, replacing a purchased AutoML package (<em>4.15M NTD / 2 yrs</em>); 6 production-line report flows cut over with zero downtime. Claude Code–style harness on FastAPI + Gemini function calling + MCP, 10 Docker services, data stays on the intranet.
+          <li><b>Enterprise Brain → AI data-analysis platform</b> (system architect &amp; lead developer) — live and used daily by the BML polarizer line, replacing a purchased AutoML package (<em>4.15M NTD / 2 yrs</em>); 6 line report flows cut over with zero downtime. FastAPI + Gemini + MCP, 10 Docker services, on-prem.
+            <div class="flow">
+              <div class="st"><b>3 entry points</b><span>Excel upload · API · 6 schedules</span></div>
+              <div class="st"><b>One input contract</b><span>analysis_input.v1, validated with fix hints</span></div>
+              <div class="st me"><b>sensor-analysis skill</b><span>teammates' calculation logic (incl. StatRecipe) as methods</span></div>
+              <div class="st"><b>Code computes → LLM explains</b><span>stats → interpretation → PDF / Excel</span></div>
+              <div class="st"><b>Feedback → knowledge</b><span>annotate → review → knowledge graph</span></div>
+            </div>
+            <p class="cap">Data → analysis → knowledge. Purple box: the shared skill I designed.</p>
+            <table class="cmp">
+              <tr><th></th><th>Before (n8n)</th><th>After (one skill)</th></tr>
+              <tr><td>Analysis logic</td><td>copied across 6 workflows, ~550 nodes</td><td>1 skill shared by all 3 entry points</td></tr>
+              <tr><td>New analysis method</td><td>edit every workflow</td><td>teammate supplies the logic; wired in once</td></tr>
+              <tr><td>New data source</td><td>clone a whole workflow</td><td>map the data to the input contract (7 sources so far)</td></tr>
+              <tr><td>StatRecipe (SR)</td><td>a separate node chain</td><td>ported as one skill method</td></tr>
+              <tr><td>Cutover check</td><td>—</td><td>Excel 9/9 cell-identical to old emails; identical PDFs</td></tr>
+            </table>
             <ul>
-              <li><b>Pluggable architecture</b> — designed the platform so analysis methods and ML models built by teammates plug in as skills, with no platform changes; Excel uploads, the API and 6 scheduled flows all call the same skill. Skills use Claude Code's format, so teammates build and test in Claude Code and deploy unchanged. Code computes the statistics and the LLM only writes the interpretation, so a failed LLM call never blocks the numbers.</li>
-              <li><b>Migration &amp; verification</b> — 6 n8n workflows (~550 nodes) → 1 skill + 7 code flows, checked against the old output (record counts, live replays, byte-identical PDF reports) before cutover.</li>
-              <li><b>Knowledge loop</b> — engineers annotate analysis results with their experience → AI checks them against existing knowledge → a reviewer approves → knowledge graph, which already holds the 6 OCAP defect-handling flows I built. Chat Q&amp;A opens once the knowledge base is mature.</li>
-              <li><b>Reliability &amp; safety</b> — long conversations are auto-summarized to stay within the model's limit; failed tools are retried and the error goes back to the model to try another way; at most 10 tool calls per question to prevent loops. Each role sees only its allowed tools, company rules (e.g. never read secret files) are enforced in code rather than prompt wording, code runs in a resource-limited sandbox, and every action is written to a tamper-proof audit log.</li>
+              <li><b>Design</b> — teammates supply only the calculation logic; I wrap it as a skill method with validation, LLM interpretation and reports. Code computes the stats; the LLM only explains them, so its failure never blocks the numbers. Claude Code's skill format, so methods deploy unchanged.</li>
+              <li><b>Reliability &amp; safety</b> — long chats auto-summarized, failed tools retried with the error fed back to the model, max 10 tool calls per question; role-based tools, company rules enforced in code, sandboxed execution, tamper-proof audit log.</li>
+              <li><b>Knowledge loop</b> — the graph already holds the 6 OCAP defect-handling flows I built; chat Q&amp;A opens once it matures.</li>
             </ul>
           </li>
-          <li><b>Document-AI applications (OCR + LLM)</b> — built the company's platform from zero (Azure Document Intelligence + Azure OpenAI, Python/FastAPI, React, SQL Server) and its reusable OCR → LLM → validation → feedback pipeline; each system scored on a hand-labelled test set before go-live.
+        </ul>
+      </div>
+    </section>
+  </main>
+</div>
+
+<!-- ============================== ENGLISH · page 2 ============================== -->
+<div class="page p2 lang-en">
+  <div class="mini"><b>Shan-Cheng Chang <span>張善程</span></b><span>AI Application R&amp;D Engineer · 2 / 2</span></div>
+  <aside class="side">
+    <section>
+      <h3>Languages</h3>
+      <ul><li>Mandarin Chinese — Native</li><li>English — Professional (TOEIC 790)</li><li>German — A2</li></ul>
+    </section>
+    <section>
+      <h3>Certifications</h3>
+      <ul><li>Company Digital Talent L3 (Expert)</li><li style="color:var(--muted)">Military service completed</li></ul>
+    </section>
+    <section>
+      <h3>Earlier Project</h3>
+      <div class="edu"><h5>Autonomous navigation with Autoware / ROS</h5><p>B.S. capstone, NTUT · 2020 – 2021</p><p>Indoor/outdoor self-driving platform (mapping, localization, path planning) with an ML mask-detection module.</p></div>
+    </section>
+    <section>
+      <h3>Publications &amp; Patent</h3>
+      <p class="pub">Chou, C.-Y., <b>Chang, S.-C.</b>, et al. (2023). Development of AIoT system for facility asparagus cultivation. <i>Computers and Electronics in Agriculture</i>, 206:107665. <i>(co-first author with advisor)</i></p>
+      <p class="pub"><b>Chang, S.-C.</b>, et al. (2022). AIoT based pest counting system for asparagus cultivation. <i>Proc. 10th ISMAB</i>.</p>
+      <p class="pub">Taiwan Invention Patent TW I842416 B — Crop Harvester, 2024.</p>
+    </section>
+  </aside>
+  <main class="main">
+    <section>
+      <h2>Experience (cont.)</h2>
+      <div class="job">
+        <div class="job-head"><h4>BenQ Materials — Document AI &amp; other systems</h4><span class="when">Dec 2024 – Present</span></div>
+        <ul style="margin-top:2mm">
+          <li><b>Document-AI applications (OCR + LLM)</b> — built the company's platform from zero (Azure Document Intelligence + Azure OpenAI, FastAPI, React, SQL Server) and the reusable OCR → LLM → validation → feedback pipeline; each system scored on a hand-labelled test set before go-live.
             <ul>
               <li><b>Quotation OCR</b> — validity-date accuracy <em>51% → 100%</em> (29-document regression set; quote date 86%); 30 s → 10 s per document; 758+ documents processed.</li>
               <li><b>Taiwan &amp; China invoice OCR</b> — <em>31/32</em> (5 key fields all correct, incl. handwritten) and <em>31/31</em> (10 fields); saves 1,447 h/yr; live at 3 sites.</li>
               <li><b>Health-check OCR platform</b> — <em>97.4%</em> field-level accuracy (42 reports × 46 fields), 216 reports processed; AES-256-GCM, AD + JWT, RBAC and audit logging to ISO 27001.</li>
-              <li><b>APO-OCR prompt-optimization engine</b> — designed the eval-driven loop: 32-invoice golden set (24 train / 8 held-out, 3 leakage paths removed), exact-match code validator (LLM proposes, code scores), budget/loop/failure breakers; mentored an intern to ship it — <em>8/8</em> held-out, tying the hand-tuned prompt, for $1.44.</li>
+              <li><b>APO-OCR prompt-optimization engine</b> — designed the eval-driven loop: 32-invoice golden set (24 train / 8 held-out, 3 leakage paths removed), code-scored fields (LLM only proposes), budget/loop/failure breakers. Mentored an intern to ship it: <em>8/8</em> held-out, tying the hand-tuned prompt, for $1.44; a 7/8 run traced to a date format missing from training.</li>
             </ul>
           </li>
           <li><b>Google Cloud Platform — supplier questionnaire management system</b> (live) — React 19 + Cloud Functions + Firestore; 52 APIs, Entra ID login, built solo in 4.5 months, handed over with GCP training.</li>
@@ -197,32 +258,25 @@
         <div class="org">China Steel Corporation (中國鋼鐵) · Cold-Rolling Mill · Kaohsiung, Taiwan</div>
         <ul>
           <li><b>Ran shift operations</b> on the cold-rolled coil line, keeping production continuous at <em>95% yield</em>.</li>
-          <li><b>Data-driven anomaly analysis</b> — process parameters (rolling force, tension, speed, temperature) plus quality data; SPC, trend and correlation analysis to find root causes of coil defects and downtime.</li>
+          <li><b>Anomaly analysis</b> — rolling force, tension, speed, temperature and quality data; SPC, trend and correlation analysis for root causes of defects and downtime.</li>
           <li><b>Anomaly &amp; defect reports</b> (Python / Excel) for daily production meetings — the domain base for the later production-line AI platform.</li>
         </ul>
       </div>
     </section>
-
     <section>
-      <h2>Research & Selected Projects</h2>
+      <h2>Research &amp; Selected Projects</h2>
       <div class="proj"><h5>AIoT Pest Monitoring &amp; Bee Pollination (M.S. thesis, NTU) <span class="when">2021 – 2023</span></h5>
         <p>Lead developer of greenhouse AIoT systems: YOLOv8 + StrongSORT bee tracking (<em>99.5% mAP</em>), Mask R-CNN pollen segmentation, deep-learning pest counting (<em>95.8%</em>), kriging-based climate control.</p>
         <div class="stack">PyTorch · YOLOv8 · StrongSORT · Mask R-CNN · IoT · Kriging</div></div>
       <div class="proj"><h5>Universal OCR Platform — no-code OCR builder (side project) <span class="when">2025 – 2026</span></h5>
-        <p>Define fields and prompts, run a 7-step OCR → LLM pipeline, deploy as a REST API; three cloud variants (FastAPI · React 19 · Supabase · Cloud Run · Docker).</p></div>
+        <p>Define fields and prompts, run a 7-step OCR → LLM pipeline, deploy as a REST API; three cloud variants (FastAPI · React 19 · Supabase · Cloud Run).</p></div>
     </section>
 
-    <section>
-      <h2>Publications & Patent</h2>
-      <p class="pub">Chou, C.-Y., <b>Chang, S.-C.</b>, et al. (2023). Development of AIoT system for facility asparagus cultivation. <i>Computers and Electronics in Agriculture</i>, 206:107665. <i>(co-first author with advisor)</i></p>
-      <p class="pub"><b>Chang, S.-C.</b>, et al. (2022). AIoT based pest counting system for asparagus cultivation. <i>Proc. 10th ISMAB</i>.</p>
-      <p class="pub">Taiwan Invention Patent TW I842416 B — Crop Harvester, 2024.</p>
-    </section>
   </main>
 </div>
 
-<!-- ============================== 中文 ============================== -->
-<div class="page lang-zh"><div class="print-sidebar-bg"></div>
+<!-- ============================== 中文 · 第 1 頁 ============================== -->
+<div class="page lang-zh">
   <header class="top"><div class="glow a"></div><div class="glow b"></div>
     <div class="who">
       <div class="eyebrow"><span class="dot"></span>AI 應用研發工程師 · 明基材料</div>
@@ -253,76 +307,110 @@
       <div class="edu"><h5>國立臺灣大學</h5><p>生物機電工程學系 碩士（AIoT / 電腦視覺）· 2021 – 2023</p></div>
       <div class="edu"><h5>國立臺北科技大學</h5><p>機械工程學系 學士 · 2017 – 2021</p></div>
     </section>
-    <section>
-      <h3>語言</h3>
-      <ul><li>中文 — 母語</li><li>英文 — 專業工作能力（TOEIC 790）</li><li>德文 — A2</li><li style="margin-top:4px;color:var(--muted)">公司數位推廣人才 L3 專家認證</li><li style="color:var(--muted)">役別：已服畢</li></ul>
-    </section>
-
   </aside>
-
   <main class="main">
-    <p class="summary">在製造業設計、驗證並維運企業級 AI 系統的 AI 應用工程師。主導明基材料「企業大腦」AI 數據分析平台與其 Claude Code 式 Agent Harness，已正式上線、產線每天在用，取代外購 AutoML；在此之前從零建立公司的文件 AI 技術棧。每套系統都附人工標註測試集或回歸驗證，可靠度用量測證明，不靠假設。</p>
-
+    <p class="summary">在製造業設計、驗證並維運企業級 AI 系統的 AI 應用工程師。設計並主導明基材料「企業大腦」AI 數據分析平台（Claude Code 式 Agent Harness，產線每天在用）；此前從零建立公司的文件 AI 技術棧。每套系統上線前都經人工標註測試集，或與被取代的舊系統逐一比對。</p>
     <div class="kpi">
       <div><b>415 萬</b><span>兩年免外購 AutoML（NTD）</span></div>
       <div><b>6 支</b><span>產線自動分析流程平台化</span></div>
       <div><b>約 100 萬</b><span>每年有形效益（3 套 OCR）</span></div>
       <div><b>1,500+</b><span>小時／年節省（3 套 OCR）</span></div>
     </div>
-
     <section>
       <h2>工作經歷</h2>
       <div class="job">
         <div class="job-head"><h4>AI 應用研發工程師</h4><span class="when">2024/12 – 至今</span></div>
         <div class="org">明基材料股份有限公司 · 數位技術中心智慧應用部智慧應用開發課 · 桃園</div>
         <ul>
-          <li><b>企業大腦 → AI 數據分析平台</b>（系統架構設計、主要開發者）— 正式部署公司伺服器，BML 偏光片產線每天在用，取代外購 AutoML（<em>兩年免採購 415 萬</em>）；6 支產線自動分析流程零斷線切換。以 FastAPI + Gemini Function Calling + MCP 打造 Claude Code 式 Harness，10 個 Docker 服務，資料不出內網。
+          <li><b>企業大腦 → AI 數據分析平台</b>（系統架構設計、主要開發者）— 正式部署公司伺服器，BML 偏光片產線每天在用，取代外購 AutoML（<em>兩年免採購 415 萬</em>）；6 支產線自動分析流程零斷線切換。FastAPI + Gemini Function Calling + MCP，10 個 Docker 服務，資料不出內網。
+            <div class="flow">
+              <div class="st"><b>3 個入口</b><span>上傳 Excel · 對外 API · 6 支排程</span></div>
+              <div class="st"><b>統一輸入格式</b><span>analysis_input.v1，先驗格式，錯了告訴你怎麼修</span></div>
+              <div class="st me"><b>sensor-analysis skill</b><span>同事的計算邏輯（含 StatRecipe）掛成方法</span></div>
+              <div class="st"><b>程式算 → LLM 寫</b><span>統計 → 判讀 → PDF／Excel 報表</span></div>
+              <div class="st"><b>回饋變知識</b><span>工程師標註 → 審核 → 知識圖譜</span></div>
+            </div>
+            <p class="cap">圖：資料進來 → 分析 → 累積成知識；紫框是我設計的共用 skill。</p>
+            <table class="cmp">
+              <tr><th></th><th>原本（n8n）</th><th>改成一個 skill 後</th></tr>
+              <tr><td>分析邏輯</td><td>散在 6 支流程、約 550 個節點，各自複製</td><td>1 個 skill，3 個入口共用</td></tr>
+              <tr><td>新增分析方法</td><td>要逐支流程改</td><td>同事提供計算邏輯，掛進 skill 一次</td></tr>
+              <tr><td>接新資料來源</td><td>複製一整支流程</td><td>整理成統一格式即可（已接 7 種）</td></tr>
+              <tr><td>StatRecipe（SR）</td><td>獨立的一串節點</td><td>移植成 skill 的一個方法</td></tr>
+              <tr><td>切換驗證</td><td>—</td><td>Excel 報表與舊信 9/9 逐格一致、PDF 逐 byte 相同</td></tr>
+            </table>
             <ul>
-              <li><b>可插拔架構</b> — 設計成同事開發的分析方法與機器學習模型以 skill 形式掛上平台即可使用，不必改平台；使用者上傳 Excel、對外 API 與 6 支排程都呼叫同一個 skill。skill 格式與 Claude Code 相同，同事在 Claude Code 開發測試後可原封不動搬上平台。統計由程式計算，LLM 只依統計結果撰寫判讀，LLM 失敗也不影響數據。</li>
-              <li><b>遷移與驗證</b> — 6 支 n8n 流程（約 550 個節點）收斂為 1 個 skill + 7 支程式化 flow，切換前逐一與舊流程比對（筆數、實際重跑、PDF 報表逐 byte 相同）。</li>
-              <li><b>知識迴圈</b> — 工程師在分析結果標註經驗 → AI 比對既有知識 → 審核通過 → 寫入知識圖譜（已收錄我建的 6 支 OCAP 缺陷處理流程）；知識庫成熟後再開放 chat 問答。</li>
-              <li><b>穩定與安全</b> — 對話太長時自動摘要舊內容，避免超出模型上限；工具失敗會重試，並把錯誤告訴模型讓它換做法；每題最多呼叫 10 次工具，避免無限循環。依角色限定可用工具；公司規定（如不得讀取機密檔）由程式強制擋下，不靠 prompt 叮嚀；程式碼在限制資源的沙盒執行；每次操作寫入不可修改的稽核紀錄。</li>
+              <li><b>設計重點</b> — 同事只提供計算邏輯，我包成 skill 的方法，並負責格式驗證、LLM 判讀與報表；統計由程式算，LLM 只寫判讀，LLM 失敗也不影響數據。skill 格式與 Claude Code 相同，在 Claude Code 開發測試後可直接上平台。</li>
+              <li><b>穩定與安全</b> — 對話太長自動摘要、工具失敗重試並把錯誤告訴模型換做法、每題最多 10 次工具呼叫；依角色限定工具、公司規定由程式強制擋下、沙盒執行、不可修改的稽核紀錄。</li>
+              <li><b>知識迴圈</b> — 知識圖譜已收錄我建的 6 支 OCAP 缺陷處理流程；知識庫成熟後再開放 chat 問答。</li>
             </ul>
           </li>
-          <li><b>文件 AI 應用（OCR + LLM）</b> — 從零建立公司平台（Azure Document Intelligence + Azure OpenAI、Python/FastAPI、React、SQL Server），定義出後續專案沿用的 OCR → LLM 提取 → 驗證 → 回饋流程；每套系統上線前都以人工標註測試集評分。
+        </ul>
+      </div>
+    </section>
+  </main>
+</div>
+
+<!-- ============================== 中文 · 第 2 頁 ============================== -->
+<div class="page p2 lang-zh">
+  <div class="mini"><b>張善程 <span>Shan-Cheng Chang</span></b><span>AI 應用研發工程師 · 2 / 2</span></div>
+  <aside class="side">
+    <section>
+      <h3>語言</h3>
+      <ul><li>中文 — 母語</li><li>英文 — 專業工作能力（TOEIC 790）</li><li>德文 — A2</li></ul>
+    </section>
+    <section>
+      <h3>認證與其他</h3>
+      <ul><li>公司數位推廣人才 L3 專家認證</li><li style="color:var(--muted)">役別：已服畢</li></ul>
+    </section>
+    <section>
+      <h3>大學專題</h3>
+      <div class="edu"><h5>以 Autoware / ROS 實現無人駕駛導航</h5><p>北科大機械 · 2020 – 2021</p><p>室內外自駕平台（建圖、定位、路徑規劃），並整合機器學習口罩偵測模組。</p></div>
+    </section>
+    <section>
+      <h3>論文與專利</h3>
+      <p class="pub">Chou, C.-Y., <b>Chang, S.-C.</b>, et al. (2023). Development of AIoT system for facility asparagus cultivation. <i>Computers and Electronics in Agriculture</i>, 206:107665.（共同第一作者，與指導教授並列）</p>
+      <p class="pub"><b>Chang, S.-C.</b>, et al. (2022). AIoT based pest counting system for asparagus cultivation. <i>Proc. 10th ISMAB</i>.</p>
+      <p class="pub">中華民國發明專利 TW I842416 B — 作物採收機，2024 年 5 月核准。</p>
+    </section>
+  </aside>
+  <main class="main">
+    <section>
+      <h2>工作經歷（續）</h2>
+      <div class="job">
+        <div class="job-head"><h4>明基材料 — 文件 AI 與其他系統</h4><span class="when">2024/12 – 至今</span></div>
+        <ul style="margin-top:2mm">
+          <li><b>文件 AI 應用（OCR + LLM）</b> — 從零建立公司平台（Azure Document Intelligence + Azure OpenAI、FastAPI、React、SQL Server）與後續專案沿用的 OCR → LLM → 驗證 → 回饋流程；每套上線前都以人工標註測試集評分。
             <ul>
               <li><b>報價單 OCR</b> — 效期準確率 <em>51% → 100%</em>（29 份回歸測試集；報價日期 86%）；單份 30 秒 → 10 秒；累計處理 758+ 份。</li>
               <li><b>臺灣與中國發票 OCR</b> — <em>31/32</em>（5 個關鍵欄位全對才算對，含手寫）與 <em>31/31</em>（10 個欄位）；年省 1,447 人時；已導入三個廠區。</li>
               <li><b>新人健檢 OCR 平台</b> — 欄位級準確率 <em>97.4%</em>（42 份 × 46 欄位），累計處理 216 份；AES-256-GCM 加密、AD + JWT、權限控管與稽核日誌，符合 ISO 27001。</li>
-              <li><b>APO-OCR Prompt 自動優化引擎</b> — 設計以評估驅動的迴圈：32 張發票的 golden set 切成 24 訓練／8 保留，並排除 3 種資料洩漏；純程式碼逐欄位比對（LLM 只提案、程式碼評分）；預算、圈數、連續失敗三重熔斷。指導實習生上線：保留測試集 <em>8/8</em>，與人工調校版打平，成本 $1.44；一次 7/8 的結果追到是訓練集缺少某種日期格式。</li>
+              <li><b>APO-OCR Prompt 自動優化引擎</b> — 設計評估驅動迴圈：32 張發票 golden set 切 24 訓練／8 保留、排除 3 種資料洩漏；程式碼逐欄位評分（LLM 只提案）；預算、圈數、連續失敗三重熔斷。指導實習生上線：保留集 <em>8/8</em>，與人工調校版打平，成本 $1.44；一次 7/8 追到是訓練集缺某種日期格式。</li>
             </ul>
           </li>
-          <li><b>Google Cloud Platform — 供應商問卷管理系統</b>（已上線）— React 19 + Cloud Functions + Firestore；52 個 API，4.5 個月獨立完成；以 Entra ID 登入取代付費帳號；已交接同仁並完成 GCP 教學。</li>
-          <li><b>ESG 碳及能源數位管理平台重構</b> — 程式 <em>44,000 → 6,000 行</em>、相依主機 5 → 1 台；資料改網頁上傳、預覽差異並自動驗證，分段執行、每段可還原。</li>
+          <li><b>Google Cloud Platform — 供應商問卷管理系統</b>（已上線）— React 19 + Cloud Functions + Firestore；52 個 API，4.5 個月獨立完成；Entra ID 登入；已交接並完成 GCP 教學。</li>
+          <li><b>ESG 碳及能源數位管理平台重構</b> — 程式 <em>44,000 → 6,000 行</em>、主機 5 → 1 台；改網頁上傳並自動驗證。</li>
         </ul>
       </div>
       <div class="job">
         <div class="job-head"><h4>值班股長</h4><span class="when">2024/01 – 2024/11</span></div>
         <div class="org">中國鋼鐵股份有限公司 · 冷軋廠 · 高雄</div>
         <ul>
-          <li><b>負責冷軋鋼捲產線值班運作</b>，排除生產異況、維持連續生產，產率達 <em>95%</em>。</li>
-          <li><b>建立數據驅動的產線異常分析</b> — 彙整製程參數（軋延力、張力、速度、溫度）與品質檢測資料，以 SPC、趨勢與相關性分析找出鋼捲缺陷與停機真因，提出製程調整建議並追蹤成效。</li>
-          <li><b>以 Python / Excel 建立異常統計與缺陷分類報表</b>，作為每日生產會議及與上下游製程、品保協調的決策依據；這段製程資料分析經驗直接延續到日後在明基材料建構的產線 AI 數據分析平台。</li>
+          <li><b>冷軋鋼捲產線值班</b>，排除異況、維持連續生產，產率 <em>95%</em>。</li>
+          <li><b>產線異常分析</b> — 彙整軋延力、張力、速度、溫度與品質資料，以 SPC、趨勢與相關性分析找出缺陷與停機真因，提出調整並追蹤成效。</li>
+          <li><b>異常與缺陷分類報表</b>（Python / Excel），供每日生產會議決策；這段經驗延續到日後的產線 AI 數據分析平台。</li>
         </ul>
       </div>
     </section>
-
     <section>
       <h2>研究與代表專案</h2>
       <div class="proj"><h5>AIoT 設施栽培害蟲監控與蜜蜂授粉優化（臺大碩士論文）<span class="when">2021 – 2023</span></h5>
         <p>溫室 AIoT 系統主要開發者：YOLOv8 + StrongSORT 蜜蜂追蹤（<em>mAP 99.5%</em>）、Mask R-CNN 花粉分割、深度學習害蟲計數（<em>95.8%</em>）、克利金法環控自動化。</p>
         <div class="stack">PyTorch · YOLOv8 · StrongSORT · Mask R-CNN · IoT · Kriging</div></div>
       <div class="proj"><h5>Universal OCR Platform — No-code OCR 建構平台（Side Project）<span class="when">2025 – 2026</span></h5>
-        <p>自助式平台：定義欄位與 Prompt、執行 7 步驟 OCR → LLM 流程、一鍵部署為 REST API；支援多檔案聯合提取；三種雲端部署架構。</p>
-        <div class="stack">FastAPI · React 19 · PostgreSQL / Supabase · Cloud Run · Firebase Hosting · Docker</div></div>
+        <p>定義欄位與 Prompt、執行 7 步驟 OCR → LLM 流程、一鍵部署為 REST API；三種雲端架構（FastAPI · React 19 · Supabase · Cloud Run）。</p></div>
     </section>
 
-    <section>
-      <h2>論文與專利</h2>
-      <p class="pub">Chou, C.-Y., <b>Chang, S.-C.</b>, et al. (2023). Development of AIoT system for facility asparagus cultivation. <i>Computers and Electronics in Agriculture</i>, 206:107665.（共同第一作者，與指導教授並列）</p>
-      <p class="pub"><b>Chang, S.-C.</b>, et al. (2022). AIoT based pest counting system for asparagus cultivation. <i>Proc. 10th ISMAB</i>.</p>
-      <p class="pub">中華民國發明專利 TW I842416 B — 作物採收機，2024 年 5 月核准。</p>
-    </section>
   </main>
 </div>
 
@@ -342,3 +430,4 @@
 </script>
 </body>
 </html>
+
