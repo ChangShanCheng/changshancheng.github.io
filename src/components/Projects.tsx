@@ -95,16 +95,16 @@ const projectsData: Project[] = [
   {
     id: 5,
     title: 'APO-OCR：Prompt 自動優化引擎',
-    period: '2026/03 – 2026/09',
+    period: '2026/03 – 上線前驗證中',
     category: 'Document AI',
-    description: '設計「Golden Set + 純程式碼驗證器 + Coach LLM + 熔斷治理」的迴圈架構，讓 Prompt 自動迭代到達標；我先完成引擎、已可用來優化既有 OCR 的 prompt，再指導實習生延伸實作。',
-    metric: '$1.44 · 2 輪迭代 · 保留測試集 8/8',
-    technologies: ['Python', 'Azure OpenAI', 'Loop Engineering', 'Golden Set', 'Validator'],
+    description: '幫團隊打造的內部工具：有 OCR 專案的成員接上既有流程，就能用自己的黃金測試集自動把 Prompt 調到達標。架構是「Golden Set + 純程式碼驗證器 + Coach LLM + 熔斷治理」；目前在開放給大家用之前做驗證。',
+    metric: '給團隊 OCR 專案共用 · 上線前驗證中',
+    technologies: ['Python', 'Gemini', 'Loop Engineering', 'Golden Set', 'Validator'],
     highlights: [
-      '32 張發票 golden set 切 24 訓練／8 保留並排除 3 種資料洩漏；LLM 只有提案權、評分全由純程式碼逐欄位比對',
+      'LLM 只有提案權、評分全由純程式碼逐欄位比對',
+      '目前以 32 張臺灣發票黃金集驗證中，確認後開放給團隊',
       '達標 / 圈數 / 預算三重熔斷，避免無限震盪',
-      '引擎與 OCR API 僅透過 HTTP 溝通，換單據只需換測試集',
-      '自動產出的 Prompt 比人工版短 35%，與資深工程師手調版同分',
+      '引擎與各 OCR 專案只透過 HTTP 或命令列溝通，換單據只需換測試集，引擎不用改',
     ],
   },
   {
