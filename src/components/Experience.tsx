@@ -14,7 +14,7 @@ const experiences: (ExperienceItem & { icon: typeof Building2; tone: string })[]
       '企業大腦 AI 數據分析平台（系統架構設計、主要開發）：BML 產線每天在用，取代外購 AutoML（兩年免採購 415 萬）；把 6 支 n8n 流程與 StatRecipe 收斂成一個 skill，同事只給計算邏輯即可共用，6 支流程零斷線切換。',
       '文件 AI（OCR + LLM）：從零建立公司平台，每套以人工標註測試集驗收——報價單效期 51% → 100%（29 份）、發票 31/32 與 31/31、健檢欄位級 97.4%（42 份 × 46 欄）；設計 APO-OCR 自動調 prompt，指導實習生上線（保留集 8/8）。',
       '供應商問卷管理系統（GCP）：52 個 API、4.5 個月獨立完成並上線，已交接。',
-      'ESG 碳管理平台：匯入改網頁上傳並交接同事；API 104 → 42 支、資料表 13 → 8，輸出逐筆比對不變。',
+      'ESG 碳管理平台：匯入改網頁上傳並交接同事；後端單檔拆成每頁一個模組（API 104 → 42 支）、前端逐廠複製的圖表合成共用元件（219 → 51 檔），輸出逐筆比對不變。',
       '發票與健檢三套系統每年節省 1,572 人時、有形效益約 99 萬元；ChatGPT Team 課程助教（67 位學員）。',
     ],
     tags: ['Agent Harness', 'MCP', 'Gemini', 'Azure OpenAI', 'FastAPI', 'Docker', 'Neo4j', 'pgvector', 'React', 'GCP'],
