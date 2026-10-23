@@ -176,7 +176,7 @@
             <ul>
               <li><b>Pluggable architecture</b> — designed the platform so analysis methods and ML models built by teammates plug in as skills, with no platform changes; Excel uploads, the API and 6 scheduled flows all call the same skill. Skills use Claude Code's format, so teammates build and test in Claude Code and deploy unchanged. Code computes the statistics and the LLM only writes the interpretation, so a failed LLM call never blocks the numbers.</li>
               <li><b>Migration &amp; verification</b> — 6 n8n workflows (~550 nodes) → 1 skill + 7 code flows, checked against the old output (record counts, live replays, byte-identical PDF reports) before cutover.</li>
-              <li><b>Knowledge loop</b> — engineers annotate analysis results with their experience → AI checks them against existing knowledge → a reviewer approves → knowledge graph. Chat Q&amp;A opens once the knowledge base is mature.</li>
+              <li><b>Knowledge loop</b> — engineers annotate analysis results with their experience → AI checks them against existing knowledge → a reviewer approves → knowledge graph, which already holds the 6 OCAP defect-handling flows I built. Chat Q&amp;A opens once the knowledge base is mature.</li>
               <li><b>Reliability &amp; safety</b> — long conversations are auto-summarized to stay within the model's limit; failed tools are retried and the error goes back to the model to try another way; at most 10 tool calls per question to prevent loops. Each role sees only its allowed tools, company rules (e.g. never read secret files) are enforced in code rather than prompt wording, code runs in a resource-limited sandbox, and every action is written to a tamper-proof audit log.</li>
             </ul>
           </li>
@@ -280,7 +280,7 @@
             <ul>
               <li><b>可插拔架構</b> — 設計成同事開發的分析方法與機器學習模型以 skill 形式掛上平台即可使用，不必改平台；使用者上傳 Excel、對外 API 與 6 支排程都呼叫同一個 skill。skill 格式與 Claude Code 相同，同事在 Claude Code 開發測試後可原封不動搬上平台。統計由程式計算，LLM 只依統計結果撰寫判讀，LLM 失敗也不影響數據。</li>
               <li><b>遷移與驗證</b> — 6 支 n8n 流程（約 550 個節點）收斂為 1 個 skill + 7 支程式化 flow，切換前逐一與舊流程比對（筆數、實際重跑、PDF 報表逐 byte 相同）。</li>
-              <li><b>知識迴圈</b> — 工程師在分析結果標註經驗 → AI 比對既有知識 → 審核通過 → 寫入知識圖譜；知識庫成熟後再開放 chat 問答。</li>
+              <li><b>知識迴圈</b> — 工程師在分析結果標註經驗 → AI 比對既有知識 → 審核通過 → 寫入知識圖譜（已收錄我建的 6 支 OCAP 缺陷處理流程）；知識庫成熟後再開放 chat 問答。</li>
               <li><b>穩定與安全</b> — 對話太長時自動摘要舊內容，避免超出模型上限；工具失敗會重試，並把錯誤告訴模型讓它換做法；每題最多呼叫 10 次工具，避免無限循環。依角色限定可用工具；公司規定（如不得讀取機密檔）由程式強制擋下，不靠 prompt 叮嚀；程式碼在限制資源的沙盒執行；每次操作寫入不可修改的稽核紀錄。</li>
             </ul>
           </li>
