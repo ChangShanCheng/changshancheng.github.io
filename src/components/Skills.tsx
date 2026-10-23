@@ -11,13 +11,13 @@ const groups: SkillGroup[] = [
   { category: 'Backend', items: ['Python', 'FastAPI', 'Flask', 'Node.js', 'Express', 'REST', 'Server-Sent Events', 'WebSocket'] },
   { category: 'Frontend', items: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'Recharts', 'React Query'] },
   { category: 'Cloud & DevOps', items: ['Docker', 'GCP', 'Firebase Hosting', 'Cloud Functions', 'Cloud Run', 'Supabase', 'Azure AI', 'IIS', 'Git', 'n8n', 'Vitest', 'Playwright', 'Sentry'] },
-  { category: 'Security', items: ['AES-256-GCM', 'JWT', 'AD / LDAP', 'Microsoft Entra ID OAuth', 'RBAC', 'ISO 27001 稽核日誌'] },
+  { category: 'Security', items: ['AES-256-GCM', 'JWT', 'AD / LDAP', 'Microsoft Entra ID OAuth', 'RBAC', 'ISO 27001 規範設計'] },
 ];
 
 const specialties = [
   { icon: ScanText, tone: 'brand', title: 'Document AI（OCR + LLM）', desc: 'Azure Document Intelligence 結合 LLM 結構化提取，報價單、發票、健檢報告等系統上線，每套都先以人工標註測試集評分。' },
   { icon: Brain, tone: 'lav', title: 'LLM Agent 與知識庫', desc: '設計可插拔、仿 Claude Code 的 skill 架構，讓同事的分析方法掛上；Docker 沙盒執行；從 OCAP 與使用者回饋建立文字知識庫。' },
-  { icon: ShieldCheck, tone: 'sage', title: '企業級系統交付', desc: 'AES-256-GCM 加密、AD / Entra ID 登入、RBAC 與稽核日誌，符合 ISO 27001；Docker 與 GCP 雲端部署。' },
+  { icon: ShieldCheck, tone: 'sage', title: '企業級系統交付', desc: 'AES-256-GCM 加密、AD / Entra ID 登入、RBAC 與稽核日誌，依 ISO 27001 設計；Docker 與 GCP 雲端部署。' },
 ];
 
 const credentials = [

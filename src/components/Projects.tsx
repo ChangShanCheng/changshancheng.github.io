@@ -82,7 +82,7 @@ const projectsData: Project[] = [
     title: '新人健檢報告 OCR 平台',
     period: '2025/06 – 2025/09 上線',
     category: 'Document AI',
-    description: '人資新人健檢報告自動建檔的獨立系統：48 項健檢欄位提取、AI 校正、醫師評估建議，並符合 ISO 27001 機密資料規範。',
+    description: '人資新人健檢報告自動建檔的獨立系統：48 項健檢欄位提取、AI 校正、醫師評估建議，並依 ISO 27001 機密資料規範設計。',
     metric: '欄位級 97.4%（42 份 × 46 欄位）· 已處理 216+ 份',
     technologies: ['FastAPI', 'React', 'Azure OpenAI', 'SQL Server', 'AES-256-GCM', 'JWT', 'LDAP'],
     highlights: [
@@ -97,7 +97,7 @@ const projectsData: Project[] = [
     title: 'APO-OCR：Prompt 自動優化引擎',
     period: '2026/03 – 2026/09',
     category: 'Document AI',
-    description: '設計「Golden Set + 純程式碼驗證器 + Coach LLM + 熔斷治理」的迴圈架構，讓 Prompt 自動迭代到達標；指導實習生實作並交接上線。',
+    description: '設計「Golden Set + 純程式碼驗證器 + Coach LLM + 熔斷治理」的迴圈架構，讓 Prompt 自動迭代到達標；我先完成引擎、已可用來優化既有 OCR 的 prompt，再指導實習生延伸實作。',
     metric: '$1.44 · 2 輪迭代 · 保留測試集 8/8',
     technologies: ['Python', 'Azure OpenAI', 'Loop Engineering', 'Golden Set', 'Validator'],
     highlights: [
@@ -142,12 +142,12 @@ const projectsData: Project[] = [
     title: 'ESG 碳管理平台重構與交接',
     period: '2025/12 – 2026/10 重構上線',
     category: 'Cloud & Web',
-    description: '接手既有 ESG 碳排看板：每月匯入原本只能在個人電腦跑腳本、出錯只有開發者能處理；改成網頁上傳並交給同事自己操作，同時把前後端整理到好維護。',
+    description: '接手既有 ESG 碳排看板：每月匯入原本只能在個人電腦跑腳本、出錯只有開發者能處理；改成網頁上傳並交給使用單位自己操作，同時把前後端整理到好維護。',
     metric: 'API 104 → 42 支 · 資料表 13 → 8 · 前端 219 → 51 檔 · 主機 5 → 1 台',
     technologies: ['Flask', 'React', 'SQL Server', 'IIS', '模組化', '資料驗證', '回歸比對'],
     highlights: [
       '網頁上傳：依內容自動辨識資料類型、擋下放錯檔與錯月份，不必再改檔名',
-      '權限統一成一張表＋權限管理頁，同事可自己加人、停用、設上傳權限',
+      '權限統一成一張表＋權限管理頁，使用單位可自己加人、停用、設上傳權限',
       '後端模組化：9,977 行單檔拆成每頁一個模組（首頁、溫室氣體、碳排、熱點、能源、登入）＋共用核心；同型查詢收斂成共用函式，刪掉 IIS log 顯示沒人用的 API（104 → 42 支）',
       '前端整理：55 個逐廠複製的圖表檔合成 5 個共用元件，刪除到不了的檔案（219 → 51 檔），打包變小',
       '每一步都以 API 逐筆重放、57 張圖像素比對證明輸出不變，看板切換不中斷',
