@@ -16,7 +16,7 @@ const projectsData: Project[] = [
       { title: '整理成統一格式', desc: 'analysis_input.v1 JSON，先驗格式，錯了告訴你怎麼修' },
       { title: 'sensor-analysis skill', desc: '同事的分析方法掛成模組，analysis.py all 一行全跑', mine: true },
       { title: '程式算 → LLM 寫', desc: '統計、圖表、Excel 由程式產；LLM 只寫判讀文字' },
-      { title: '回饋變知識', desc: '工程師標註 → 審核 → 知識圖譜' },
+      { title: '回饋變知識', desc: '工程師標註結果 → 審核後進知識庫' },
     ],
     flowCaption: '資料進來 → 分析 → 累積成知識；紫框是我設計的共用 skill',
     compare: {
@@ -29,14 +29,21 @@ const projectsData: Project[] = [
         ['切換驗證', '—', 'Excel 報表與舊信 9/9 逐格一致、PDF 逐 byte 相同'],
       ],
     },
-    technologies: ['FastAPI', 'Gemini Function Calling', 'MCP', 'PostgreSQL + pgvector', 'Neo4j', 'Docker', 'React', 'n8n → Skills'],
+    roadmap: [
+      { title: '① 分析平台', desc: '已上線，BML 產線每天在用', status: 'done' },
+      { title: '② K1 OCAP 知識庫', desc: '文字知識庫，收錄我建的 6 支缺陷處理流程', status: 'now' },
+      { title: '③ K2 回饋知識庫', desc: '工程師標註 → AI 比對既有知識 → 審核入庫', status: 'now' },
+      { title: '④ chat 核心', desc: '之後做；同時評估文字知識庫是否轉成知識圖譜', status: 'next' },
+    ],
+    roadmapCaption: '路線圖：目前在 ②③ 收集知識；chat 的上下文管理、MCP、知識圖譜都還是原型（PoC），沙盒已用在分析，之後也給 chat 跑程式',
+    technologies: ['FastAPI', 'Azure OpenAI', 'Docker 沙盒', 'PostgreSQL + pgvector', 'React', 'n8n → Skills', 'Gemini Function Calling（原型）', 'MCP（原型）'],
     highlights: [
       '資料怎麼進來：各資料源自己整理成統一格式（資料整理不進 skill），skill 先驗格式、錯了回傳修法，再跑分析；產出圖表資料、Excel 報表與判讀文字',
       '仿 Claude Code：skill 目錄（SKILL.md）與權限檔（deny 規則）格式和 Claude Code 相同，在 Claude Code 開發測試後原封不動上平台',
-      'LLM 怎麼呼叫 skill：提示裡只放 skill 名稱與用途；LLM 判斷需要時呼叫 Skill 工具載入完整說明，再用 Bash 在沙盒跑 skill 的腳本、Read 讀產出，跟 Claude Code 的做法一樣',
-      '為什麼分析改由程式呼叫：讓 LLM 自己跑分析時結果會飄，所以上傳、API、排程改成程式直接呼叫同一個 skill，LLM 只寫判讀、失敗也不影響數據；chat 留給知識問答',
-      '穩定與安全：長對話自動摘要、工具失敗重試並讓模型換做法、每題最多 10 次工具呼叫；依角色限權、規定由程式擋下、稽核紀錄不可改',
-      '知識迴圈：知識圖譜已收錄我建的 6 支 OCAP 缺陷處理流程；成熟後開放 chat 問答',
+      '沙盒：分析在 Docker 沙盒執行（移除權限、限 CPU／記憶體／時間），之後同一套沙盒也給 chat 跑程式',
+      'chat 原型（PoC）：仿 Claude Code，提示裡只放 skill 名稱與用途，LLM 需要時呼叫 Skill 工具載入說明，再用 Bash 在沙盒跑腳本、Read 讀產出',
+      '為什麼上線版由程式呼叫：原型裡讓 LLM 自己跑分析時結果會飄，所以上傳、API、排程改成程式直接呼叫同一個 skill，LLM 只寫判讀、失敗也不影響數據',
+      'chat 原型也做了長對話自動摘要、工具失敗重試等上下文與穩定機制，待知識庫成熟後再正式開發',
     ],
   },
   {
@@ -222,6 +229,16 @@ const Projects = () => {
                     ))}
                   </ol>
                   {p.flowCaption && <p className="arch-cap">{p.flowCaption}</p>}
+                </div>
+              )}
+              {p.roadmap && (
+                <div className="arch">
+                  <ol className="arch-flow road">
+                    {p.roadmap.map((f) => (
+                      <li key={f.title} className={f.status}><b>{f.title}</b><span>{f.desc}</span></li>
+                    ))}
+                  </ol>
+                  {p.roadmapCaption && <p className="arch-cap">{p.roadmapCaption}</p>}
                 </div>
               )}
               {p.compare && (

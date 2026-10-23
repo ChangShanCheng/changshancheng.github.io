@@ -11,6 +11,8 @@ export interface Project {
   metric?: string;
   flow?: { title: string; desc: string; mine?: boolean }[];
   flowCaption?: string;
+  roadmap?: { title: string; desc: string; status: 'done' | 'now' | 'next' }[];
+  roadmapCaption?: string;
   compare?: { head: [string, string, string]; rows: [string, string, string][] };
   github?: string;
   demo?: string;

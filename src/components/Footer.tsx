@@ -19,7 +19,7 @@ const Footer = () => {
                 <div className="ftitle">{profile.title}</div>
               </div>
             </div>
-            <p>專注於 Document AI、LLM Agent 與企業知識圖譜的 AI 應用工程師，把 AI 做成部門真的會用的系統。</p>
+            <p>專注於 Document AI、LLM Agent 與 AI 數據分析的 AI 應用工程師，把 AI 做成部門真的會用的系統。</p>
             <div className="footer-social">
               <a href={profile.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub"><GithubIcon size={18} /></a>
               <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><LinkedinIcon size={18} /></a>
@@ -38,7 +38,7 @@ const Footer = () => {
             <h4>專業領域</h4>
             <span>OCR + LLM 文件自動化</span>
             <span>LLM Agent / Harness Engineering</span>
-            <span>知識圖譜與 RAG</span>
+            <span>知識庫與 RAG</span>
             <span>全端與雲端系統交付</span>
           </div>
         </div>

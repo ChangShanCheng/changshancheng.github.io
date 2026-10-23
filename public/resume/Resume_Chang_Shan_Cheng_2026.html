@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
 <title>Shan-Cheng Chang (張善程) · Resume 2026</title>
-<meta name="description" content="Resume of Shan-Cheng Chang — AI Application Engineer (LLM Agent Engineering / Knowledge Graph / Document AI), BenQ Materials.">
+<meta name="description" content="Resume of Shan-Cheng Chang — AI Application Engineer (LLM Agent Engineering / AI Data Analytics / Document AI), BenQ Materials.">
 <style>
   :root{
     --lav-50:#F5F0F9; --lav-100:#ECE3F5; --lav-200:#D8C9E8; --lav-300:#C4AFDB; --lav-400:#A88BCB;
@@ -98,6 +98,9 @@
   .flow .st b{display:block;font-size:8.5pt;color:var(--lav-900);line-height:1.25}
   .flow .st span{display:block;font-size:7.7pt;color:var(--text-2);line-height:1.35;margin-top:1px}
   .cap{font-size:7.8pt;color:var(--muted);margin:0 0 1.8mm}
+  .flow.road .st,.flow.road .st:last-child{background:#fff;border:1px dashed var(--lav-200)}
+  .flow.road .st.ok{background:#EEF6F0;border:1px solid #cfe5d4}
+  .flow.road .st.on{background:var(--lav-100);border:1.5px solid var(--lav-500)}
   table.cmp{width:100%;border-collapse:collapse;font-size:8.7pt;margin:0 0 2.5mm;line-height:1.4}
   table.cmp th,table.cmp td{border-bottom:1px solid var(--line);padding:3px 6px;text-align:left;vertical-align:top}
   table.cmp th{background:var(--lav-50);color:var(--lav-700);font-weight:700}
@@ -145,7 +148,7 @@
     <div class="who">
       <div class="eyebrow"><span class="dot"></span>AI Application R&amp;D Engineer · BenQ Materials</div>
       <h1 class="name">Shan-Cheng Chang<small>張善程</small></h1>
-      <div class="title">LLM Agent Engineering · Knowledge Graph · Document AI</div>
+      <div class="title">LLM Agent Engineering · AI Data Analytics · Document AI</div>
       <ul class="contact">
         <li><span class="k">✉</span><a href="mailto:steven7962102@icloud.com">steven7962102@icloud.com</a></li>
         <li><span class="k">🌐</span><a href="https://changshancheng.github.io">changshancheng.github.io</a></li>
@@ -160,7 +163,7 @@
       <h3>Core Skills</h3>
       <div class="skillgroup"><b>Agent Engineering</b><div class="tags"><span class="tag">Agent Harness</span><span class="tag">Function Calling</span><span class="tag">MCP</span><span class="tag">Skills / Tools</span><span class="tag">Context Management</span><span class="tag">Sandboxing</span><span class="tag">RBAC / Audit Log</span></div></div>
       <div class="skillgroup"><b>Evaluation &amp; Validation</b><div class="tags"><span class="tag">Golden Set / Held-out</span><span class="tag">Code Validators</span><span class="tag">Regression Baseline</span><span class="tag">Failure Analysis</span></div></div>
-      <div class="skillgroup"><b>LLM &amp; Retrieval</b><div class="tags"><span class="tag">Gemini API</span><span class="tag">Azure OpenAI</span><span class="tag">Prompt Engineering</span><span class="tag">RAG</span><span class="tag">Knowledge Graph (Neo4j)</span><span class="tag">pgvector</span></div></div>
+      <div class="skillgroup"><b>LLM &amp; Retrieval</b><div class="tags"><span class="tag">Gemini API</span><span class="tag">Azure OpenAI</span><span class="tag">Prompt Engineering</span><span class="tag">RAG</span><span class="tag">Knowledge Graph (Neo4j, PoC)</span><span class="tag">pgvector</span></div></div>
       <div class="skillgroup"><b>Document AI / ML / CV</b><div class="tags"><span class="tag">Azure Document Intelligence</span><span class="tag">OCR + LLM Extraction</span><span class="tag">YOLOv8</span><span class="tag">PyTorch</span></div></div>
       <div class="skillgroup"><b>Backend &amp; Web</b><div class="tags"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">Node.js</span><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">PostgreSQL</span><span class="tag">SQL Server</span></div></div>
       <div class="skillgroup"><b>DevOps &amp; Tools</b><div class="tags"><span class="tag">Docker</span><span class="tag">GCP</span><span class="tag">Azure</span><span class="tag">Git</span><span class="tag">Claude Code</span></div></div>
@@ -186,13 +189,13 @@
         <div class="job-head"><h4>AI Application R&amp;D Engineer</h4><span class="when">Dec 2024 – Present</span></div>
         <div class="org">BenQ Materials Corp. (明基材料) · Digital Technology Center, Intelligent Application Dev. Sec. · Taoyuan</div>
         <ul>
-          <li><b>Enterprise Brain → AI data-analysis platform</b> (system architect &amp; lead developer) — used daily by the BML line, replacing a purchased AutoML package (<em>4.15M NTD / 2 yrs</em>); 6 flows cut over with zero downtime. FastAPI + Gemini + MCP, on-prem.
+          <li><b>Enterprise Brain → AI data-analysis platform</b> (system architect &amp; lead developer) — used daily by the BML line, replacing a purchased AutoML package (<em>4.15M NTD / 2 yrs</em>); 6 flows cut over with zero downtime. FastAPI + Azure OpenAI + Docker sandbox, on-prem.
             <div class="flow">
               <div class="st"><b>Data in</b><span>Excel upload · API · 6 schedules (7 sources)</span></div>
               <div class="st"><b>One input contract</b><span>validated, errors say how to fix</span></div>
               <div class="st me"><b>sensor-analysis skill</b><span>teammates' methods as modules, one command runs all</span></div>
               <div class="st"><b>Code computes → LLM explains</b><span>stats, charts, Excel by code; LLM writes the reading</span></div>
-              <div class="st"><b>Feedback → knowledge</b><span>annotate → review → graph (holds 6 OCAP flows I built)</span></div>
+              <div class="st"><b>Feedback → knowledge</b><span>engineer notes → reviewed into the knowledge base</span></div>
             </div>
             <p class="cap">Data → analysis → knowledge. Purple box: the shared skill I designed.</p>
             <table class="cmp">
@@ -204,10 +207,15 @@
               <tr><td>Cutover check</td><td>—</td><td>Excel 9/9 cell-identical to old emails; identical PDFs</td></tr>
             </table>
             <ul>
-              <li><b>Claude Code–style</b> — same skill and permission format, so skills tested in Claude Code move over unchanged. The prompt lists only skill names; the LLM calls a Skill tool to load one, Bash runs its scripts in a sandbox, Read returns results.</li>
-              <li><b>Why code calls it</b> — LLM-run analysis drifted, so all entry points call the skill in code; the LLM only interprets, and never blocks the numbers.</li>
-              <li><b>Reliability &amp; safety</b> — chats summarized, failed tools retried, ≤ 10 tool calls; role access, rules in code, tamper-proof audit log.</li>
+              <li><b>Claude Code–style</b> — same skill and permission format, so skills tested in Claude Code move over unchanged; analysis runs in a Docker sandbox (no privileges, CPU / memory / time caps) that chat will later reuse.</li>
+              <li><b>Why code calls it</b> — in the chat prototype, LLM-run analysis drifted; in production, entry points call the skill in code and the LLM only interprets.</li>
             </ul>
+            <div class="flow road">
+              <div class="st ok"><b>① Analysis</b><span>live, used daily</span></div>
+              <div class="st on"><b>② K1 OCAP · now</b><span>my 6 defect flows</span></div>
+              <div class="st on"><b>③ K2 feedback · now</b><span>notes → review</span></div>
+              <div class="st"><b>④ Chat</b><span>next; MCP, graph prototyped</span></div>
+            </div>
           </li>
         </ul>
       </div>
@@ -284,7 +292,7 @@
     <div class="who">
       <div class="eyebrow"><span class="dot"></span>AI 應用研發工程師 · 明基材料</div>
       <h1 class="name">張善程<small>Shan-Cheng Chang</small></h1>
-      <div class="title">LLM Agent 工程 · 知識圖譜 · 文件 AI</div>
+      <div class="title">LLM Agent 工程 · AI 數據分析 · 文件 AI</div>
       <ul class="contact">
         <li><span class="k">✉</span><a href="mailto:steven7962102@icloud.com">steven7962102@icloud.com</a></li>
         <li><span class="k">🌐</span><a href="https://changshancheng.github.io">changshancheng.github.io</a></li>
@@ -299,7 +307,7 @@
       <h3>核心技能</h3>
       <div class="skillgroup"><b>Agent 工程</b><div class="tags"><span class="tag">Agent Harness</span><span class="tag">Function Calling</span><span class="tag">MCP</span><span class="tag">Skills / Tools</span><span class="tag">上下文管理</span><span class="tag">沙盒執行</span><span class="tag">RBAC / 稽核日誌</span></div></div>
       <div class="skillgroup"><b>評估與驗證</b><div class="tags"><span class="tag">Golden Set / 保留測試集</span><span class="tag">程式碼驗證器</span><span class="tag">回歸基準</span><span class="tag">失敗案例分析</span></div></div>
-      <div class="skillgroup"><b>LLM 與檢索</b><div class="tags"><span class="tag">Gemini API</span><span class="tag">Azure OpenAI</span><span class="tag">Prompt Engineering</span><span class="tag">RAG</span><span class="tag">知識圖譜 (Neo4j)</span><span class="tag">pgvector</span></div></div>
+      <div class="skillgroup"><b>LLM 與檢索</b><div class="tags"><span class="tag">Gemini API</span><span class="tag">Azure OpenAI</span><span class="tag">Prompt Engineering</span><span class="tag">RAG</span><span class="tag">知識圖譜 (Neo4j，PoC)</span><span class="tag">pgvector</span></div></div>
       <div class="skillgroup"><b>文件 AI / ML / 電腦視覺</b><div class="tags"><span class="tag">Azure Document Intelligence</span><span class="tag">OCR + LLM 結構化提取</span><span class="tag">YOLOv8</span><span class="tag">PyTorch</span></div></div>
       <div class="skillgroup"><b>後端與網頁</b><div class="tags"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">Node.js</span><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">PostgreSQL</span><span class="tag">SQL Server</span></div></div>
       <div class="skillgroup"><b>DevOps 與工具</b><div class="tags"><span class="tag">Docker</span><span class="tag">GCP</span><span class="tag">Azure</span><span class="tag">Git</span><span class="tag">Claude Code</span></div></div>
@@ -325,13 +333,13 @@
         <div class="job-head"><h4>AI 應用研發工程師</h4><span class="when">2024/12 – 至今</span></div>
         <div class="org">明基材料股份有限公司 · 數位技術中心智慧應用部智慧應用開發課 · 桃園</div>
         <ul>
-          <li><b>企業大腦 → AI 數據分析平台</b>（系統架構設計、主要開發者）— BML 產線每天在用，取代外購 AutoML（<em>兩年免採購 415 萬</em>）；6 支流程零斷線切換。FastAPI + Gemini + MCP，資料不出內網。
+          <li><b>企業大腦 → AI 數據分析平台</b>（系統架構設計、主要開發者）— BML 產線每天在用，取代外購 AutoML（<em>兩年免採購 415 萬</em>）；6 支流程零斷線切換。FastAPI + Azure OpenAI + Docker 沙盒，資料不出內網。
             <div class="flow">
               <div class="st"><b>資料進來</b><span>上傳 Excel · 對外 API · 6 支排程（7 種資料源）</span></div>
               <div class="st"><b>整理成統一格式</b><span>先驗格式，錯了告訴你怎麼修</span></div>
               <div class="st me"><b>sensor-analysis skill</b><span>同事的分析方法掛成模組，一行指令全跑</span></div>
               <div class="st"><b>程式算 → LLM 寫</b><span>統計、圖表、Excel 由程式產；LLM 只寫判讀</span></div>
-              <div class="st"><b>回饋變知識</b><span>工程師標註 → 審核 → 知識圖譜</span></div>
+              <div class="st"><b>回饋變知識</b><span>工程師標註結果 → 審核後進知識庫</span></div>
             </div>
             <p class="cap">圖：資料進來 → 分析 → 累積成知識；紫框是我設計的共用 skill。</p>
             <table class="cmp">
@@ -343,11 +351,16 @@
               <tr><td>切換驗證</td><td>—</td><td>Excel 9/9 逐格一致、PDF 相同</td></tr>
             </table>
             <ul>
-              <li><b>仿 Claude Code</b> — skill 與權限檔格式和 Claude Code 相同，在 Claude Code 開發測試後原封不動上平台。提示裡只放 skill 清單；LLM 判斷需要時呼叫 Skill 工具載入說明，再用 Bash 在沙盒跑腳本、Read 讀結果。</li>
-              <li><b>為什麼分析改由程式呼叫</b> — 讓 LLM 自己跑分析時結果會飄，所以上傳、API、排程改成程式直接呼叫同一個 skill，LLM 只寫判讀，失敗也不影響數據；chat 留給知識問答。</li>
-              <li><b>穩定與安全</b> — 長對話自動摘要、工具失敗重試並讓模型換做法、每題最多 10 次工具呼叫；依角色限權、公司規定由程式擋下、稽核紀錄不可改。</li>
-              <li><b>知識迴圈</b> — 知識圖譜已收錄我建的 6 支 OCAP 缺陷處理流程；成熟後開放 chat 問答。</li>
+              <li><b>仿 Claude Code</b> — skill 與權限檔格式和 Claude Code 相同，在 Claude Code 開發測試後原封不動上平台；分析在 Docker 沙盒執行（移除權限、限 CPU／記憶體／時間），之後同一套沙盒也給 chat 跑程式。</li>
+              <li><b>為什麼由程式呼叫</b> — chat 原型裡讓 LLM 自己載入 skill 跑分析，結果會飄；上線版改由上傳、API、排程用程式直接呼叫，LLM 只寫判讀，失敗也不影響數據。</li>
             </ul>
+            <div class="flow road">
+              <div class="st ok"><b>① 分析平台</b><span>已上線，產線每天在用</span></div>
+              <div class="st on"><b>② K1 OCAP 知識庫</b><span>文字知識庫，收錄我建的 6 支缺陷處理流程</span></div>
+              <div class="st on"><b>③ K2 回饋知識庫</b><span>工程師標註 → AI 比對 → 審核入庫</span></div>
+              <div class="st"><b>④ chat 核心</b><span>之後做；評估知識庫是否轉成知識圖譜</span></div>
+            </div>
+            <p class="cap">圖：路線圖，目前在 ②③ 收集知識；chat 的上下文管理、MCP、知識圖譜仍是原型。</p>
           </li>
         </ul>
       </div>
