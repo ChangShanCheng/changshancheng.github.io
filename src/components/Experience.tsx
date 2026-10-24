@@ -56,7 +56,7 @@ const Experience = () => {
         <div className="section-head reveal">
           <div className="eyebrow">Experience</div>
           <h2>工作經歷</h2>
-          <p>兩年製造業 AI 落地經驗，從文件 AI 一路做到產線 AI 數據分析平台。</p>
+          <p>近兩年製造業 AI 落地經驗，從文件 AI 一路做到產線 AI 數據分析平台。</p>
         </div>
 
         <div className="timeline">

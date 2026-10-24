@@ -167,8 +167,8 @@
       <div class="skillgroup"><b>Evaluation &amp; Validation</b><div class="tags"><span class="tag">Golden Set</span><span class="tag">Code Validators</span></div></div>
       <div class="skillgroup"><b>LLM</b><div class="tags"><span class="tag">Azure OpenAI</span><span class="tag">Gemini API</span><span class="tag">Prompt Engineering</span><span class="tag">APO</span></div></div>
       <div class="skillgroup"><b>Document AI / ML / CV</b><div class="tags"><span class="tag">Azure Document Intelligence</span><span class="tag">OCR + LLM Extraction</span><span class="tag">YOLOv8</span><span class="tag">PyTorch</span></div></div>
-      <div class="skillgroup"><b>Backend &amp; Web</b><div class="tags"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">Node.js</span><span class="tag">React</span><span class="tag">JavaScript</span><span class="tag">PostgreSQL</span><span class="tag">SQL Server</span></div></div>
-      <div class="skillgroup"><b>DevOps &amp; Tools</b><div class="tags"><span class="tag">Docker</span><span class="tag">GCP</span><span class="tag">Azure</span><span class="tag">Git</span><span class="tag">Claude Code</span></div></div>
+      <div class="skillgroup"><b>Backend &amp; Web</b><div class="tags"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">Node.js</span><span class="tag">React</span><span class="tag">JavaScript / TypeScript</span><span class="tag">PostgreSQL</span><span class="tag">SQL Server</span></div></div>
+      <div class="skillgroup"><b>DevOps &amp; Tools</b><div class="tags"><span class="tag">Docker</span><span class="tag">GCP</span><span class="tag">Azure</span><span class="tag">Git</span><span class="tag">n8n</span><span class="tag">Claude Code</span></div></div>
       <div class="skillgroup"><b>Security</b><div class="tags"><span class="tag">AES-256-GCM</span><span class="tag">JWT</span><span class="tag">AD / Entra ID</span><span class="tag">ISO 27001-aligned</span></div></div>
     </section>
     <section>
@@ -191,7 +191,7 @@
         <div class="job-head"><h4>AI Application R&amp;D Engineer</h4><span class="when">Dec 2024 – Present</span></div>
         <div class="org">BenQ Materials Corp. (明基材料) · Digital Technology Center, Intelligent Application Dev. Sec. · Taoyuan</div>
         <ul>
-          <li><b>Enterprise Brain → AI data-analysis platform</b> (system architect &amp; lead developer) — used daily by the BML line, replacing a purchased AutoML package (<em>4.15M NTD / 2 yrs</em>); 6 flows cut over with zero downtime. FastAPI + Azure OpenAI + Docker sandbox, on-prem.
+          <li><b>Enterprise Brain → AI data-analysis platform</b> (system architect &amp; lead developer) — used daily by the BML line, replacing a purchased AutoML package (<em>4.15M NTD / 2 yrs</em>); 6 flows cut over with zero downtime. FastAPI + Azure OpenAI (company-hosted API) + Docker sandbox.
             <div class="flow">
               <div class="st"><b>Data in</b><span>upload · API · 6 schedules</span></div>
               <div class="st"><b>One format</b><span>validated, with fix hints</span></div>
@@ -257,6 +257,7 @@
         <ul style="margin-top:2mm">
           <li><b>Google Cloud Platform — supplier questionnaire management system</b> (live) — 52 APIs, built solo in 4.5 months, handed over; React 19 + Cloud Functions + Entra ID.</li>
           <li><b>ESG carbon platform refactor &amp; handover</b> — import moved to a web upload run by the user department; backend split into one module per page (APIs 104 → 42), 55 copy-pasted chart files merged into 5 shared components; every step verified output-identical.</li>
+          <li><b>Teaching assistant</b>, company ChatGPT Team course (67 learners).</li>
         </ul>
       </div>
       <div class="job">
@@ -269,11 +270,21 @@
       </div>
     </section>
     <section>
+      <h2>How Each System Was Validated</h2>
+      <table class="cmp">
+        <tr><th>System</th><th>Method</th><th>Evidence</th></tr>
+        <tr><td>4 OCR systems</td><td>hand-labelled golden set; scored field-by-field in code (LLM only proposes)</td><td>29 quotations · 32 / 31 invoices · 42 × 46 health fields</td></tr>
+        <tr><td>n8n → skill migration</td><td>old vs. new output on the same inputs</td><td>Excel 9/9 cells identical; PDFs byte-identical</td></tr>
+        <tr><td>ESG refactor</td><td>API-by-API replay + pixel diff of charts after every step</td><td>57 charts identical; dashboard never down</td></tr>
+        <tr><td>Analysis platform (live)</td><td>engineers label each result; reviewed into the knowledge base</td><td>feedback loop running on the BML line</td></tr>
+      </table>
+    </section>
+    <section>
       <h2>Research &amp; Selected Projects</h2>
       <div class="proj"><h5>AIoT Pest Monitoring &amp; Bee Pollination (M.S. thesis, NTU) <span class="when">2021 – 2023</span></h5>
         <p>Lead developer of greenhouse AIoT systems: bee tracking <em>99.5% mAP</em>, pest counting <em>95.8%</em> (YOLOv8, StrongSORT, Mask R-CNN).</p></div>
       <div class="proj"><h5>Universal OCR Platform — no-code OCR builder (side project) <span class="when">2025 – 2026</span></h5>
-        <p>Define fields and prompts, deploy as an OCR REST API in one click (FastAPI · React · Cloud Run).</p></div>
+        <p>Define fields and prompts, deploy as an OCR REST API in one click (FastAPI · React · Cloud Run); includes a Claude MCP integration that profiles a document and drafts the workflow.</p></div>
     </section>
 
   </main>
@@ -303,8 +314,8 @@
       <div class="skillgroup"><b>評估與驗證</b><div class="tags"><span class="tag">Golden Set 黃金測試集</span><span class="tag">程式碼驗證器</span></div></div>
       <div class="skillgroup"><b>LLM</b><div class="tags"><span class="tag">Azure OpenAI</span><span class="tag">Gemini API</span><span class="tag">Prompt Engineering</span><span class="tag">Prompt 自動優化 (APO)</span></div></div>
       <div class="skillgroup"><b>文件 AI / ML / 電腦視覺</b><div class="tags"><span class="tag">Azure Document Intelligence</span><span class="tag">OCR + LLM 結構化提取</span><span class="tag">YOLOv8</span><span class="tag">PyTorch</span></div></div>
-      <div class="skillgroup"><b>後端與網頁</b><div class="tags"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">Node.js</span><span class="tag">React</span><span class="tag">JavaScript</span><span class="tag">PostgreSQL</span><span class="tag">SQL Server</span></div></div>
-      <div class="skillgroup"><b>DevOps 與工具</b><div class="tags"><span class="tag">Docker</span><span class="tag">GCP</span><span class="tag">Azure</span><span class="tag">Git</span><span class="tag">Claude Code</span></div></div>
+      <div class="skillgroup"><b>後端與網頁</b><div class="tags"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">Node.js</span><span class="tag">React</span><span class="tag">JavaScript / TypeScript</span><span class="tag">PostgreSQL</span><span class="tag">SQL Server</span></div></div>
+      <div class="skillgroup"><b>DevOps 與工具</b><div class="tags"><span class="tag">Docker</span><span class="tag">GCP</span><span class="tag">Azure</span><span class="tag">Git</span><span class="tag">n8n</span><span class="tag">Claude Code</span></div></div>
       <div class="skillgroup"><b>資安</b><div class="tags"><span class="tag">AES-256-GCM</span><span class="tag">JWT</span><span class="tag">AD / Entra ID</span><span class="tag">ISO 27001 規範設計</span></div></div>
     </section>
     <section>
@@ -394,6 +405,7 @@
         <ul style="margin-top:2mm">
           <li><b>Google Cloud Platform — 供應商問卷管理系統</b>（已上線）— 52 個 API、4.5 個月獨立完成，已交接；React 19 + Cloud Functions + Entra ID。</li>
           <li><b>ESG 碳管理平台重構與交接</b> — 匯入改網頁上傳並交給使用單位；後端單檔拆成每頁一個模組（API 104 → 42）、前端 55 個複製檔合成 5 個共用元件；每步逐筆比對，輸出不變。</li>
+          <li><b>ChatGPT Team 課程助教</b>（67 位學員）。</li>
         </ul>
       </div>
       <div class="job">
@@ -406,11 +418,21 @@
       </div>
     </section>
     <section>
+      <h2>每套系統怎麼驗證</h2>
+      <table class="cmp">
+        <tr><th>系統</th><th>方法</th><th>證據</th></tr>
+        <tr><td>4 套 OCR</td><td>人工標註 Golden Set，程式逐欄位比對評分（LLM 只提案）</td><td>報價單 29 份 · 發票 32／31 份 · 健檢 42 × 46 欄</td></tr>
+        <tr><td>n8n → skill 遷移</td><td>同一批輸入，新舊產出比對</td><td>Excel 9/9 逐格一致、PDF 逐 byte 相同</td></tr>
+        <tr><td>ESG 重構</td><td>每一步 API 逐筆重放、圖表像素比對</td><td>57 張圖一致，看板不中斷</td></tr>
+        <tr><td>分析平台（上線後）</td><td>工程師標註每次分析結果，審核後入知識庫</td><td>回饋迴圈在 BML 產線運作中</td></tr>
+      </table>
+    </section>
+    <section>
       <h2>研究與代表專案</h2>
       <div class="proj"><h5>AIoT 設施栽培害蟲監控與蜜蜂授粉優化（臺大碩士論文）<span class="when">2021 – 2023</span></h5>
         <p>溫室 AIoT 系統主要開發者：蜜蜂追蹤 <em>mAP 99.5%</em>、害蟲計數 <em>95.8%</em>（YOLOv8、StrongSORT、Mask R-CNN）。</p></div>
       <div class="proj"><h5>Universal OCR Platform — No-code OCR 建構平台（Side Project）<span class="when">2025 – 2026</span></h5>
-        <p>自訂欄位與 Prompt，一鍵部署成 OCR REST API（FastAPI · React · Cloud Run）。</p></div>
+        <p>自訂欄位與 Prompt，一鍵部署成 OCR REST API（FastAPI · React · Cloud Run）；含 Claude MCP 整合，自動分析文件特徵並協助建立工作流程。</p></div>
     </section>
 
   </main>

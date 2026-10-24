@@ -4,8 +4,8 @@ import './Hero.css';
 
 const STATS = [
   { icon: Coins, label: '兩年免外購 AutoML (NTD)', value: '415 萬', tone: 'lav' },
-  { icon: Target, label: '每年有形效益 (NTD)', value: '~100 萬', tone: 'sage' },
-  { icon: Clock, label: '每年節省人時', value: '1,500+', tone: 'amber' },
+  { icon: Target, label: '每年有形效益 (NTD · 3 套 OCR)', value: '~100 萬', tone: 'sage' },
+  { icon: Clock, label: '每年節省人時 (3 套 OCR)', value: '1,500+', tone: 'amber' },
   { icon: FileCheck2, label: '產線分析流程平台化', value: '6 支', tone: 'rose' },
 ];
 

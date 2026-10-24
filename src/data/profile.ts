@@ -3,7 +3,7 @@ export const profile = {
   nameZh: '張善程',
   nameEn: 'Shan-Cheng Chang',
   title: 'AI Application R&D Engineer',
-  tagline: 'LLM Agents · Knowledge Graph · Document AI',
+  tagline: 'LLM Agents · AI 數據分析 · Document AI',
   email: 'steven7962102@icloud.com',
   github: 'https://github.com/ChangShanCheng',
   linkedin: 'https://www.linkedin.com/in/shan-cheng-chang-897688274',

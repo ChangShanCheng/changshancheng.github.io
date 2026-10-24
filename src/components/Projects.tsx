@@ -82,7 +82,7 @@ const projectsData: Project[] = [
     title: '新人健檢報告 OCR 平台',
     period: '2025/06 – 2025/09 上線',
     category: 'Document AI',
-    description: '人資新人健檢報告自動建檔的獨立系統：48 項健檢欄位提取、AI 校正、醫師評估建議，並依 ISO 27001 機密資料規範設計。',
+    description: '人資新人健檢報告自動建檔的獨立系統：48 項健檢欄位提取（其中 46 欄納入測試）、AI 校正、醫師評估建議，並依 ISO 27001 機密資料規範設計。',
     metric: '欄位級 97.4%（42 份 × 46 欄位）· 已處理 216+ 份',
     technologies: ['FastAPI', 'React', 'Azure OpenAI', 'SQL Server', 'AES-256-GCM', 'JWT', 'LDAP'],
     highlights: [

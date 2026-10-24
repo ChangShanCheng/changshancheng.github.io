@@ -9,7 +9,7 @@ const groups: SkillGroup[] = [
   { category: 'Document AI / CV', items: ['Azure Document Intelligence', 'OCR + LLM 結構化提取', 'Bounding Box 可解釋化', 'OpenCV', 'YOLOv8', 'StrongSORT', 'Mask R-CNN', 'PyTorch'] },
   { category: 'Data & ML', items: ['SPC', 'Pandas', 'PostgreSQL', 'SQL Server', 'Firestore'] },
   { category: 'Backend', items: ['Python', 'FastAPI', 'Flask', 'Node.js', 'Express', 'REST', 'Server-Sent Events', 'WebSocket'] },
-  { category: 'Frontend', items: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'Recharts', 'React Query'] },
+  { category: 'Frontend', items: ['React', 'JavaScript / TypeScript', 'Vite', 'Tailwind CSS', 'Recharts', 'React Query'] },
   { category: 'Cloud & DevOps', items: ['Docker', 'GCP', 'Firebase Hosting', 'Cloud Functions', 'Cloud Run', 'Supabase', 'Azure AI', 'IIS', 'Git', 'n8n', 'Vitest', 'Playwright', 'Sentry'] },
   { category: 'Security', items: ['AES-256-GCM', 'JWT', 'AD / LDAP', 'Microsoft Entra ID OAuth', 'RBAC', 'ISO 27001 規範設計'] },
 ];
