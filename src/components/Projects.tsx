@@ -119,7 +119,7 @@ const projectsData: Project[] = [
       '預處理 → Document Intelligence → 多次 LLM 提取 → 結果選擇 → 欄位定位 → 標註圖 → 驗證',
       '多檔案聯合 OCR（2–5 份文件一次提取並標記來源）與多值欄位獨立定位',
       '三種部署架構：本地 PostgreSQL + SSE、Firestore + Firebase Hosting、Supabase Realtime + Cloud Run',
-      'Claude MCP 整合：自動分析文件特徵並協助建立工作流程',
+      '以 MCP 工具格式封裝文件分析：抽文件特徵（頁數、表格、關鍵字）→ LLM 分流到合適的 OCR 範本',
     ],
   },
   {
