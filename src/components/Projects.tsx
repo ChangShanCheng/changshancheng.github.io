@@ -9,7 +9,7 @@ const projectsData: Project[] = [
     title: '企業大腦：從 PoC 到產線 AI 數據分析平台',
     period: '2025/12 – 進行中',
     category: 'Agent & Analytics',
-    description: '系統架構設計與主要開發。BML 產線每天在用，取代外購 AutoML。原本散在 6 支 n8n 流程的分析和另一套獨立的統計分析，我收斂成一個仿 Claude Code 格式的 skill：同事只給計算邏輯，上傳、API、排程都呼叫同一個 skill。',
+    description: '系統架構設計與主要開發。偏光產線每天在用，取代外購 AutoML。原本散在 6 支 n8n 流程的分析和另一套獨立的統計分析，我收斂成一個仿 Claude Code 格式的 skill：同事只給計算邏輯，上傳、API、排程都呼叫同一個 skill。',
     metric: '免外購 415 萬／兩年 · 6 支產線流程平台化 · 零斷線切換',
     flow: [
       { title: '資料進來', desc: '上傳 Excel · 對外 API · 6 支排程，已接 7 種資料源' },
@@ -30,7 +30,7 @@ const projectsData: Project[] = [
       ],
     },
     roadmap: [
-      { title: '① 分析平台', desc: '已上線，BML 產線每天在用', status: 'done' },
+      { title: '① 分析平台', desc: '已上線，偏光產線每天在用', status: 'done' },
       { title: '② K1 OCAP 知識庫', desc: '文字知識庫，收錄我建的 6 支缺陷處理流程', status: 'now' },
       { title: '③ K2 回饋知識庫', desc: '工程師標註 → AI 比對既有知識 → 審核入庫', status: 'now' },
       { title: '④ chat 核心', desc: '之後做；同時評估文字知識庫是否轉成知識圖譜', status: 'next' },

@@ -3,134 +3,59 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
 <title>Shan-Cheng Chang (張善程) · Resume 2026</title>
-<meta name="description" content="Resume of Shan-Cheng Chang — AI Application Engineer (LLM Agent Engineering / AI Data Analytics / Document AI), BenQ Materials.">
+<meta name="description" content="Resume of Shan-Cheng Chang — AI Application R&D Engineer who ships LLM application systems to production, BenQ Materials.">
 <style>
-  :root{
-    --lav-50:#F5F0F9; --lav-100:#ECE3F5; --lav-200:#D8C9E8; --lav-300:#C4AFDB; --lav-400:#A88BCB;
-    --lav-500:#9D6FC0; --lav-600:#7B5BA6; --lav-700:#6B4A8E; --lav-900:#3D2B5C; --ink:#2A1F3D;
-    --text:#1e293b; --text-2:#475569; --muted:#64748b; --faint:#94a3b8; --line:#e2e8f0; --sage:#5C9E69;
-    --bg:#ffffff; --side:#F7F3FA;
-  }
+  :root{ --ink:#111; --text:#1a1a1a; --muted:#555; --line:#222; --rule:#999; }
   *{box-sizing:border-box}
-  html,body{margin:0;padding:0;background:#e9ecf1;color:var(--text);font-family:"Inter","Noto Sans TC",-apple-system,"Helvetica Neue",Arial,"PingFang TC","Microsoft JhengHei",sans-serif;font-size:10pt;line-height:1.5}
-  a{color:var(--lav-700);text-decoration:none}
-  .toolbar{position:sticky;top:0;z-index:10;background:var(--ink);color:#fff;padding:10px 16px;display:flex;gap:10px;align-items:center;justify-content:center;flex-wrap:wrap;font-size:13px}
-  .toolbar button{border:1px solid rgba(255,255,255,.35);background:transparent;color:#fff;padding:6px 14px;border-radius:8px;cursor:pointer;font-size:13px}
-  .toolbar button.active{background:linear-gradient(135deg,var(--lav-600),var(--lav-500));border-color:transparent}
+  html,body{margin:0;padding:0;background:#e9ecf1;color:var(--text);font-family:"Inter","Noto Sans TC",-apple-system,"Helvetica Neue",Arial,"PingFang TC","Microsoft JhengHei",sans-serif;font-size:9pt;line-height:1.28}
+  a{color:var(--text);text-decoration:none}
+  b{font-weight:700}
+  em{font-style:normal;font-weight:700}
+  .toolbar{position:sticky;top:0;z-index:10;background:#222;color:#fff;padding:10px 16px;display:flex;gap:10px;align-items:center;justify-content:center;flex-wrap:wrap;font-size:13px}
+  .toolbar button{border:1px solid rgba(255,255,255,.4);background:transparent;color:#fff;padding:6px 14px;border-radius:6px;cursor:pointer;font-size:13px}
+  .toolbar button.active{background:#fff;color:#222;border-color:#fff}
   .toolbar .hint{color:#c9ced6}
-  .page{width:210mm;min-height:297mm;margin:18px auto;background:var(--bg);box-shadow:0 2px 18px rgba(0,0,0,.12);display:grid;grid-template-columns:62mm 1fr;grid-template-rows:auto 1fr}
-  /* header band = website hero */
-  .top{grid-column:1/3;position:relative;overflow:hidden;color:#fff;padding:6mm 9mm 5.5mm;background:linear-gradient(135deg,#2A1F3D 0%,#3D2B5C 45%,#6B4A8E 100%);display:flex;align-items:center;gap:8mm}
-  .top .glow{position:absolute;border-radius:50%;pointer-events:none}
-  .top .glow.a{top:-40mm;left:-20mm;width:80mm;height:80mm;background:radial-gradient(circle,rgba(157,111,192,.45),transparent 70%)}
-  .top .glow.b{bottom:-45mm;right:-15mm;width:90mm;height:90mm;background:radial-gradient(circle,rgba(123,91,166,.4),transparent 70%)}
-  .top .who{position:relative;flex:1;min-width:0}
-  .eyebrow{display:inline-flex;align-items:center;gap:6px;padding:2px 9px;border-radius:999px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);font-size:7.6pt;font-weight:600;letter-spacing:.04em;margin-bottom:2.2mm}
-  .eyebrow .dot{width:6px;height:6px;border-radius:50%;background:#7ee2a8;box-shadow:0 0 0 3px rgba(126,226,168,.25)}
-  .name{font-size:20pt;font-weight:800;letter-spacing:-.01em;margin:0;line-height:1.05;color:#fff}
-  .name small{display:inline;font-size:10pt;font-weight:600;color:#DCCBEB;margin-left:8px;letter-spacing:.02em}
-  .title{font-size:9.5pt;color:#E9DDF5;font-weight:600;margin:1.5mm 0 2.2mm}
-  .contact{display:flex;flex-wrap:wrap;gap:4px 10px;padding:0;margin:0;list-style:none}
-  .contact li{display:flex;gap:5px;align-items:center;font-size:8.4pt;color:rgba(255,255,255,.9)}
-  .contact li a{color:#fff}
-  .contact .k{display:inline-flex;align-items:center;justify-content:center;width:14px;height:14px;border-radius:4px;background:rgba(255,255,255,.14);font-size:7.5pt;color:#fff}
-  /* columns */
-  .side{background:var(--side);padding:5.5mm 5.5mm 5mm 6.5mm;border-right:1px solid var(--lav-100)}
-  .main{padding:5.5mm 8.5mm 7mm 7.5mm}
-  .side h3,.main h2{font-size:8.4pt;letter-spacing:.14em;text-transform:uppercase;color:var(--lav-700);margin:0 0 6px;padding-bottom:0;border:0;display:flex;align-items:center;gap:6px;font-weight:800}
-  .main h2{margin-bottom:2.5mm}
-  .side h3::before,.main h2::before{content:"";width:14px;height:2px;border-radius:2px;background:var(--lav-500)}
-  .side section{margin-bottom:5.5mm}
-  .side p,.side li{margin:0 0 1.5px;font-size:8.7pt;color:var(--text)}
-  .side ul{padding-left:0;list-style:none;margin:0}
-  .tags{display:flex;flex-wrap:wrap;gap:4px}
-  .tag{background:#fff;border:1px solid var(--lav-200);border-radius:999px;padding:1px 7px;font-size:8pt;white-space:nowrap;color:var(--text-2)}
-  .skillgroup{margin-bottom:6px}
-  .skillgroup b{display:block;font-size:7.6pt;color:var(--lav-700);margin-bottom:2px;font-weight:700;letter-spacing:.03em}
-  .summary{margin:0 0 5mm;color:var(--text-2);font-size:1.02em;line-height:1.55}
-  .main section{margin-bottom:6mm}
-  .job{margin-bottom:5mm}
-  .job-head{display:flex;justify-content:space-between;align-items:center;gap:8px}
-  .job-head h4{margin:0;font-size:11pt;font-weight:800}
-  .job-head .when{font-size:7.8pt;font-weight:700;color:var(--lav-700);background:var(--lav-50);border:1px solid var(--lav-100);padding:1px 8px;border-radius:999px;white-space:nowrap}
-  .job .org{color:var(--muted);font-size:9pt;margin:1.5px 0 2.5mm}
-  .job ul{margin:0;padding-left:0;list-style:none}
-  .job li{margin-bottom:2mm;position:relative;padding-left:12px;line-height:1.45}
-  .job li::before{content:"";position:absolute;left:0;top:.55em;width:5px;height:5px;border-radius:50%;background:var(--lav-500)}
-  .job li b{font-weight:700;color:var(--lav-900)}
-  .job li em{font-style:normal;font-weight:700;color:var(--text)}
-  .job li ul{margin:1.2mm 0 0;padding-left:0}
-  .job li li{margin-bottom:1.4mm;padding-left:11px}
-  .job li li::before{width:4px;height:4px;background:var(--lav-300)}
-  .proj{margin-bottom:2.5mm;padding:2.2mm 3mm;border:1px solid var(--line);border-radius:8px;background:#fff}
-  .proj h5{margin:0;font-size:9.8pt;display:flex;justify-content:space-between;gap:8px;align-items:center}
-  .proj h5 .when{font-size:7.6pt;font-weight:700;color:var(--lav-700);background:var(--lav-50);padding:1px 7px;border-radius:999px;white-space:nowrap}
-  .proj p{margin:1mm 0 0;color:var(--text-2);line-height:1.45}
-  .proj .stack{color:var(--muted);font-size:8.3pt;margin-top:1.5px}
-  .kpi{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:0 0 6mm}
-  .kpi div{background:#fff;border:1px solid var(--line);border-radius:10px;padding:6px 8px;text-align:left;box-shadow:0 1px 3px rgba(0,0,0,.04)}
-  .kpi b{display:block;font-size:14pt;font-weight:800;color:var(--text);line-height:1.1}
-  .kpi span{font-size:7.3pt;color:var(--muted);letter-spacing:.04em;text-transform:uppercase;font-weight:600}
-  .edu{margin-bottom:3mm}
-  .edu h5{margin:0;font-size:9.4pt;display:flex;justify-content:space-between;gap:8px}
-  .edu h5 .when{color:var(--lav-700);font-weight:700;font-size:7.8pt;white-space:nowrap}
-  .edu p{margin:1px 0 0;color:var(--muted);font-size:8.6pt}
-  .side .pub{font-size:7.9pt;text-indent:0;padding-left:0;margin-bottom:6px}
-  .pub{font-size:8.8pt;margin:0 0 5px;line-height:1.45;padding-left:12px;text-indent:-12px;color:var(--text-2)}
-  body:not([data-lang="zh"]) .lang-zh{display:none!important}
-  body[data-lang="zh"] .lang-en{display:none!important}
-  body[data-lang="zh"] .page{font-family:"Noto Sans TC","Inter","PingFang TC","Microsoft JhengHei",sans-serif}
-  .lang-en .main{font-size:9.6pt;padding-bottom:1mm}
-  .lang-zh .main{padding-bottom:2mm}
-  .lang-en .job li{margin-bottom:1.7mm}
-  .print-sidebar-bg{display:none}
-  .page.p2{grid-template-rows:auto 1fr}
-  .mini{grid-column:1/3;display:flex;justify-content:space-between;align-items:center;padding:2.6mm 9mm;color:#fff;font-size:8.3pt;background:linear-gradient(135deg,#2A1F3D 0%,#3D2B5C 45%,#6B4A8E 100%)}
-  .mini b{font-size:10pt;font-weight:800}
-  .mini span{color:#E9DDF5}
-  .flow{display:flex;margin:2.5mm 0 1.2mm}
-  .flow .st{flex:1;min-width:0;background:var(--lav-50);border:1px solid var(--lav-200);border-radius:7px;padding:6px 7px;position:relative;margin-right:10px}
-  .flow .st::after{content:"";position:absolute;right:-9px;top:50%;margin-top:-4px;border-top:4px solid transparent;border-bottom:4px solid transparent;border-left:6px solid var(--lav-500)}
-  .flow .st:last-child{margin-right:0;background:#EEF6F0;border-color:#cfe5d4}
-  .flow .st:last-child::after{display:none}
-  .flow .st.me{background:var(--lav-100);border:1.5px solid var(--lav-500)}
-  .flow .st b{display:block;font-size:8.5pt;color:var(--lav-900);line-height:1.25}
-  .flow .st span{display:block;font-size:7.7pt;color:var(--text-2);line-height:1.35;margin-top:1px}
-  .cap{font-size:7.8pt;color:var(--muted);margin:0 0 1.8mm}
-  .flow.road .st,.flow.road .st:last-child{background:#fff;border:1px dashed var(--lav-200)}
-  .flow.road .st.ok{background:#EEF6F0;border:1px solid #cfe5d4}
-  .flow.road .st.on{background:var(--lav-100);border:1.5px solid var(--lav-500)}
-  table.cmp{width:100%;border-collapse:collapse;font-size:8.7pt;margin:0 0 2.5mm;line-height:1.4}
-  table.cmp th,table.cmp td{border-bottom:1px solid var(--line);padding:3px 6px;text-align:left;vertical-align:top}
-  table.cmp th{background:var(--lav-50);color:var(--lav-700);font-weight:700}
-  table.cmp td:first-child{color:var(--muted);white-space:nowrap}
-  table.cmp.doc td:first-child{color:var(--lav-900);font-weight:700}
-  table.cmp.doc td:last-child{font-weight:400;color:var(--text-2)}
-  table.cmp em{font-style:normal;font-weight:700;color:var(--text)}
-  table.cmp td:nth-child(2){color:var(--text-2)}
-  table.cmp td:last-child{color:var(--text);font-weight:600}
-  .job li .flow,.job li .cap,.job li table{margin-left:0}
+  .page{width:210mm;height:297mm;margin:18px auto;background:#fff;box-shadow:0 2px 18px rgba(0,0,0,.12);padding:8mm 10mm 6mm;overflow:hidden}
+  /* header: centred name + contact lines, like the common single-column template */
+  .head{text-align:center;margin-bottom:1.6mm}
+  .head h1{margin:0;font-size:19pt;font-weight:700;letter-spacing:.3px;line-height:1.15;color:var(--ink)}
+  .head h1 small{font-weight:500;font-size:11.5pt;color:var(--muted);margin-left:7px}
+  .head .role{margin:.6mm 0 .8mm;font-size:9.6pt;font-weight:600;color:var(--ink)}
+  .head .contact{margin:0;font-size:8.6pt;color:var(--text)}
+  .head .contact span.sep{color:#999;margin:0 1.6mm}
+  /* sections */
+  h2{font-size:9.4pt;font-weight:700;letter-spacing:.7px;text-transform:uppercase;margin:1.9mm 0 .9mm;padding-bottom:.5mm;border-bottom:1px solid var(--rule);color:var(--ink)}
+  .lang-zh h2{letter-spacing:1.2px;text-transform:none}
+  p{margin:0 0 .8mm}
+  .summary{margin:0 0 .4mm}
+  .row{display:flex;justify-content:space-between;align-items:baseline;gap:6mm}
+  .row h3{margin:0;font-size:9.6pt;font-weight:700;color:var(--ink)}
+  .row .when{white-space:nowrap;font-size:8.8pt;color:var(--muted)}
+  .row h3 .stack{font-weight:400}
+  .org{font-size:8.8pt;color:var(--muted);margin:0 0 .6mm}
+  .org i{font-style:italic}
+  .sys{margin:.9mm 0 .2mm}
+  .sys h4{margin:0;font-size:9.2pt;font-weight:700;color:var(--ink);display:inline}
+  .sys .stack{color:var(--muted);font-size:8.6pt}
+  .sys .role{color:var(--muted);font-size:8.6pt}
+  ul{margin:0 0 .4mm;padding-left:4mm}
+  li{margin:0 0 .45mm}
+  .skills p{margin:0 0 .5mm;display:flex;gap:2mm}
+  .skills b{flex:0 0 30mm}
+  .skills span{flex:1}
+  .page.lang-zh{display:none}
+  body[data-lang="zh"] .page.lang-en{display:none}
+  body[data-lang="zh"] .page.lang-zh{display:block}
+  .lang-zh{font-size:9.2pt;line-height:1.34}
+  .lang-zh .skills b{flex:0 0 26mm}
+  @page{size:A4;margin:0}
   @media print{
-    @page{size:A4;margin:0}
     html,body{background:#fff}
     .toolbar{display:none}
-    .page{margin:0;box-shadow:none;min-height:296mm}
-    .page.p2{break-before:page;page-break-before:always}
-    .top,.mini,.side,.kpi div,.tag,.job-head .when,.proj h5 .when,.eyebrow,.flow .st,table.cmp th{-webkit-print-color-adjust:exact;print-color-adjust:exact}
-    .job li,.proj,.edu,.pub,.kpi,.skillgroup,table.cmp,.flow{break-inside:avoid;page-break-inside:avoid}
-    .job li:has(ul){break-inside:auto;page-break-inside:auto}
-    .main h2,.side h3{break-after:avoid;page-break-after:avoid}
-  }
-  @media screen and (max-width:820px){
-    .page{width:100%;grid-template-columns:1fr;min-height:auto}
-    .top,.mini{grid-column:1;flex-direction:column;align-items:flex-start}
-    .side{border-right:0;border-bottom:1px solid var(--line)}
-    .kpi{grid-template-columns:repeat(2,1fr)}
-    .flow{flex-direction:column}
-    .flow .st{margin:0 0 10px}
-    .flow .st::after{right:auto;left:50%;top:auto;bottom:-9px;margin:0 0 0 -4px;border-left:4px solid transparent;border-right:4px solid transparent;border-top:6px solid var(--lav-500);border-bottom:0}
+    .page{margin:0;box-shadow:none;width:210mm;height:297mm;page-break-after:avoid}
+    body[data-lang="en"] .page.lang-zh,body[data-lang="zh"] .page.lang-en{display:none!important}
   }
 </style>
 </head>
@@ -139,303 +64,159 @@
   <button id="btn-en" class="active" onclick="setLang('en')">English</button>
   <button id="btn-zh" onclick="setLang('zh')">中文</button>
   <button onclick="window.print()">Print / Save as PDF</button>
-  <span class="hint">A4 · set margins to “None” and enable background graphics when printing</span>
+  <span class="hint">A4 · one page · set margins to “None” when printing</span>
 </div>
 
-
-<!-- ============================== ENGLISH · page 1 ============================== -->
+<!-- ============================== ENGLISH ============================== -->
 <div class="page lang-en">
-  <header class="top"><div class="glow a"></div><div class="glow b"></div>
-    <div class="who">
-      <div class="eyebrow"><span class="dot"></span>AI Application R&amp;D Engineer · BenQ Materials</div>
-      <h1 class="name">Shan-Cheng Chang<small>張善程</small></h1>
-      <div class="title">LLM Agent Engineering · AI Data Analytics · Document AI</div>
-      <ul class="contact">
-        <li><span class="k">✉</span><a href="mailto:steven7962102@icloud.com">steven7962102@icloud.com</a></li>
-        <li><span class="k">🌐</span><a href="https://changshancheng.github.io">changshancheng.github.io</a></li>
-        <li><span class="k">⌥</span><a href="https://github.com/ChangShanCheng">github.com/ChangShanCheng</a></li>
-        <li><span class="k">in</span><a href="https://www.linkedin.com/in/shan-cheng-chang-897688274">linkedin.com/in/shan-cheng-chang-897688274</a></li>
-        <li><span class="k">⌂</span><span>Taoyuan, Taiwan</span></li>
-      </ul>
-    </div>
+  <header class="head">
+    <h1>Shan-Cheng Chang<small>張善程</small></h1>
+    <p class="role">AI Application R&amp;D Engineer · ships LLM application systems to production</p>
+    <p class="contact"><a href="mailto:steven7962102@icloud.com">steven7962102@icloud.com</a><span class="sep">|</span>Taoyuan, Taiwan</p>
+    <p class="contact"><a href="https://changshancheng.github.io">changshancheng.github.io</a><span class="sep">|</span><a href="https://github.com/ChangShanCheng">github.com/ChangShanCheng</a><span class="sep">|</span><a href="https://www.linkedin.com/in/shan-cheng-chang-897688274">linkedin.com/in/shan-cheng-chang-897688274</a></p>
   </header>
-  <aside class="side">
-    <section>
-      <h3>Core Skills</h3>
-      <div class="skillgroup"><b>Agent Engineering (live)</b><div class="tags"><span class="tag">Skills (Claude Code style)</span><span class="tag">Sandboxing</span><span class="tag">RBAC / Audit Log</span></div></div>
-      <div class="skillgroup"><b>Agent Prototypes (PoC)</b><div class="tags"><span class="tag">Agent Harness</span><span class="tag">Function Calling</span><span class="tag">MCP</span><span class="tag">Context Management</span><span class="tag">Knowledge Graph (PostgreSQL + pgvector)</span></div></div>
-      <div class="skillgroup"><b>Evaluation &amp; Validation</b><div class="tags"><span class="tag">Golden Set</span><span class="tag">Code Validators</span></div></div>
-      <div class="skillgroup"><b>LLM</b><div class="tags"><span class="tag">Azure OpenAI</span><span class="tag">Gemini API</span><span class="tag">Prompt Engineering</span><span class="tag">APO</span></div></div>
-      <div class="skillgroup"><b>Document AI / ML / CV</b><div class="tags"><span class="tag">Azure Document Intelligence</span><span class="tag">OCR + LLM Extraction</span><span class="tag">YOLOv8</span><span class="tag">PyTorch</span></div></div>
-      <div class="skillgroup"><b>Backend &amp; Web</b><div class="tags"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">Node.js</span><span class="tag">React</span><span class="tag">JavaScript / TypeScript</span><span class="tag">PostgreSQL</span><span class="tag">SQL Server</span></div></div>
-      <div class="skillgroup"><b>DevOps &amp; Tools</b><div class="tags"><span class="tag">Docker</span><span class="tag">GCP</span><span class="tag">Azure</span><span class="tag">Git</span><span class="tag">n8n</span><span class="tag">Claude Code</span></div></div>
-      <div class="skillgroup"><b>Security</b><div class="tags"><span class="tag">AES-256-GCM</span><span class="tag">JWT</span><span class="tag">AD / Entra ID</span><span class="tag">ISO 27001-aligned</span></div></div>
-    </section>
-    <section>
-      <h3>Education</h3>
-      <div class="edu"><h5>National Taiwan University</h5><p>M.S. Biomechatronics Eng. (AIoT / CV) · 2021 – 2023</p></div>
-      <div class="edu"><h5>Taipei Tech (NTUT)</h5><p>B.S. Mechanical Engineering · 2017 – 2021</p></div>
-    </section>
-  </aside>
-  <main class="main">
-    <p class="summary">AI application engineer who designs, validates and maintains enterprise AI systems: architect of BenQ Materials' AI data-analysis platform (in daily production use) and its document-AI stack, built from zero. Every system is checked against a test set or the system it replaces before go-live.</p>
-    <div class="kpi">
-      <div><b>4.15M NTD</b><span>AutoML avoided / 2 yrs</span></div>
-      <div><b>6</b><span>line flows on platform</span></div>
-      <div><b>~1M NTD</b><span>benefit / yr (3 OCR)</span></div>
-      <div><b>1,500+ h</b><span>saved / yr (3 OCR)</span></div>
-    </div>
-    <section>
-      <h2>Experience</h2>
-      <div class="job">
-        <div class="job-head"><h4>AI Application R&amp;D Engineer</h4><span class="when">Dec 2024 – Present</span></div>
-        <div class="org">BenQ Materials Corp. (明基材料) · Digital Technology Center, Intelligent Application Dev. Sec. · Taoyuan</div>
-        <ul>
-          <li><b>Enterprise Brain → AI data-analysis platform</b> (system architect &amp; lead developer) — used daily by the BML line, replacing a purchased AutoML package (<em>4.15M NTD / 2 yrs</em>); 6 flows cut over with zero downtime. FastAPI + Azure OpenAI (company-hosted API) + Docker sandbox.
-            <div class="flow">
-              <div class="st"><b>Data in</b><span>upload · API · 6 schedules</span></div>
-              <div class="st"><b>One format</b><span>validated, with fix hints</span></div>
-              <div class="st me"><b>Analysis skill</b><span>teammates' methods plugged in</span></div>
-              <div class="st"><b>Code → LLM</b><span>code computes, LLM explains</span></div>
-              <div class="st"><b>Feedback</b><span>reviewed into knowledge</span></div>
-            </div>
-            <p class="cap">Data → analysis → knowledge. Purple box: the shared skill I designed.</p>
-            <table class="cmp">
-              <tr><th></th><th>Before (n8n)</th><th>After (one skill)</th></tr>
-              <tr><td>Analysis logic</td><td>6 flows, ~550 nodes</td><td>1 skill, 3 entry points</td></tr>
-              <tr><td>New method</td><td>edit every flow</td><td>teammate’s logic, wired once</td></tr>
-              <tr><td>Migration check</td><td>—</td><td>Old = new: Excel 9/9 cells; same PDFs</td></tr>
-            </table>
-            <ul>
-              <li><b>Why a skill</b> — hard-coding would work today; a Claude Code–format skill lets a future chat LLM call the same methods. Analysis already runs in a Docker sandbox that chat will reuse.</li>
-              <li><b>Status</b> — analysis platform live; now building an OCAP text knowledge base (K1, incl. my 6 flows) and a user-feedback base (K2) before chat; MCP and knowledge graph are prototypes. Full architecture on my website.</li>
-            </ul>
-          </li>
-          <li><b>Document-AI applications (OCR + LLM)</b> — built the company's platform from zero (Azure Document Intelligence + Azure OpenAI); every system scored field-by-field in code on a hand-labelled test set before go-live.
-            <table class="cmp doc">
-              <tr><th>System</th><th>Accuracy (test set)</th><th>Impact</th></tr>
-              <tr><td>Quotation OCR</td><td>validity <em>51% → 100%</em> (29 docs)</td><td>30 → 10 s; 758+ docs</td></tr>
-              <tr><td>Invoice OCR (TW/CN)</td><td><em>31/32</em>, <em>31/31</em> fully correct</td><td>1,447 h/yr; CN: 3 sites</td></tr>
-              <tr><td>Health-check OCR</td><td><em>97.4%</em> fields (42 × 46)</td><td>AES-256, AD; ISO 27001-aligned</td></tr>
-              <tr><td>APO-OCR prompt tuning</td><td>validating (32-invoice set)</td><td>team tool, pre-launch</td></tr>
-            </table>
-          </li>
-        </ul>
-      </div>
-    </section>
-  </main>
+
+  <h2>Summary</h2>
+  <p class="summary">AI application engineer (M.S., NTU) with nearly two years taking LLM systems from zero to production at BenQ Materials: architected the AI data-analysis platform the production line uses daily and built the document-AI stack (4 OCR + LLM systems, 1,500+ h/yr saved). Every system is validated against a labelled test set or the system it replaces before go-live.</p>
+
+  <h2>Experience</h2>
+  <div class="row"><h3>BenQ Materials Corp. (明基材料) — AI Application R&amp;D Engineer</h3><span class="when">Dec 2024 – Present</span></div>
+  <p class="org"><i>Digital Technology Center, Intelligent Application Development Sec.</i> · Taoyuan</p>
+
+  <div class="sys"><h4>AI data-analysis platform (“Enterprise Brain”)</h4> <span class="stack">· FastAPI, Azure OpenAI (company-hosted), Docker</span> <span class="role">— architect &amp; main developer; methods from teammates</span></div>
+  <ul>
+    <li>Replaced 6 n8n flows (~550 nodes, logic copied per flow) with <em>one analysis skill</em> shared by upload, API and 6 schedules, so a new method is wired once.</li>
+    <li>Designed the skill in Claude Code–compatible format (SKILL.md + deny rules) running in a Docker sandbox (non-root, resource/time limits, isolated network), so a future chat agent can call the same methods unchanged; code computes the statistics, the LLM only writes the interpretation.</li>
+    <li>Shipped to the polarizer production line, replacing a purchased AutoML package; cut over 6 flows with zero downtime, old vs. new output identical on the same inputs (Excel 9/9 cells, PDFs byte-identical).</li>
+    <li>Done: platform, sandbox, OCAP knowledge base (6 defect flows, written by me), feedback labelling (built, rolling out in stages). Prototype only: chat agent, MCP, knowledge graph.</li>
+  </ul>
+
+  <div class="sys"><h4>Document-AI systems (OCR + LLM)</h4> <span class="stack">· Azure Document Intelligence, Azure OpenAI</span> <span class="role">— built solo from zero; 4 systems live</span></div>
+  <ul>
+    <li>Shipped quotation, Taiwan/China invoice and health-check OCR; each scored field-by-field in code on a hand-labelled set before go-live.</li>
+    <li>Raised the quotation validity field from <em>51% to 100%</em> on a 29-document regression set, 30 → 10 s per document; <em>758+</em> documents processed in production since.</li>
+    <li>Invoices: <em>31/32</em> (TW, incl. handwritten) and <em>31/31</em> (CN, 3 sites) with every key field correct. Health-check: <em>97.4%</em> of fields on 42 documents × 46 fields, 216 processed in production; data encrypted (AES-256-GCM), AD login, ISO 27001-aligned.</li>
+    <li>Built an APO (automatic prompt optimisation) tool for the team's OCR projects; in pre-launch validation.</li>
+  </ul>
+
+  <div class="sys"><h4>Supplier questionnaire management system (GCP)</h4> <span class="stack">· React 19, Cloud Functions (Node.js), Entra ID</span> <span class="role">— designed and built solo</span></div>
+  <ul>
+    <li>Delivered <em>52 APIs</em> and the front end in 4.5 months; live and handed over to the owning team.</li>
+  </ul>
+
+  <div class="sys"><h4>ESG carbon &amp; energy platform refactor</h4> <span class="role">— took over a 44,000-line legacy platform</span></div>
+  <ul>
+    <li>Split a 9,977-line backend file into one module per page (<em>APIs 104 → 42</em>, tables 13 → 8); merged 55 copy-pasted chart files into 5 shared components (front end 219 → 51 files).</li>
+    <li>Verified each step by API replay and pixel diff of 57 charts, dashboard never down; moved data import from a developer-run script to a web upload owned by the user department.</li>
+  </ul>
+  <ul>
+    <li>Teaching assistant, company ChatGPT Team course (67 learners); Digital Talent L3 (Expert) certification.</li>
+  </ul>
+
+  <div class="row"><h3>China Steel Corporation (中國鋼鐵) — Shift Supervisor (值班股長)</h3><span class="when">Jan 2024 – Nov 2024</span></div>
+  <p class="org"><i>Cold-Rolling Mill</i> · Kaohsiung</p>
+  <ul>
+    <li>Ran shift operations on the cold-rolled coil line at <em>95% yield</em>.</li>
+    <li>Root-caused defects and downtime with SPC, trend and correlation analysis of process parameters; built the daily anomaly reports (Python / Excel) used in production meetings.</li>
+  </ul>
+
+  <h2>Skills</h2>
+  <div class="skills">
+    <p><b>LLM &amp; agents</b><span>Azure OpenAI, Gemini API, prompt engineering / APO, skills (Claude Code format), sandboxed execution, function calling, MCP (prototype), golden-set evaluation</span></p>
+    <p><b>Document AI / ML</b><span>Azure Document Intelligence, OCR + LLM extraction, PyTorch, YOLOv8</span></p>
+    <p><b>Backend &amp; infra</b><span>Python, FastAPI, Node.js, React, JavaScript / TypeScript, PostgreSQL, SQL Server, Docker, GCP, Azure, n8n, Git</span></p>
+    <p><b>Languages</b><span>Mandarin (native) · English (professional, TOEIC 790) · German (A2) · military service completed</span></p>
+  </div>
+
+  <h2>Projects</h2>
+  <div class="row"><h3>Universal OCR Platform <span class="stack">· FastAPI, React, Cloud Run · side project</span></h3><span class="when">2025 – 2026</span></div>
+  <ul>
+    <li>No-code OCR builder: define fields and prompts, deploy as an OCR REST API in one click; document analysis wrapped as MCP-format tools that extract document features and route to the best OCR template.</li>
+  </ul>
+
+  <h2>Education</h2>
+  <div class="row"><h3>National Taiwan University — M.S. Biomechatronics Engineering (AIoT / computer vision)</h3><span class="when">2021 – 2023</span></div>
+  <ul>
+    <li>Thesis (lead developer): greenhouse AIoT pest monitoring and bee pollination — bee tracking <em>99.5% mAP</em>, pest counting <em>95.8%</em> (YOLOv8, StrongSORT, Mask R-CNN).</li>
+    <li>Co-first author (with advisor), <i>Computers and Electronics in Agriculture</i> 206:107665 (2023); first author, 10th ISMAB (2022); Taiwan patent TW I842416 B, crop harvester (2024).</li>
+  </ul>
+  <div class="row"><h3>National Taipei University of Technology — B.S. Mechanical Engineering <span class="stack">· capstone: Autoware / ROS self-driving</span></h3><span class="when">2017 – 2021</span></div>
 </div>
 
-<!-- ============================== ENGLISH · page 2 ============================== -->
-<div class="page p2 lang-en">
-  <div class="mini"><b>Shan-Cheng Chang <span>張善程</span></b><span>AI Application R&amp;D Engineer · 2 / 2</span></div>
-  <aside class="side">
-    <section>
-      <h3>Languages</h3>
-      <ul><li>Mandarin Chinese — Native</li><li>English — Professional (TOEIC 790)</li><li>German — A2</li></ul>
-    </section>
-    <section>
-      <h3>Certifications</h3>
-      <ul><li>Company Digital Talent L3 (Expert)</li><li style="color:var(--muted)">Military service completed</li></ul>
-    </section>
-    <section>
-      <h3>Earlier Project</h3>
-      <div class="edu"><h5>Autonomous navigation with Autoware / ROS</h5><p>B.S. capstone, NTUT · 2020 – 2021</p><p>Indoor/outdoor self-driving platform (mapping, localization, path planning) with an ML mask-detection module.</p></div>
-    </section>
-    <section>
-      <h3>Publications &amp; Patent</h3>
-      <p class="pub">Chou, C.-Y., <b>Chang, S.-C.</b>, et al. (2023). Development of AIoT system for facility asparagus cultivation. <i>Computers and Electronics in Agriculture</i>, 206:107665. <i>(co-first author with advisor)</i></p>
-      <p class="pub"><b>Chang, S.-C.</b>, et al. (2022). AIoT based pest counting system for asparagus cultivation. <i>Proc. 10th ISMAB</i>.</p>
-      <p class="pub">Taiwan Invention Patent TW I842416 B — Crop Harvester, 2024.</p>
-    </section>
-  </aside>
-  <main class="main">
-    <section>
-      <h2>Experience (cont.)</h2>
-      <div class="job">
-        <div class="job-head"><h4>BenQ Materials — other systems</h4><span class="when">Dec 2024 – Present</span></div>
-        <ul style="margin-top:2mm">
-          <li><b>Google Cloud Platform — supplier questionnaire management system</b> (live) — 52 APIs, built solo in 4.5 months, handed over; React 19 + Cloud Functions + Entra ID.</li>
-          <li><b>ESG carbon platform refactor &amp; handover</b> — import moved to a web upload run by the user department; backend split into one module per page (APIs 104 → 42), 55 copy-pasted chart files merged into 5 shared components; every step verified output-identical.</li>
-          <li><b>Teaching assistant</b>, company ChatGPT Team course (67 learners).</li>
-        </ul>
-      </div>
-      <div class="job">
-        <div class="job-head"><h4>Shift Supervisor (值班股長)</h4><span class="when">Jan 2024 – Nov 2024</span></div>
-        <div class="org">China Steel Corporation (中國鋼鐵) · Cold-Rolling Mill · Kaohsiung, Taiwan</div>
-        <ul>
-          <li><b>Ran shift operations</b> on the cold-rolled coil line at <em>95% yield</em>.</li>
-          <li><b>Anomaly analysis</b> — SPC, trend and correlation analysis for root causes of defects and downtime; daily anomaly reports (Python / Excel).</li>
-        </ul>
-      </div>
-    </section>
-    <section>
-      <h2>How Each System Was Validated</h2>
-      <table class="cmp">
-        <tr><th>System</th><th>Method</th><th>Evidence</th></tr>
-        <tr><td>4 OCR systems</td><td>hand-labelled golden set; scored field-by-field in code (LLM only proposes)</td><td>29 quotations · 32 / 31 invoices · 42 × 46 health fields</td></tr>
-        <tr><td>n8n → skill migration</td><td>old vs. new output on the same inputs</td><td>Excel 9/9 cells identical; PDFs byte-identical</td></tr>
-        <tr><td>ESG refactor</td><td>API-by-API replay + pixel diff of charts after every step</td><td>57 charts identical; dashboard never down</td></tr>
-        <tr><td>Analysis platform (live)</td><td>engineers label each result; reviewed into the knowledge base</td><td>feedback loop running on the BML line</td></tr>
-      </table>
-    </section>
-    <section>
-      <h2>Research &amp; Selected Projects</h2>
-      <div class="proj"><h5>AIoT Pest Monitoring &amp; Bee Pollination (M.S. thesis, NTU) <span class="when">2021 – 2023</span></h5>
-        <p>Lead developer of greenhouse AIoT systems: bee tracking <em>99.5% mAP</em>, pest counting <em>95.8%</em> (YOLOv8, StrongSORT, Mask R-CNN).</p></div>
-      <div class="proj"><h5>Universal OCR Platform — no-code OCR builder (side project) <span class="when">2025 – 2026</span></h5>
-        <p>Define fields and prompts, deploy as an OCR REST API in one click (FastAPI · React · Cloud Run); document analysis wrapped as MCP-format tools: extract document features → LLM routes to the best OCR template.</p></div>
-    </section>
-
-  </main>
-</div>
-
-<!-- ============================== 中文 · 第 1 頁 ============================== -->
+<!-- ============================== 中文 ============================== -->
 <div class="page lang-zh">
-  <header class="top"><div class="glow a"></div><div class="glow b"></div>
-    <div class="who">
-      <div class="eyebrow"><span class="dot"></span>AI 應用研發工程師 · 明基材料</div>
-      <h1 class="name">張善程<small>Shan-Cheng Chang</small></h1>
-      <div class="title">LLM Agent 工程 · AI 數據分析 · 文件 AI</div>
-      <ul class="contact">
-        <li><span class="k">✉</span><a href="mailto:steven7962102@icloud.com">steven7962102@icloud.com</a></li>
-        <li><span class="k">🌐</span><a href="https://changshancheng.github.io">changshancheng.github.io</a></li>
-        <li><span class="k">⌥</span><a href="https://github.com/ChangShanCheng">github.com/ChangShanCheng</a></li>
-        <li><span class="k">in</span><a href="https://www.linkedin.com/in/shan-cheng-chang-897688274">linkedin.com/in/shan-cheng-chang-897688274</a></li>
-        <li><span class="k">⌂</span><span>桃園，台灣</span></li>
-      </ul>
-    </div>
+  <header class="head">
+    <h1>張善程<small>Shan-Cheng Chang</small></h1>
+    <p class="role">AI 應用研發工程師 · 把 LLM 應用系統做到正式上線</p>
+    <p class="contact"><a href="mailto:steven7962102@icloud.com">steven7962102@icloud.com</a><span class="sep">|</span>桃園，台灣</p>
+    <p class="contact"><a href="https://changshancheng.github.io">changshancheng.github.io</a><span class="sep">|</span><a href="https://github.com/ChangShanCheng">github.com/ChangShanCheng</a><span class="sep">|</span><a href="https://www.linkedin.com/in/shan-cheng-chang-897688274">linkedin.com/in/shan-cheng-chang-897688274</a></p>
   </header>
-  <aside class="side">
-    <section>
-      <h3>核心技能</h3>
-      <div class="skillgroup"><b>Agent 工程（已上線）</b><div class="tags"><span class="tag">Skills（仿 Claude Code）</span><span class="tag">沙盒執行</span><span class="tag">RBAC / 稽核日誌</span></div></div>
-      <div class="skillgroup"><b>Agent 原型（PoC）</b><div class="tags"><span class="tag">Agent Harness</span><span class="tag">Function Calling</span><span class="tag">MCP</span><span class="tag">上下文管理</span><span class="tag">知識圖譜 (PostgreSQL + pgvector)</span></div></div>
-      <div class="skillgroup"><b>評估與驗證</b><div class="tags"><span class="tag">Golden Set 黃金測試集</span><span class="tag">程式碼驗證器</span></div></div>
-      <div class="skillgroup"><b>LLM</b><div class="tags"><span class="tag">Azure OpenAI</span><span class="tag">Gemini API</span><span class="tag">Prompt Engineering</span><span class="tag">Prompt 自動優化 (APO)</span></div></div>
-      <div class="skillgroup"><b>文件 AI / ML / 電腦視覺</b><div class="tags"><span class="tag">Azure Document Intelligence</span><span class="tag">OCR + LLM 結構化提取</span><span class="tag">YOLOv8</span><span class="tag">PyTorch</span></div></div>
-      <div class="skillgroup"><b>後端與網頁</b><div class="tags"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">Node.js</span><span class="tag">React</span><span class="tag">JavaScript / TypeScript</span><span class="tag">PostgreSQL</span><span class="tag">SQL Server</span></div></div>
-      <div class="skillgroup"><b>DevOps 與工具</b><div class="tags"><span class="tag">Docker</span><span class="tag">GCP</span><span class="tag">Azure</span><span class="tag">Git</span><span class="tag">n8n</span><span class="tag">Claude Code</span></div></div>
-      <div class="skillgroup"><b>資安</b><div class="tags"><span class="tag">AES-256-GCM</span><span class="tag">JWT</span><span class="tag">AD / Entra ID</span><span class="tag">ISO 27001 規範設計</span></div></div>
-    </section>
-    <section>
-      <h3>學歷</h3>
-      <div class="edu"><h5>國立臺灣大學</h5><p>生物機電工程學系 碩士（AIoT / 電腦視覺）· 2021 – 2023</p></div>
-      <div class="edu"><h5>國立臺北科技大學</h5><p>機械工程學系 學士 · 2017 – 2021</p></div>
-    </section>
-  </aside>
-  <main class="main">
-    <p class="summary">設計、驗證並維運企業級 AI 系統的 AI 應用工程師：主導明基材料「企業大腦」AI 數據分析平台（產線每天在用），並從零建立公司的文件 AI 技術棧。每套系統都先以測試集或舊系統比對驗證，才上線。</p>
-    <div class="kpi">
-      <div><b>415 萬</b><span>兩年免外購 AutoML（NTD）</span></div>
-      <div><b>6 支</b><span>產線自動分析流程平台化</span></div>
-      <div><b>約 100 萬</b><span>每年有形效益（3 套 OCR）</span></div>
-      <div><b>1,500+</b><span>小時／年節省（3 套 OCR）</span></div>
-    </div>
-    <section>
-      <h2>工作經歷</h2>
-      <div class="job">
-        <div class="job-head"><h4>AI 應用研發工程師</h4><span class="when">2024/12 – 至今</span></div>
-        <div class="org">明基材料股份有限公司 · 數位技術中心智慧應用部智慧應用開發課 · 桃園</div>
-        <ul>
-          <li><b>企業大腦 → AI 數據分析平台</b>（系統架構設計、主要開發者）— BML 產線每天在用，取代外購 AutoML（<em>兩年免採購 415 萬</em>）；6 支流程零斷線切換。FastAPI + Azure OpenAI + Docker 沙盒，資料不出內網。
-            <div class="flow">
-              <div class="st"><b>資料進來</b><span>上傳 · API · 6 支排程</span></div>
-              <div class="st"><b>統一格式</b><span>先驗格式，附修法</span></div>
-              <div class="st me"><b>分析 skill</b><span>掛上同事的分析方法</span></div>
-              <div class="st"><b>程式算 → LLM 寫</b><span>數據由程式，判讀由 LLM</span></div>
-              <div class="st"><b>回饋變知識</b><span>標註審核後進知識庫</span></div>
-            </div>
-            <p class="cap">圖：資料進來 → 分析 → 累積成知識；紫框是我設計的共用 skill。</p>
-            <table class="cmp">
-              <tr><th></th><th>原本（n8n）</th><th>改成一個 skill 後</th></tr>
-              <tr><td>分析邏輯</td><td>6 支流程、約 550 節點各自複製</td><td>1 個 skill，3 個入口共用</td></tr>
-              <tr><td>新增分析方法</td><td>要逐支流程改</td><td>同事給計算邏輯，掛進一次</td></tr>
-              <tr><td>遷移驗證</td><td>—</td><td>新舊產出比對：Excel 9/9 逐格一致、PDF 完全相同</td></tr>
-            </table>
-            <ul>
-              <li><b>為什麼做成 skill</b> — 現在寫死在程式也能跑；做成仿 Claude Code 格式，是為了之後 chat 的 LLM 能直接呼叫；分析已在沙盒執行，之後也給 chat 用。</li>
-              <li><b>目前進度</b> — 分析已上線；正在建 OCAP 知識庫（K1，含我建的 6 支流程）與回饋知識庫（K2），之後才做 chat；MCP、知識圖譜為原型。詳見個人網站。</li>
-            </ul>
-          </li>
-          <li><b>文件 AI 應用（OCR + LLM）</b> — 從零建立公司平台（Azure Document Intelligence + Azure OpenAI），每套上線前都以人工標註測試集評分。
-            <table class="cmp doc">
-              <tr><th>系統</th><th>準確率（測試集）</th><th>效益</th></tr>
-              <tr><td>報價單 OCR</td><td>效期 <em>51% → 100%</em>（29 份）</td><td>30 → 10 秒／份；758+ 份</td></tr>
-              <tr><td>臺灣／中國發票 OCR</td><td><em>31/32</em>、<em>31/31</em> 份全對</td><td>年省 1,447 人時；中國發票 3 廠區</td></tr>
-              <tr><td>新人健檢 OCR</td><td>欄位級 <em>97.4%</em>（42 份 × 46 欄）</td><td>AES-256、AD、依 ISO 27001 設計</td></tr>
-              <tr><td>APO-OCR 自動調 prompt</td><td>上線前驗證中（32 張發票）</td><td>給團隊 OCR 專案共用</td></tr>
-            </table>
-            <p class="cap">評分一律由程式碼逐欄位比對，LLM 只提案。</p>
-          </li>
-        </ul>
-      </div>
-    </section>
-  </main>
-</div>
 
-<!-- ============================== 中文 · 第 2 頁 ============================== -->
-<div class="page p2 lang-zh">
-  <div class="mini"><b>張善程 <span>Shan-Cheng Chang</span></b><span>AI 應用研發工程師 · 2 / 2</span></div>
-  <aside class="side">
-    <section>
-      <h3>語言</h3>
-      <ul><li>中文 — 母語</li><li>英文 — 專業工作能力（TOEIC 790）</li><li>德文 — A2</li></ul>
-    </section>
-    <section>
-      <h3>認證與其他</h3>
-      <ul><li>公司數位推廣人才 L3 專家認證</li><li style="color:var(--muted)">役別：已服畢</li></ul>
-    </section>
-    <section>
-      <h3>大學專題</h3>
-      <div class="edu"><h5>以 Autoware / ROS 實現無人駕駛導航</h5><p>北科大機械 · 2020 – 2021</p><p>室內外自駕平台（建圖、定位、路徑規劃），並整合機器學習口罩偵測模組。</p></div>
-    </section>
-    <section>
-      <h3>論文與專利</h3>
-      <p class="pub">Chou, C.-Y., <b>Chang, S.-C.</b>, et al. (2023). Development of AIoT system for facility asparagus cultivation. <i>Computers and Electronics in Agriculture</i>, 206:107665.（共同第一作者，與指導教授並列）</p>
-      <p class="pub"><b>Chang, S.-C.</b>, et al. (2022). AIoT based pest counting system for asparagus cultivation. <i>Proc. 10th ISMAB</i>.</p>
-      <p class="pub">中華民國發明專利 TW I842416 B — 作物採收機，2024 年 5 月核准。</p>
-    </section>
-  </aside>
-  <main class="main">
-    <section>
-      <h2>工作經歷（續）</h2>
-      <div class="job">
-        <div class="job-head"><h4>明基材料 — 其他系統</h4><span class="when">2024/12 – 至今</span></div>
-        <ul style="margin-top:2mm">
-          <li><b>Google Cloud Platform — 供應商問卷管理系統</b>（已上線）— 52 個 API、4.5 個月獨立完成，已交接；React 19 + Cloud Functions + Entra ID。</li>
-          <li><b>ESG 碳管理平台重構與交接</b> — 匯入改網頁上傳並交給使用單位；後端單檔拆成每頁一個模組（API 104 → 42）、前端 55 個複製檔合成 5 個共用元件；每步逐筆比對，輸出不變。</li>
-          <li><b>ChatGPT Team 課程助教</b>（67 位學員）。</li>
-        </ul>
-      </div>
-      <div class="job">
-        <div class="job-head"><h4>值班股長</h4><span class="when">2024/01 – 2024/11</span></div>
-        <div class="org">中國鋼鐵股份有限公司 · 冷軋廠 · 高雄</div>
-        <ul>
-          <li><b>冷軋鋼捲產線值班</b>，維持連續生產，產率 <em>95%</em>。</li>
-          <li><b>產線異常分析</b> — 以 SPC、趨勢與相關性分析找出缺陷與停機真因，並建立每日異常報表（Python / Excel）。</li>
-        </ul>
-      </div>
-    </section>
-    <section>
-      <h2>每套系統怎麼驗證</h2>
-      <table class="cmp">
-        <tr><th>系統</th><th>方法</th><th>證據</th></tr>
-        <tr><td>4 套 OCR</td><td>人工標註 Golden Set，程式逐欄位比對評分（LLM 只提案）</td><td>報價單 29 份 · 發票 32／31 份 · 健檢 42 × 46 欄</td></tr>
-        <tr><td>n8n → skill 遷移</td><td>同一批輸入，新舊產出比對</td><td>Excel 9/9 逐格一致、PDF 逐 byte 相同</td></tr>
-        <tr><td>ESG 重構</td><td>每一步 API 逐筆重放、圖表像素比對</td><td>57 張圖一致，看板不中斷</td></tr>
-        <tr><td>分析平台（上線後）</td><td>工程師標註每次分析結果，審核後入知識庫</td><td>回饋迴圈在 BML 產線運作中</td></tr>
-      </table>
-    </section>
-    <section>
-      <h2>研究與代表專案</h2>
-      <div class="proj"><h5>AIoT 設施栽培害蟲監控與蜜蜂授粉優化（臺大碩士論文）<span class="when">2021 – 2023</span></h5>
-        <p>溫室 AIoT 系統主要開發者：蜜蜂追蹤 <em>mAP 99.5%</em>、害蟲計數 <em>95.8%</em>（YOLOv8、StrongSORT、Mask R-CNN）。</p></div>
-      <div class="proj"><h5>Universal OCR Platform — No-code OCR 建構平台（Side Project）<span class="when">2025 – 2026</span></h5>
-        <p>自訂欄位與 Prompt，一鍵部署成 OCR REST API（FastAPI · React · Cloud Run）；以 MCP 工具格式封裝文件分析：抽文件特徵 → LLM 分流到合適的 OCR 範本。</p></div>
-    </section>
+  <h2>摘要</h2>
+  <p class="summary">AI 應用工程師（臺大碩士），近兩年在明基材料把 LLM 系統從零做到正式上線：主導 AI 數據分析平台的架構（產線每天在用），並從零建立公司的文件 AI 技術棧（4 套 OCR + LLM 系統，年省 1,500+ 小時）。每套系統上線前都以人工標註測試集、或與被取代的舊系統比對驗證。</p>
 
-  </main>
+  <h2>工作經歷</h2>
+  <div class="row"><h3>明基材料股份有限公司 — AI 應用研發工程師</h3><span class="when">2024/12 – 至今</span></div>
+  <p class="org"><i>數位技術中心智慧應用部智慧應用開發課</i> · 桃園</p>
+
+  <div class="sys"><h4>AI 數據分析平台（企業大腦）</h4> <span class="stack">· FastAPI、Azure OpenAI（公司專用 API）、Docker</span> <span class="role">— 架構設計與主要開發者（統計方法由同事提供）</span></div>
+  <ul>
+    <li>把 6 支 n8n 流程（約 550 個節點、邏輯各自複製）改成<em>一個分析 skill</em>，由上傳、API、6 支排程共用，新方法只需掛進一次。</li>
+    <li>skill 採仿 Claude Code 格式（SKILL.md + deny 規則），在 Docker 沙盒執行（非 root、資源／時間限制、獨立網段），之後 chat agent 不用改寫就能呼叫同一套方法；統計由程式計算，LLM 只負責寫判讀。</li>
+    <li>已在偏光產線上線，取代外購 AutoML；6 支流程零斷線切換，同一批輸入新舊產出完全一致（Excel 9/9 逐格、PDF 逐 byte 相同）。</li>
+    <li>已完成：平台、沙盒、OCAP 知識庫（6 支缺陷流程，由我撰寫）、回饋標註功能（已建、分階段開放中）。僅原型：chat agent、MCP、知識圖譜。</li>
+  </ul>
+
+  <div class="sys"><h4>文件 AI 系統（OCR + LLM）</h4> <span class="stack">· Azure Document Intelligence、Azure OpenAI</span> <span class="role">— 獨立從零建立；4 套系統已上線</span></div>
+  <ul>
+    <li>報價單、臺灣／中國發票、新人健檢 OCR 皆已上線；每套上線前以人工標註測試集由程式逐欄位評分。</li>
+    <li>報價單「效期」欄位準確率 <em>51% → 100%</em>（29 份回歸集），每份 30 → 10 秒，上線後已處理 <em>758+</em> 份。</li>
+    <li>發票 <em>31/32</em>（臺灣，含手寫）、<em>31/31</em>（中國，3 廠區）關鍵欄位全對；健檢欄位級 <em>97.4%</em>（42 份 × 46 欄），上線後已處理 216 份，資料 AES-256-GCM 加密、AD 登入、依 ISO 27001 設計。</li>
+    <li>另為團隊 OCR 專案建 APO（自動 prompt 優化）工具，上線前驗證中。</li>
+  </ul>
+
+  <div class="sys"><h4>供應商問卷管理系統（GCP）</h4> <span class="stack">· React 19、Cloud Functions（Node.js）、Entra ID</span> <span class="role">— 獨立設計與開發</span></div>
+  <ul>
+    <li>4.5 個月完成 <em>52 支 API</em> 與前端；已上線並交接給負責單位。</li>
+  </ul>
+
+  <div class="sys"><h4>ESG 碳及能源平台重構</h4> <span class="role">— 接手 44,000 行的舊系統</span></div>
+  <ul>
+    <li>後端由單一 9,977 行檔案拆成每頁一個模組（<em>API 104 → 42</em>、資料表 13 → 8）；前端 55 個複製貼上的圖表檔合併成 5 個共用元件（219 → 51 檔）。</li>
+    <li>每一步以 API 逐筆重放與 57 張圖表像素比對驗證，看板不中斷；資料匯入從工程師手動跑腳本改成網頁上傳，交給使用單位自行操作。</li>
+  </ul>
+  <ul>
+    <li>ChatGPT Team 課程助教（67 位學員）；公司數位推廣人才 L3 專家認證。</li>
+  </ul>
+
+  <div class="row"><h3>中國鋼鐵股份有限公司 — 值班股長</h3><span class="when">2024/01 – 2024/11</span></div>
+  <p class="org"><i>冷軋廠</i> · 高雄</p>
+  <ul>
+    <li>冷軋鋼捲產線值班，維持連續生產，產率 <em>95%</em>。</li>
+    <li>以製程參數做 SPC、趨勢與相關性分析找出缺陷與停機真因；以 Python／Excel 建立每日異常報表供生產會議使用。</li>
+  </ul>
+
+  <h2>技能</h2>
+  <div class="skills">
+    <p><b>LLM 與 Agent</b><span>Azure OpenAI、Gemini API、Prompt Engineering／APO、Skills（仿 Claude Code）、沙盒執行、Function Calling、MCP（原型）、Golden Set 評估</span></p>
+    <p><b>文件 AI／ML</b><span>Azure Document Intelligence、OCR + LLM 結構化提取、PyTorch、YOLOv8</span></p>
+    <p><b>後端與基礎設施</b><span>Python、FastAPI、Node.js、React、JavaScript／TypeScript、PostgreSQL、SQL Server、Docker、GCP、Azure、n8n、Git</span></p>
+    <p><b>語言</b><span>中文（母語）· 英文（專業工作能力，TOEIC 790）· 德文（A2）· 役畢</span></p>
+  </div>
+
+  <h2>專案</h2>
+  <div class="row"><h3>Universal OCR Platform <span class="stack">· FastAPI、React、Cloud Run · Side Project</span></h3><span class="when">2025 – 2026</span></div>
+  <ul>
+    <li>No-code OCR 建構平台：自訂欄位與 prompt，一鍵部署成 OCR REST API；以 MCP 工具格式封裝文件分析：抽文件特徵 → LLM 分流到合適的 OCR 範本。</li>
+  </ul>
+
+  <h2>學歷</h2>
+  <div class="row"><h3>國立臺灣大學 — 生物機電工程學系碩士（AIoT／電腦視覺）</h3><span class="when">2021 – 2023</span></div>
+  <ul>
+    <li>論文（系統主要開發者）：溫室 AIoT 害蟲監控與蜜蜂授粉優化 — 蜜蜂追蹤 <em>mAP 99.5%</em>、害蟲計數 <em>95.8%</em>（YOLOv8、StrongSORT、Mask R-CNN）。</li>
+    <li>期刊 <i>Computers and Electronics in Agriculture</i> 206:107665（2023，與指導教授共同第一作者）；Proc. 10th ISMAB（2022，第一作者）；中華民國發明專利 TW I842416 B 作物採收機（2024）。</li>
+  </ul>
+  <div class="row"><h3>國立臺北科技大學 — 機械工程學系學士 <span class="stack">· 專題：以 Autoware／ROS 實現無人駕駛導航</span></h3><span class="when">2017 – 2021</span></div>
 </div>
 
 <script>
@@ -454,4 +235,3 @@
 </script>
 </body>
 </html>
-
