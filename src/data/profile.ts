@@ -6,7 +6,7 @@ export const profile = {
   tagline: 'LLM Agents · AI 數據分析 · Document AI',
   email: 'steven7962102@icloud.com',
   github: 'https://github.com/ChangShanCheng',
-  linkedin: 'https://www.linkedin.com/in/shan-cheng-chang-897688274',
+  linkedin: 'https://www.linkedin.com/in/shanchengchang',
   location: '台灣 桃園',
   resumeHtml: '/resume/Resume_Chang_Shan_Cheng_2026.html',
   resumePdfEn: '/resume/Resume_Chang_Shan_Cheng_2026_EN_A4.pdf',

@@ -9,7 +9,7 @@
 <style>
   :root{ --ink:#111; --text:#1a1a1a; --muted:#555; --line:#222; --rule:#999; }
   *{box-sizing:border-box}
-  html,body{margin:0;padding:0;background:#e9ecf1;color:var(--text);font-family:"Inter","Noto Sans TC",-apple-system,"Helvetica Neue",Arial,"PingFang TC","Microsoft JhengHei",sans-serif;font-size:9pt;line-height:1.28}
+  html,body{margin:0;padding:0;background:#e9ecf1;color:var(--text);font-family:"Inter","Noto Sans TC",-apple-system,"Helvetica Neue",Arial,"PingFang TC","Microsoft JhengHei",sans-serif;font-size:9.4pt;line-height:1.26}
   a{color:var(--text);text-decoration:none}
   b{font-weight:700}
   em{font-style:normal;font-weight:700}
@@ -48,7 +48,7 @@
   .page.lang-zh{display:none}
   body[data-lang="zh"] .page.lang-en{display:none}
   body[data-lang="zh"] .page.lang-zh{display:block}
-  .lang-zh{font-size:9.2pt;line-height:1.34}
+  .lang-zh{font-size:10pt;line-height:1.36}
   .lang-zh .skills b{flex:0 0 26mm}
   @page{size:A4;margin:0}
   @media print{
@@ -73,11 +73,11 @@
     <h1>Shan-Cheng Chang<small>張善程</small></h1>
     <p class="role">AI Application R&amp;D Engineer · ships LLM application systems to production</p>
     <p class="contact"><a href="mailto:steven7962102@icloud.com">steven7962102@icloud.com</a><span class="sep">|</span>Taoyuan, Taiwan</p>
-    <p class="contact"><a href="https://changshancheng.github.io">changshancheng.github.io</a><span class="sep">|</span><a href="https://github.com/ChangShanCheng">github.com/ChangShanCheng</a><span class="sep">|</span><a href="https://www.linkedin.com/in/shan-cheng-chang-897688274">linkedin.com/in/shan-cheng-chang-897688274</a></p>
+    <p class="contact"><a href="https://changshancheng.github.io">changshancheng.github.io</a><span class="sep">|</span><a href="https://www.linkedin.com/in/shanchengchang">linkedin.com/in/shanchengchang</a></p>
   </header>
 
   <h2>Summary</h2>
-  <p class="summary">AI application engineer (M.S., NTU) with nearly two years taking LLM systems from zero to production at BenQ Materials: architected the AI data-analysis platform the production line uses daily and built the document-AI stack (4 OCR + LLM systems, 1,500+ h/yr saved). Every system is validated against a labelled test set or the system it replaces before go-live.</p>
+  <p class="summary">AI application engineer (M.S., NTU) with nearly two years taking LLM systems from zero to production at BenQ Materials: architected the AI data-analysis platform the production line uses daily and built the document-AI stack (4 OCR + LLM systems; the 3 measured ones save 1,500+ h/yr). Every system is validated against a labelled test set or the system it replaces before go-live.</p>
 
   <h2>Experience</h2>
   <div class="row"><h3>BenQ Materials Corp. (明基材料) — AI Application R&amp;D Engineer</h3><span class="when">Dec 2024 – Present</span></div>
@@ -86,17 +86,16 @@
   <div class="sys"><h4>AI data-analysis platform (“Enterprise Brain”)</h4> <span class="stack">· FastAPI, Azure OpenAI (company-hosted), Docker</span> <span class="role">— architect &amp; main developer; methods from teammates</span></div>
   <ul>
     <li>Replaced 6 n8n flows (~550 nodes, logic copied per flow) with <em>one analysis skill</em> shared by upload, API and 6 schedules, so a new method is wired once.</li>
-    <li>Designed the skill in Claude Code–compatible format (SKILL.md + deny rules) running in a Docker sandbox (non-root, resource/time limits, isolated network), so a future chat agent can call the same methods unchanged; code computes the statistics, the LLM only writes the interpretation.</li>
+    <li>Designed the skill in Claude Code–compatible format (SKILL.md + deny rules) running in a Docker sandbox (non-root, resource limits, isolated network), so a future chat agent can call the same methods; code computes the statistics, the LLM only writes the interpretation.</li>
     <li>Shipped to the polarizer production line, replacing a purchased AutoML package; cut over 6 flows with zero downtime, old vs. new output identical on the same inputs (Excel 9/9 cells, PDFs byte-identical).</li>
-    <li>Done: platform, sandbox, OCAP knowledge base (6 defect flows, written by me), feedback labelling (built, rolling out in stages). Prototype only: chat agent, MCP, knowledge graph.</li>
+    <li>Live: platform, sandbox, OCAP knowledge base (6 defect flows), feedback labelling (rolling out in stages); the chat agent is still a prototype.</li>
   </ul>
 
   <div class="sys"><h4>Document-AI systems (OCR + LLM)</h4> <span class="stack">· Azure Document Intelligence, Azure OpenAI</span> <span class="role">— built solo from zero; 4 systems live</span></div>
   <ul>
     <li>Shipped quotation, Taiwan/China invoice and health-check OCR; each scored field-by-field in code on a hand-labelled set before go-live.</li>
-    <li>Raised the quotation validity field from <em>51% to 100%</em> on a 29-document regression set, 30 → 10 s per document; <em>758+</em> documents processed in production since.</li>
-    <li>Invoices: <em>31/32</em> (TW, incl. handwritten) and <em>31/31</em> (CN, 3 sites) with every key field correct. Health-check: <em>97.4%</em> of fields on 42 documents × 46 fields, 216 processed in production; data encrypted (AES-256-GCM), AD login, ISO 27001-aligned.</li>
-    <li>Built an APO (automatic prompt optimisation) tool for the team's OCR projects; in pre-launch validation.</li>
+    <li>Raised the quotation validity field from <em>51% to 100%</em> on a 29-document regression set, 30 → 10 s per document; <em>758+</em> documents in 18 months of production with no field-correction request from users.</li>
+    <li>Taiwan invoice <em>78% → 97%</em> (31/32 documents with all 5 key fields correct; <em>90%</em> of production documents fully correct a year after go-live); China invoice <em>31/31</em> on 10 fields. Health-check: <em>97.4%</em> of fields on 42 documents × 46 fields.</li>
   </ul>
 
   <div class="sys"><h4>Supplier questionnaire management system (GCP)</h4> <span class="stack">· React 19, Cloud Functions (Node.js), Entra ID</span> <span class="role">— designed and built solo</span></div>
@@ -104,13 +103,10 @@
     <li>Delivered <em>52 APIs</em> and the front end in 4.5 months; live and handed over to the owning team.</li>
   </ul>
 
-  <div class="sys"><h4>ESG carbon &amp; energy platform refactor</h4> <span class="role">— took over a 44,000-line legacy platform</span></div>
+  <div class="sys"><h4>ESG carbon &amp; energy platform refactor</h4> <span class="role">— took over a 44,000-line legacy platform, solo</span></div>
   <ul>
     <li>Split a 9,977-line backend file into one module per page (<em>APIs 104 → 42</em>, tables 13 → 8); merged 55 copy-pasted chart files into 5 shared components (front end 219 → 51 files).</li>
-    <li>Verified each step by API replay and pixel diff of 57 charts, dashboard never down; moved data import from a developer-run script to a web upload owned by the user department.</li>
-  </ul>
-  <ul>
-    <li>Teaching assistant, company ChatGPT Team course (67 learners); Digital Talent L3 (Expert) certification.</li>
+    <li>Verified each step by API replay and pixel diff of 57 charts, dashboard never down; moved data import from a developer-run script to a web upload owned by the user department, and the platform is now maintainable by one engineer.</li>
   </ul>
 
   <div class="row"><h3>China Steel Corporation (中國鋼鐵) — Shift Supervisor (值班股長)</h3><span class="when">Jan 2024 – Nov 2024</span></div>
@@ -122,25 +118,25 @@
 
   <h2>Skills</h2>
   <div class="skills">
-    <p><b>LLM &amp; agents</b><span>Azure OpenAI, Gemini API, prompt engineering / APO, skills (Claude Code format), sandboxed execution, function calling, MCP (prototype), golden-set evaluation</span></p>
+    <p><b>LLM &amp; agents</b><span>Azure OpenAI, Gemini API, prompt engineering, agent skills, sandboxed execution, function calling, golden-set evaluation, Claude Code</span></p>
     <p><b>Document AI / ML</b><span>Azure Document Intelligence, OCR + LLM extraction, PyTorch, YOLOv8</span></p>
-    <p><b>Backend &amp; infra</b><span>Python, FastAPI, Node.js, React, JavaScript / TypeScript, PostgreSQL, SQL Server, Docker, GCP, Azure, n8n, Git</span></p>
+    <p><b>Backend &amp; infra</b><span>Python, FastAPI, Node.js, React, JavaScript / TypeScript, PostgreSQL, SQL Server, Docker, GCP, Azure</span></p>
     <p><b>Languages</b><span>Mandarin (native) · English (professional, TOEIC 790) · German (A2) · military service completed</span></p>
   </div>
 
   <h2>Projects</h2>
   <div class="row"><h3>Universal OCR Platform <span class="stack">· FastAPI, React, Cloud Run · side project</span></h3><span class="when">2025 – 2026</span></div>
   <ul>
-    <li>No-code OCR builder: define fields and prompts, deploy as an OCR REST API in one click; document analysis wrapped as MCP-format tools that extract document features and route to the best OCR template.</li>
+    <li>No-code OCR builder: define fields and prompts, deploy as a REST API in one click; MCP-format tools extract document features and route each file to the best OCR template.</li>
   </ul>
 
   <h2>Education</h2>
   <div class="row"><h3>National Taiwan University — M.S. Biomechatronics Engineering (AIoT / computer vision)</h3><span class="when">2021 – 2023</span></div>
   <ul>
-    <li>Thesis (lead developer): greenhouse AIoT pest monitoring and bee pollination — bee tracking <em>99.5% mAP</em>, pest counting <em>95.8%</em> (YOLOv8, StrongSORT, Mask R-CNN).</li>
-    <li>Co-first author (with advisor), <i>Computers and Electronics in Agriculture</i> 206:107665 (2023); first author, 10th ISMAB (2022); Taiwan patent TW I842416 B, crop harvester (2024).</li>
+    <li>Thesis (lead developer): greenhouse AIoT pest monitoring and bee pollination — bee tracking <em>99.5% mAP</em> (YOLOv8, StrongSORT).</li>
+    <li>Co-first author (with advisor), <i>Computers and Electronics in Agriculture</i> 206:107665 (2023); first author, 10th ISMAB (2022).</li>
   </ul>
-  <div class="row"><h3>National Taipei University of Technology — B.S. Mechanical Engineering <span class="stack">· capstone: Autoware / ROS self-driving</span></h3><span class="when">2017 – 2021</span></div>
+  <div class="row"><h3>National Taipei Univ. of Technology — B.S. Mechanical Eng. <span class="stack">· Autoware / ROS self-driving capstone</span></h3><span class="when">2017 – 2021</span></div>
 </div>
 
 <!-- ============================== 中文 ============================== -->
@@ -149,11 +145,11 @@
     <h1>張善程<small>Shan-Cheng Chang</small></h1>
     <p class="role">AI 應用研發工程師 · 把 LLM 應用系統做到正式上線</p>
     <p class="contact"><a href="mailto:steven7962102@icloud.com">steven7962102@icloud.com</a><span class="sep">|</span>桃園，台灣</p>
-    <p class="contact"><a href="https://changshancheng.github.io">changshancheng.github.io</a><span class="sep">|</span><a href="https://github.com/ChangShanCheng">github.com/ChangShanCheng</a><span class="sep">|</span><a href="https://www.linkedin.com/in/shan-cheng-chang-897688274">linkedin.com/in/shan-cheng-chang-897688274</a></p>
+    <p class="contact"><a href="https://changshancheng.github.io">changshancheng.github.io</a><span class="sep">|</span><a href="https://www.linkedin.com/in/shanchengchang">linkedin.com/in/shanchengchang</a></p>
   </header>
 
   <h2>摘要</h2>
-  <p class="summary">AI 應用工程師（臺大碩士），近兩年在明基材料把 LLM 系統從零做到正式上線：主導 AI 數據分析平台的架構（產線每天在用），並從零建立公司的文件 AI 技術棧（4 套 OCR + LLM 系統，年省 1,500+ 小時）。每套系統上線前都以人工標註測試集、或與被取代的舊系統比對驗證。</p>
+  <p class="summary">AI 應用工程師（臺大碩士），近兩年在明基材料把 LLM 系統從零做到正式上線：主導 AI 數據分析平台的架構（產線每天在用），並從零建立公司的文件 AI 技術棧（4 套 OCR + LLM 系統，其中 3 套量得年省 1,500+ 小時）。每套系統上線前都以人工標註測試集、或與被取代的舊系統比對驗證。</p>
 
   <h2>工作經歷</h2>
   <div class="row"><h3>明基材料股份有限公司 — AI 應用研發工程師</h3><span class="when">2024/12 – 至今</span></div>
@@ -164,15 +160,14 @@
     <li>把 6 支 n8n 流程（約 550 個節點、邏輯各自複製）改成<em>一個分析 skill</em>，由上傳、API、6 支排程共用，新方法只需掛進一次。</li>
     <li>skill 採仿 Claude Code 格式（SKILL.md + deny 規則），在 Docker 沙盒執行（非 root、資源／時間限制、獨立網段），之後 chat agent 不用改寫就能呼叫同一套方法；統計由程式計算，LLM 只負責寫判讀。</li>
     <li>已在偏光產線上線，取代外購 AutoML；6 支流程零斷線切換，同一批輸入新舊產出完全一致（Excel 9/9 逐格、PDF 逐 byte 相同）。</li>
-    <li>已完成：平台、沙盒、OCAP 知識庫（6 支缺陷流程，由我撰寫）、回饋標註功能（已建、分階段開放中）。僅原型：chat agent、MCP、知識圖譜。</li>
+    <li>已上線：平台、沙盒、OCAP 知識庫（6 支缺陷流程）、回饋標註（分階段開放中）；chat agent 仍在原型階段。</li>
   </ul>
 
   <div class="sys"><h4>文件 AI 系統（OCR + LLM）</h4> <span class="stack">· Azure Document Intelligence、Azure OpenAI</span> <span class="role">— 獨立從零建立；4 套系統已上線</span></div>
   <ul>
     <li>報價單、臺灣／中國發票、新人健檢 OCR 皆已上線；每套上線前以人工標註測試集由程式逐欄位評分。</li>
-    <li>報價單「效期」欄位準確率 <em>51% → 100%</em>（29 份回歸集），每份 30 → 10 秒，上線後已處理 <em>758+</em> 份。</li>
-    <li>發票 <em>31/32</em>（臺灣，含手寫）、<em>31/31</em>（中國，3 廠區）關鍵欄位全對；健檢欄位級 <em>97.4%</em>（42 份 × 46 欄），上線後已處理 216 份，資料 AES-256-GCM 加密、AD 登入、依 ISO 27001 設計。</li>
-    <li>另為團隊 OCR 專案建 APO（自動 prompt 優化）工具，上線前驗證中。</li>
+    <li>報價單「效期」欄位準確率 <em>51% → 100%</em>（29 份回歸集），每份 30 → 10 秒；上線 18 個月已處理 <em>758+</em> 份，使用者未提出任何欄位修正需求。</li>
+    <li>臺灣發票 <em>78% → 97%</em>（31/32 份、5 個關鍵欄位全對；上線一年後實際整份全對 <em>90%</em>）；中國發票 <em>31/31</em>（10 欄位全對）；健檢欄位級 <em>97.4%</em>（42 份 × 46 欄）。</li>
   </ul>
 
   <div class="sys"><h4>供應商問卷管理系統（GCP）</h4> <span class="stack">· React 19、Cloud Functions（Node.js）、Entra ID</span> <span class="role">— 獨立設計與開發</span></div>
@@ -180,13 +175,10 @@
     <li>4.5 個月完成 <em>52 支 API</em> 與前端；已上線並交接給負責單位。</li>
   </ul>
 
-  <div class="sys"><h4>ESG 碳及能源平台重構</h4> <span class="role">— 接手 44,000 行的舊系統</span></div>
+  <div class="sys"><h4>ESG 碳及能源平台重構</h4> <span class="role">— 獨立接手 44,000 行的舊系統</span></div>
   <ul>
     <li>後端由單一 9,977 行檔案拆成每頁一個模組（<em>API 104 → 42</em>、資料表 13 → 8）；前端 55 個複製貼上的圖表檔合併成 5 個共用元件（219 → 51 檔）。</li>
-    <li>每一步以 API 逐筆重放與 57 張圖表像素比對驗證，看板不中斷；資料匯入從工程師手動跑腳本改成網頁上傳，交給使用單位自行操作。</li>
-  </ul>
-  <ul>
-    <li>ChatGPT Team 課程助教（67 位學員）；公司數位推廣人才 L3 專家認證。</li>
+    <li>每一步以 API 逐筆重放與 57 張圖表像素比對驗證，看板不中斷；資料匯入從工程師手動跑腳本改成網頁上傳，交給使用單位自行操作，重構後一人即可維護。</li>
   </ul>
 
   <div class="row"><h3>中國鋼鐵股份有限公司 — 值班股長</h3><span class="when">2024/01 – 2024/11</span></div>
@@ -198,9 +190,9 @@
 
   <h2>技能</h2>
   <div class="skills">
-    <p><b>LLM 與 Agent</b><span>Azure OpenAI、Gemini API、Prompt Engineering／APO、Skills（仿 Claude Code）、沙盒執行、Function Calling、MCP（原型）、Golden Set 評估</span></p>
+    <p><b>LLM 與 Agent</b><span>Azure OpenAI、Gemini API、Prompt Engineering、Agent Skill 與沙盒執行、Function Calling、Golden Set 評估、Claude Code</span></p>
     <p><b>文件 AI／ML</b><span>Azure Document Intelligence、OCR + LLM 結構化提取、PyTorch、YOLOv8</span></p>
-    <p><b>後端與基礎設施</b><span>Python、FastAPI、Node.js、React、JavaScript／TypeScript、PostgreSQL、SQL Server、Docker、GCP、Azure、n8n、Git</span></p>
+    <p><b>後端與基礎設施</b><span>Python、FastAPI、Node.js、React、JavaScript／TypeScript、PostgreSQL、SQL Server、Docker、GCP、Azure</span></p>
     <p><b>語言</b><span>中文（母語）· 英文（專業工作能力，TOEIC 790）· 德文（A2）· 役畢</span></p>
   </div>
 
@@ -213,8 +205,8 @@
   <h2>學歷</h2>
   <div class="row"><h3>國立臺灣大學 — 生物機電工程學系碩士（AIoT／電腦視覺）</h3><span class="when">2021 – 2023</span></div>
   <ul>
-    <li>論文（系統主要開發者）：溫室 AIoT 害蟲監控與蜜蜂授粉優化 — 蜜蜂追蹤 <em>mAP 99.5%</em>、害蟲計數 <em>95.8%</em>（YOLOv8、StrongSORT、Mask R-CNN）。</li>
-    <li>期刊 <i>Computers and Electronics in Agriculture</i> 206:107665（2023，與指導教授共同第一作者）；Proc. 10th ISMAB（2022，第一作者）；中華民國發明專利 TW I842416 B 作物採收機（2024）。</li>
+    <li>論文（系統主要開發者）：溫室 AIoT 害蟲監控與蜜蜂授粉優化 — 蜜蜂追蹤 <em>mAP 99.5%</em>（YOLOv8、StrongSORT）。</li>
+    <li>期刊 <i>Computers and Electronics in Agriculture</i> 206:107665（2023，與指導教授共同第一作者）；Proc. 10th ISMAB（2022，第一作者）。</li>
   </ul>
   <div class="row"><h3>國立臺北科技大學 — 機械工程學系學士 <span class="stack">· 專題：以 Autoware／ROS 實現無人駕駛導航</span></h3><span class="when">2017 – 2021</span></div>
 </div>
