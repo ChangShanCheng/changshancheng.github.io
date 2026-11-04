@@ -39,5 +39,5 @@
 }
 
 /* 隱藏入口：© 連到 /notes/（有密碼） */
-.footer-mark{color:inherit;text-decoration:none;cursor:inherit}
+.footer-mark{color:inherit;text-decoration:none;cursor:inherit;display:inline-block;padding:12px 14px;margin:-12px -10px -12px -14px}
 .footer-mark:hover,.footer-mark:focus{color:inherit;text-decoration:none;outline:none}
