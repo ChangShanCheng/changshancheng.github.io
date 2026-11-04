@@ -128,7 +128,7 @@ const projectsData: Project[] = [
     period: '2025/10 – 2026/03 · 已上線、已交接',
     category: 'Cloud & Web',
     description: '首次自行架設的 GCP 全端系統：取代採購部門手動 Excel 管理供應商 ESG 問卷，支援多專案、批次操作、自動提醒與權限控管；年底交接同仁（含 GCP／Firebase 教學），接手者已能自行部署維運。',
-    metric: '52 個 API · Entra ID 登入 · 4.5 個月獨立完成',
+    metric: '約 120 個 API 端點 · Entra ID 登入 · 4.5 個月獨立完成',
     technologies: ['React 19', 'Express 5', 'Cloud Functions', 'Firestore', 'Firebase Hosting', 'Google Sheets API', 'Entra ID', 'Sentry', 'Playwright'],
     highlights: [
       'Google Forms / Sheets 雙向同步（Apps Script + OAuth2）',
