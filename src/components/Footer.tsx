@@ -43,7 +43,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="footer-bottom">
-          <span>© {year} {profile.nameZh} {profile.nameEn}. Built with React + TypeScript + Vite · GitHub Pages</span>
+          <span><a className="footer-mark" href="/notes/">©</a> {year} {profile.nameZh} {profile.nameEn}. Built with React + TypeScript + Vite · GitHub Pages</span>
           <button className="to-top" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} aria-label="回到頂部">
             <ArrowUp size={16} />
           </button>
