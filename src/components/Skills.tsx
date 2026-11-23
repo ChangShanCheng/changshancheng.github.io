@@ -7,7 +7,7 @@ const groups: SkillGroup[] = [
   { category: 'Agent Prototypes (PoC)', items: ['Agent Harness', 'Function Calling', 'MCP', '上下文管理', 'Knowledge Graph (PostgreSQL + pgvector)'] },
   { category: 'Evaluation & Quality', items: ['Golden Set 黃金測試集', '程式碼驗證器'] },
   { category: 'Document AI / CV', items: ['Azure Document Intelligence', 'OCR + LLM 結構化提取', 'Bounding Box 可解釋化', 'OpenCV', 'YOLOv8', 'StrongSORT', 'Mask R-CNN', 'PyTorch'] },
-  { category: 'Data & ML', items: ['SPC', 'Pandas', 'PostgreSQL', 'SQL Server', 'Firestore'] },
+  { category: 'Data & ML', items: ['Pandas', 'PostgreSQL', 'SQL Server', 'Firestore'] },
   { category: 'Backend', items: ['Python', 'FastAPI', 'Flask', 'Node.js', 'Express', 'REST', 'Server-Sent Events', 'WebSocket'] },
   { category: 'Frontend', items: ['React', 'JavaScript / TypeScript', 'Vite', 'Tailwind CSS', 'Recharts', 'React Query'] },
   { category: 'Cloud & DevOps', items: ['Docker', 'GCP', 'Firebase Hosting', 'Cloud Functions', 'Cloud Run', 'Supabase', 'Azure AI', 'IIS', 'Git', 'n8n', 'Vitest', 'Playwright', 'Sentry'] },

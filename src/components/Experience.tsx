@@ -28,9 +28,9 @@ const experiences: (ExperienceItem & { icon: typeof Building2; tone: string })[]
     location: '高雄',
     description: [
       '冷軋鋼捲產線值班，排除異況、維持連續生產，產率 95%。',
-      '以 SPC、趨勢與相關性分析找出缺陷與停機真因，建立每日異常報表（Python / Excel）；這段經驗延續到日後的產線 AI 數據分析平台。',
+      '以趨勢與相關性分析找出缺陷與停機真因，建立每日異常報表（Python / Excel）；這段經驗延續到日後的產線 AI 數據分析平台。',
     ],
-    tags: ['製程數據分析', '異常分析', 'SPC', 'Python / Excel 報表', '根因分析', '跨部門協作'],
+    tags: ['製程數據分析', '異常分析', 'Python / Excel 報表', '根因分析', '跨部門協作'],
   },
 ];
 
