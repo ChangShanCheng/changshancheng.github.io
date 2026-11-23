@@ -34,7 +34,7 @@ const Hero = () => {
           <p className="hero-tagline">LLM Agents · AI 數據分析 · Document AI</p>
           <p className="hero-desc">
             在製造業設計、驗證並維運企業 AI 系統的 AI 應用工程師：主導明基材料的
-            <strong>AI 數據分析平台</strong>（仿 Claude Code 的 skill 架構，產線每天在用），並從零建立
+            <strong>QInsight AI 數據分析平台</strong>（仿 Claude Code 的 skill 架構，產線每天在用），並從零建立
             <strong>文件 AI（OCR + LLM）</strong>。每套系統都先用測試集驗過才上線。
           </p>
           <div className="hero-actions">

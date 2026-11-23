@@ -6,10 +6,10 @@ import './Projects.css';
 const projectsData: Project[] = [
   {
     id: 4,
-    title: '企業大腦：從 PoC 到產線 AI 數據分析平台',
+    title: 'QInsight（原企業大腦）：從 PoC 到產線 AI 數據分析平台',
     period: '2025/12 – 進行中',
     category: 'Agent & Analytics',
-    description: '系統架構設計與主要開發。偏光產線每天在用，取代外購 AutoML。原本散在 6 支 n8n 流程的分析和另一套獨立的統計分析，我收斂成一個仿 Claude Code 格式的 skill：同事只給計算邏輯，上傳、API、排程都呼叫同一個 skill。',
+    description: '系統架構設計與主要開發。偏光產線每天在用，取代外購 AutoML。原本散在 6 支 n8n 流程的分析和另一套獨立的統計分析，我收斂成一個仿 Claude Code 格式的 skill：同事只給計算邏輯，上傳、API、排程都呼叫同一個 skill。2026/11 擴為通用型平台並改名 QInsight（數據分析與洞察）：任何部門把資料登錄成資料集，就能跑統計／配方探索／主題式分析，每頁配一個 LLM 助理；先開放驗證群組試用。OCAP 知識庫與回饋標註已建、尚未開放。',
     metric: '免外購 415 萬／兩年 · 6 支產線流程平台化 · 零斷線切換',
     flow: [
       { title: '資料進來', desc: '上傳 Excel · 對外 API · 6 支排程，已接 7 種資料源' },
@@ -31,20 +31,21 @@ const projectsData: Project[] = [
     },
     roadmap: [
       { title: '① 分析平台', desc: '已上線，偏光產線每天在用', status: 'done' },
-      { title: '② K1 OCAP 知識庫', desc: '文字知識庫，收錄我建的 6 支缺陷處理流程', status: 'now' },
-      { title: '③ K2 回饋知識庫', desc: '工程師標註 → AI 比對既有知識 → 審核入庫', status: 'now' },
+      { title: '①b 通用型 QInsight', desc: '資料集 → 統計／配方／主題式分析，每頁配 LLM 助理；驗證群組試用中，模型訓練調校中', status: 'now' },
+      { title: '② K1 OCAP 知識庫', desc: '文字知識庫，收錄我建的 6 支缺陷處理流程；已建、尚未開放', status: 'now' },
+      { title: '③ K2 回饋知識庫', desc: '工程師標註 → AI 比對既有知識 → 審核入庫；已建、尚未開放', status: 'now' },
       { title: '④ chat 核心', desc: '之後做；同時評估文字知識庫是否轉成知識圖譜', status: 'next' },
     ],
-    roadmapCaption: '路線圖：目前在 ②③ 收集知識；chat 的上下文管理、MCP、知識圖譜都還是原型（PoC），沙盒已用在分析，之後也給 chat 跑程式',
+    roadmapCaption: '路線圖：目前在 ①b 擴大開放，②③ 已建、尚未開放；頁面 LLM 助理已開放驗證群組，chat 核心的上下文管理、MCP、知識圖譜都還是原型（PoC），沙盒已用在分析，之後也給 chat 跑程式',
     technologies: ['FastAPI', 'Azure OpenAI', 'Docker 沙盒', 'PostgreSQL', 'React', 'n8n → Skills', 'Gemini Function Calling（原型）', 'MCP（原型）', '知識圖譜 pgvector（原型）'],
     highlights: [
       '資料怎麼進來：各資料源自己整理成統一格式（資料整理不進 skill），skill 先驗格式、錯了回傳修法，再跑分析；產出圖表資料、Excel 報表與判讀文字',
       '為什麼做成 skill：現在的分析其實寫死在程式也能跑；做成 skill 是為了之後 chat 能讓 LLM 直接呼叫同一套方法，不必重寫',
       '仿 Claude Code：skill 目錄（SKILL.md）與權限檔（deny 規則）格式和 Claude Code 相同，在 Claude Code 開發測試後原封不動上平台',
       '沙盒：分析在 Docker 沙盒執行（移除權限、限 CPU／記憶體／時間），之後同一套沙盒也給 chat 跑程式',
-      'chat 原型（PoC）：仿 Claude Code，提示裡只放 skill 名稱與用途，LLM 需要時呼叫 Skill 工具載入說明，再用 Bash 在沙盒跑腳本、Read 讀產出',
       '為什麼上線版由程式呼叫：原型裡讓 LLM 自己跑分析時結果會飄，所以上傳、API、排程改成程式直接呼叫同一個 skill，LLM 只寫判讀、失敗也不影響數據',
-      'chat 原型也做了長對話自動摘要、工具失敗重試等上下文與穩定機制，待知識庫成熟後再正式開發',
+      '通用化（2026/10–11，QInsight）：資料登錄一次成為資料集，任何部門選資料集就能分析；統計視覺化、配方探索、主題式分析三個模組同一套操作（左邊看結果、右邊問助理）；主題式分析把常做的分析固定成主題，一鍵產出同樣的圖表與總結，判讀與總結 prompt 納入版控',
+      '頁面 LLM 助理（已開放驗證群組）：依使用者的問題代填分析設定、停在「開始分析」前由使用者確認，也能針對結果頁的單張圖討論，說明只用程式算出的數字；內部測試集 43 題全過；公司帳號登入、各事業部資料互相隔離，事業部 super user 自行管理成員與可見範圍',
     ],
   },
   {
@@ -142,7 +143,7 @@ const projectsData: Project[] = [
     title: 'ESG 碳管理平台重構與交接',
     period: '2025/12 – 2026/10 重構上線',
     category: 'Cloud & Web',
-    description: '接手既有 ESG 碳排看板：每月匯入原本只能在個人電腦跑腳本、出錯只有開發者能處理；改成網頁上傳並交給使用單位自己操作，同時把前後端整理到好維護。',
+    description: '接手既有 ESG 碳排看板：每月匯入原本只能在個人電腦跑腳本、出錯只有開發者能處理；改成網頁上傳並交給使用單位自己操作，同時把前後端整理到好維護；交接後使用單位已自行每月上傳。',
     metric: 'API 104 → 42 支 · 資料表 13 → 8 · 前端 219 → 51 檔 · 主機 5 → 1 台',
     technologies: ['Flask', 'React', 'SQL Server', 'IIS', '模組化', '資料驗證', '回歸比對'],
     highlights: [

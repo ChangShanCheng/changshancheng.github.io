@@ -83,12 +83,12 @@
   <div class="row"><h3>BenQ Materials Corp. (明基材料) — AI Application R&amp;D Engineer</h3><span class="when">Dec 2024 – Present</span></div>
   <p class="org"><i>Digital Technology Center, Intelligent Application Development Sec.</i> · Taoyuan</p>
 
-  <div class="sys"><h4>AI data-analysis platform (“Enterprise Brain”)</h4> <span class="stack">· FastAPI, Azure OpenAI (company-hosted), Docker</span> <span class="role">— architect &amp; main developer; methods from teammates</span></div>
+  <div class="sys"><h4>QInsight AI data-analysis platform (formerly “Enterprise Brain”)</h4> <span class="stack">· FastAPI, Azure OpenAI (company-hosted), Docker</span> <span class="role">— architect &amp; main developer; methods from teammates</span></div>
   <ul>
     <li>Replaced 6 n8n flows (~550 nodes, logic copied per flow) with <em>one analysis skill</em> shared by upload, API and 6 schedules, so a new method is wired once.</li>
-    <li>Designed the skill in Claude Code–compatible format (SKILL.md + deny rules) running in a Docker sandbox (non-root, resource limits, isolated network), so a future chat agent can call the same methods; code computes the statistics, the LLM only writes the interpretation.</li>
+    <li>Skill in Claude Code–compatible format (SKILL.md + deny rules), run in a Docker sandbox (non-root, resource limits, isolated network) so a chat agent can call the same methods; code computes, the LLM only interprets.</li>
     <li>Shipped to the polarizer production line, replacing a purchased AutoML package; cut over 6 flows with zero downtime, old vs. new output identical on the same inputs (Excel 9/9 cells, PDFs byte-identical).</li>
-    <li>Live: platform, sandbox, OCAP knowledge base (6 defect flows), feedback labelling (rolling out in stages); the chat agent is still a prototype.</li>
+    <li>Live: platform and sandbox; extended in Nov. 2026 into <em>QInsight</em>, a general-purpose platform (datasets → statistics / recipes / themed analysis, each page with an LLM assistant), now in validation-group trial. OCAP knowledge base (6 defect flows) and feedback labelling built, not yet released; model training still being tuned.</li>
   </ul>
 
   <div class="sys"><h4>Document-AI systems (OCR + LLM)</h4> <span class="stack">· Azure Document Intelligence, Azure OpenAI</span> <span class="role">— built solo from zero; 4 systems live</span></div>
@@ -106,7 +106,7 @@
   <div class="sys"><h4>ESG carbon &amp; energy platform refactor</h4> <span class="role">— took over a 44,000-line legacy platform, solo</span></div>
   <ul>
     <li>Split a 9,977-line backend file into one module per page (<em>APIs 104 → 42</em>, tables 13 → 8); merged 55 copy-pasted chart files into 5 shared components (front end 219 → 51 files).</li>
-    <li>Verified each step by API replay and pixel diff of 57 charts, dashboard never down; moved data import from a developer-run script to a web upload owned by the user department, and the platform is now maintainable by one engineer.</li>
+    <li>Verified each step by API replay and pixel diff of 57 charts, dashboard never down; moved data import from a developer-run script to a web upload owned by the user department; now maintainable by one engineer.</li>
   </ul>
 
   <div class="row"><h3>China Steel Corporation (中國鋼鐵) — Shift Supervisor (值班股長)</h3><span class="when">Jan 2024 – Nov 2024</span></div>
@@ -155,12 +155,12 @@
   <div class="row"><h3>明基材料股份有限公司 — AI 應用研發工程師</h3><span class="when">2024/12 – 至今</span></div>
   <p class="org"><i>數位技術中心智慧應用部智慧應用開發課</i> · 桃園</p>
 
-  <div class="sys"><h4>AI 數據分析平台（企業大腦）</h4> <span class="stack">· FastAPI、Azure OpenAI（公司專用 API）、Docker</span> <span class="role">— 架構設計與主要開發者（統計方法由同事提供）</span></div>
+  <div class="sys"><h4>QInsight AI 數據分析平台（原企業大腦）</h4> <span class="stack">· FastAPI、Azure OpenAI（公司專用 API）、Docker</span> <span class="role">— 架構設計與主要開發者；統計方法來自同事</span></div>
   <ul>
-    <li>把 6 支 n8n 流程（約 550 個節點、邏輯各自複製）改成<em>一個分析 skill</em>，由上傳、API、6 支排程共用，新方法只需掛進一次。</li>
-    <li>skill 採仿 Claude Code 格式（SKILL.md + deny 規則），在 Docker 沙盒執行（非 root、資源／時間限制、獨立網段），之後 chat agent 不用改寫就能呼叫同一套方法；統計由程式計算，LLM 只負責寫判讀。</li>
-    <li>已在偏光產線上線，取代外購 AutoML；6 支流程零斷線切換，同一批輸入新舊產出完全一致（Excel 9/9 逐格、PDF 逐 byte 相同）。</li>
-    <li>已上線：平台、沙盒、OCAP 知識庫（6 支缺陷流程）、回饋標註（分階段開放中）；chat agent 仍在原型階段。</li>
+    <li>把 6 支 n8n 流程（約 550 個節點、邏輯各自複製）改成<em>一個分析 skill</em>，由上傳、API、6 支排程共用，新方法掛一次。</li>
+    <li>skill 採仿 Claude Code 格式（SKILL.md + deny 規則），在 Docker 沙盒執行（非 root、資源／時間限制、獨立網段），chat agent 可直接呼叫；統計由程式計算，LLM 只寫判讀。</li>
+    <li>偏光產線上線、取代外購 AutoML；6 支流程零斷線切換，同批輸入新舊產出一致（Excel 9/9 逐格、PDF 逐 byte 相同）。</li>
+    <li>已上線：平台與沙盒；11 月擴為通用型 <em>QInsight</em>（資料集 → 統計／配方／主題式分析，每頁配 LLM 助理），先開放驗證群組。OCAP 知識庫（6 支缺陷流程）與回饋標註已建、尚未開放，模型訓練調校中。</li>
   </ul>
 
   <div class="sys"><h4>文件 AI 系統（OCR + LLM）</h4> <span class="stack">· Azure Document Intelligence、Azure OpenAI</span> <span class="role">— 獨立從零建立；4 套系統已上線</span></div>
